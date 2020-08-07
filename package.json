@@ -1,0 +1,17 @@
+{
+  "name": "hotel-landing",
+  "version": "1.0.0",
+  "description": "Landing page for a hotel. A practice project for FSD frontend development course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "frontend",
+    "pug",
+    "scss",
+    "html"
+  ],
+  "author": "https://github.com/obulat",
+  "license": "ISC"
+}
