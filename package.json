@@ -4,7 +4,9 @@
   "description": "Landing page for a hotel. A practice project for FSD frontend development course.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "keywords": [
     "frontend",
@@ -13,5 +15,25 @@
     "html"
   ],
   "author": "https://github.com/obulat",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.11.1",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.1",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "pug": "^3.0.0",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0"
+  }
 }

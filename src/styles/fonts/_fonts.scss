@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./Quicksand-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./Quicksand-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./Montserrat-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./Montserrat-SemiBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./opensans-regular-webfont.woff2') format('woff2'),
+  url('./opensans-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./opensans-bold-webfont.woff2') format('woff2'),
+  url('./opensans-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url('./MaterialIcons-Regular.woff2') format('woff2'),
+  url('./MaterialIcons-Regular.woff') format('woff');
+}
