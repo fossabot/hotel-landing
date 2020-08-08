@@ -1,11 +1,12 @@
 extends ../base/base
+include ../../blocks/button/button
 
 block variables
     - let pages = [{'title' : 'Colors and Typography'}, {'title': 'Form Elements'}]
 
 block content
     h1 UI KIT
-    a(href='../index.html') index
+    a(href='index.html') index
     .pages =pages
     each page in pages
         block page
@@ -13,4 +14,5 @@ block content
                 .logo logo
             block page-content
                 =page.title
+                +button({ text: 'button', type : 'contained' })
 
