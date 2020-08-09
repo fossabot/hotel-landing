@@ -1,8 +1,10 @@
-.ui_page {
-  background-color: white;
+.ui-page {
   margin-bottom: 1rem;
-  padding: 30px;
-  box-shadow: 0 0 5px 0 $c-primary-lighter;
+  //padding: 30px;
+  &_with-background {
+    background-color: white;
+    box-shadow: 0 0 5px 0 $c-primary-lighter;
+  }
   &__logo {
     margin-bottom: 63px;
     margin-right: 63px;
