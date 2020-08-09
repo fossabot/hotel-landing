@@ -1,6 +1,5 @@
 mixin button({ text = '', type = 'contained' })
-    attrs.class
-    button(class=`button button_${type}`)
+    button(class=`button button_${type} ${attributes.class}`)
         =text
         if type === 'wide'
             i.material-icons.button__arrow arrow_forward
