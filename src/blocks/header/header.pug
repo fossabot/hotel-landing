@@ -1,0 +1,27 @@
+include ../logo/logo
+mixin header({loggedIn=false, name} = {})
+    -
+        let links = [
+            {title: 'О нас', items: null, href: '#'},
+            {title: 'Услуги', items: ['service 1', 'service 2'], href: '#'},
+            {title: 'Вакансии', },
+            {title: 'Новости',},
+            {title: 'Соглашения', items: ['service 1', 'service 2'], href: '#'}]
+    header.header(class= loggedIn ? 'logged-in' : 'not-logged-in')
+        .header__logo
+            +logo()
+        nav.header__nav
+            ul.header__navlist
+                each link in links
+                    li.header__navitem
+                        if link.items
+                            a.header__navlink_expandable.header__navlink(src=link.href)=link.title
+                        else
+                            a.header__navlink(src=link.href)=link.title
+            if loggedIn
+                a.header__navlink.header__profile-link=name
+            else
+                +button({text: 'Войти', type: 'outlined'})&attributes({class: 'header__button'})
+                +button({text: 'Зарегистрироваться'})&attributes({class: 'header__button'})
+
+

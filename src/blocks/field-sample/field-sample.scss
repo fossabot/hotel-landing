@@ -1,0 +1,15 @@
+.field-sample {
+  max-width: 320px;
+  &__caption {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__name {
+    @include label-font;
+  }
+  &__status {
+    @include label-font;
+    font-weight: normal;
+  }
+}

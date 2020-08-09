@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 140px;
+  &__nav {
+    display: inherit;
+    align-items: inherit;
+  }
+  &__navlist {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+  }
+  &__navlink {
+    padding-left: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    &_expandable {
+      &::after{
+        content: 'expand_more';
+        font-family: 'Material Icons', sans-serif;
+        font-size: 24px;
+      }
+    }
+  }
+  &__button {
+    margin-left: 20px;
+  }
+  &__profile-link {
+    margin-left: 40px;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: $c-primary-lighter;
+      width: 1px;
+      height: 30px;
+      top: 0;
+      left: 0;
+    }
+  }
+}

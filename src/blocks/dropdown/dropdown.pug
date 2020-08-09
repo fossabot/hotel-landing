@@ -1,0 +1,12 @@
+include  ../../blocks/stepper/stepper
+
+mixin dropdown({placeholder='Open', items=[]})
+    .dropdown__container
+        div(class='dropdown__input')
+            p.dropdown__content= placeholder
+            i.material-icons.dropdown__arrow keyboard_arrow_down
+        .dropdown__options
+            block dropdown_options
+                for item in items
+                    .dropdown__option= item.tag
+                        +stepper({label: item.text, initial: 0})

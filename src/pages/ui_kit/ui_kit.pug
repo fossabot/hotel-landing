@@ -1,6 +1,10 @@
 extends ../base/base
 include ../../blocks/button/button
-include ../../blocks/ui_page/ui_page
+include ../../blocks/ui-page/ui-page
+include ../../blocks/text-field/text-field
+
+include ../../blocks/header/header
+include ../../blocks/field-sample/field-sample
 
 block variables
     -
@@ -13,9 +17,19 @@ block variables
 block content
     h1 UI KIT
     a(href='index.html') index
-
-    each page in pages
-        p.ui_page__title=page.title
-        +ui_page()
-            +button({ text: 'button', type : 'contained' })
+    p.ui-page__title=pages[0].title
+        +ui-page({withBackground: true})
+    p.ui-page__title=pages[1].title
+        +ui-page({withBackground: true})
+            +field-sample({name: 'text field', status: 'default'})
+                +text-field({placeholder: 'Email'})
+            +field-sample({name: 'text field', status: 'hover/ focus'})
+                +text-field({placeholder: 'This is pretty awesome'})
+    p.ui-page__title=pages[2].title
+        +ui-page()
+    p.ui-page__title=pages[3].title
+        +ui-page()
+            +header()
+        +ui-page()
+            +header({loggedIn: true, name: 'Юлий Цезарь'})
 
