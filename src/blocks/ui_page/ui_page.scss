@@ -1,0 +1,15 @@
+.ui_page {
+  background-color: white;
+  margin-bottom: 1rem;
+  padding: 30px;
+  box-shadow: 0 0 5px 0 $c-primary-lighter;
+  &__logo {
+    margin-bottom: 63px;
+    margin-right: 63px;
+  }
+  &__title {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding-left: 30px;
+  }
+}

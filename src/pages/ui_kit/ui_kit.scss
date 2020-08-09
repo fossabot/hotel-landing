@@ -1,5 +1,8 @@
 @import "src/styles/_variables";
 @import "src/styles/_base";
 @import "src/blocks/button/button";
+@import "src/blocks/ui_page/ui_page";
 
-
+body {
+  background-color: #e5e5e5;
+}

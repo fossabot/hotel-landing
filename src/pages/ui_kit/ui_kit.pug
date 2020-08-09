@@ -1,18 +1,21 @@
 extends ../base/base
 include ../../blocks/button/button
+include ../../blocks/ui_page/ui_page
 
 block variables
-    - let pages = [{'title' : 'Colors and Typography'}, {'title': 'Form Elements'}]
+    -
+        let pages = [{'title' : 'Colors and Typography'},
+                    {'title': 'Form Elements'},
+                    {'title': 'Cards'},
+                    {'title': 'Headers and Footers'}
+        ]
 
 block content
     h1 UI KIT
     a(href='index.html') index
-    .pages =pages
+
     each page in pages
-        block page
-            block header
-                .logo logo
-            block page-content
-                =page.title
-                +button({ text: 'button', type : 'contained' })
+        p.ui_page__title=page.title
+        +ui_page()
+            +button({ text: 'button', type : 'contained' })
 

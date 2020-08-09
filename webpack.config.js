@@ -91,7 +91,7 @@ module.exports = (env, options) => {
       }, {
         test: /\.(png|svg|jpg|gif)$/,
         include: [
-          path.resolve(PATHS.src, 'assets/images'),
+          path.resolve(PATHS.src, 'assets'),
         ],
         use: [
           {
@@ -100,6 +100,7 @@ module.exports = (env, options) => {
               outputPath: 'images',
               name: '[name].[ext]',
               publicPath: 'images',
+              esModule: false,
             },
           },
         ],
