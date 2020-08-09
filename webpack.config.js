@@ -19,7 +19,6 @@ module.exports = (env, options) => {
     'search_room'
   ]
     .map((name) => {
-      console.log('name: ', name, ', template: ', path.join(PAGES_DIR, `/${name}/${name}.pug`));
       return new HtmlWebpackPlugin({
         template: `./src/pages/${name}/${name}.pug`,
         filename: `${name}.html`,
