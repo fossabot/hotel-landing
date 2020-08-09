@@ -1,2 +1,6 @@
-mixin logo({className = ''})
-    img.logo(src=require("../../assets/logo.svg"), alt="logo", class=className)
+mixin logo({className, type='brand'} = {})
+    - const logo_src_modifier = type === 'brand' ? '' : `-${type}`
+    img.logo(
+        src=require(`../../assets/logo${logo_src_modifier}.svg`)
+        alt="logo"
+        class=className)
