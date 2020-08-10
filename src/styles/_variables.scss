@@ -1,10 +1,11 @@
 // colors
 
-$c-primary-darker: #1F2041; //hsl(238,35,18)rgb(31,32,65)
-$c-primary-dark: #575870; //hsl(237,12,39)rgb(87,88,112)
-$c-primary-medium: #8f8fa0; //hsl(240,8,59)rgb(143,143,160)
-$c-primary-light: #c7c7cf; //hsl(240,7,79)rgb(199,199,207)
-$c-primary-lighter: #f4f4f5;//hsl(240,4,95)rgb(244,244,245)
+$c-primary-darker: rgba(31,32,65,1);//#1F2041; //hsl(238,35,18)rgb(31,32,65)
+$c-primary-dark: rgba(31,32,65,0.75);//#575870; //hsl(237,12,39)rgb(87,88,112)
+$c-primary-medium: rgba(31,32,65,0.5);//#8f8fa0; //hsl(240,8,59)rgb(143,143,160)
+$c-primary-light: rgba(31,32,65,0.25);//#c7c7cf; //hsl(240,7,79)rgb(199,199,207)
+$c-primary-lighter:  rgba(31,32,65,0.05);//#f4f4f5;//hsl(240,4,95)rgb(244,244,245)
+$c-primary-ten:  rgba(31,32,65,0.1);//
 
 $c-brand: #bc9cff; //hsl(259,100,80)rgb(188,156,255)
 $c-accent: #6fcf97; //hsl(144,50,62)rgb(111,207,151)

@@ -1,0 +1,35 @@
+.subscription-text-field {
+  &__wrapper {
+    min-width: 320px;
+    width: 100%;
+    @include input-base;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 44px;
+    &:hover, &:active, &:focus-within {
+      box-shadow: 0 0 0 1px $c-primary-light;
+    }
+  }
+
+  &__input {
+    border: none;
+    width: 100%;
+    line-height: 44px;
+    font-family: inherit;
+    font-size: inherit;
+    &:hover, &:active, &:focus {
+      outline: none;
+    }
+  }
+  &__arrow {
+    content: 'arrow_forward';
+    font-family: "Material Icons", sans-serif;
+    font-size: 24px;
+    width: 44px;
+    text-align: center;
+    background: $brand-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+  }
+}

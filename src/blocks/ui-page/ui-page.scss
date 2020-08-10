@@ -1,17 +1,29 @@
 .ui-page {
   margin-bottom: 1rem;
-  //padding: 30px;
+  padding: 140px;
+  position: relative;
+  border-top: 2px solid $c-primary-medium;
+  border-bottom: 2px solid $c-primary-medium;
+  background-color: #f4f4f6;
   &_with-background {
     background-color: white;
     box-shadow: 0 0 5px 0 $c-primary-lighter;
   }
+  &_full-width {
+    padding-left: 0;
+    padding-right: 0;
+  }
   &__logo {
-    margin-bottom: 63px;
-    margin-right: 63px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
   }
   &__title {
     margin-top: 2rem;
     margin-bottom: 0.5rem;
     padding-left: 30px;
+  }
+  &__item {
+    margin-bottom: 20px;
   }
 }

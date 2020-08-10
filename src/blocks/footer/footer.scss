@@ -1,0 +1,56 @@
+.footer {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) repeat(3, 1fr) minmax(260px, 1fr);
+  grid-gap: 40px;
+  justify-content: space-between;
+  background-color: white;
+  padding: 100px 140px;
+  &__logo {
+    margin-bottom: 20px;
+  }
+  &__nav-heading {
+    @include label-font;
+    margin-bottom: 20px;
+    &:hover, &:active, &:focus {
+      color:$c-primary-dark;
+    }
+  }
+  &__heading-nav-link {
+    text-decoration: none;
+    color: $c-primary-medium;
+  }
+  &__nav-list {
+    list-style: none;
+  }
+  &__nav-link {
+    text-decoration: none;
+    @include body-text;
+    color: $c-primary-medium;
+  }
+  &__subscription-heading {
+    cursor: pointer;
+    @include label-font;
+    margin-bottom: 20px;
+    &:hover, &:active, &:focus {
+      color:$c-primary-dark;
+    }
+  }
+  &__subscription-text {
+    color:$c-primary-medium;
+    margin-bottom: 20px;
+  }
+  &__subscription-field {
+    margin-top: 20px;
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22.5px 140px;
+    border-top: 1px solid $c-primary-light;
+    background-color: white;
+  }
+  &__social-icon {
+    margin-left: 20px;
+  }
+}

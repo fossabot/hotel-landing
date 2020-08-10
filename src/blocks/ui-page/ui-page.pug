@@ -1,6 +1,8 @@
 include ../logo/logo
-mixin ui-page({withBackground=false} = {})
-    article.ui-page(class = withBackground ? "ui-page_with-background": "")
+mixin ui-page({withBackground=false, fullWidth=false} = {})
+    - let classes = withBackground ? "ui-page_with-background": ""
+    - classes = `${classes}${fullWidth ? ' ui-page_full-width' : ''}`
+    article.ui-page(class=classes)
         +logo({className:'ui-page__logo', type: 'light'})
         .ui-page__content
             if block

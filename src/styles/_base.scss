@@ -18,6 +18,9 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 
@@ -30,17 +33,26 @@ $label-font-size: 12px;
     font-family: Quicksand, sans-serif;
     font-size: $title-font-size;
     font-weight: bold;
+    color: $c-primary-darker;
 }
 @mixin subtitle-font {
     font-family: Quicksand, sans-serif;
     font-size: $subtitle-font-size;
     font-weight: bold;
+    color: $c-primary-darker;
 }
 @mixin label-font {
     font-family: Montserrat, sans-serif;
     font-size: $label-font-size;
     font-weight: bold;
+    color: $c-primary-darker;
     text-transform: uppercase;
+}
+@mixin body-text {
+    color: $c-primary-dark;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-size: $root-font-size;
+    line-height: 24px;
 }
 .title {
     font-family: Quicksand, sans-serif;

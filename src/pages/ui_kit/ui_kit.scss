@@ -1,9 +1,17 @@
 @import "src/styles/_variables";
 @import "src/styles/_base";
-@import "src/blocks/button/button";
+
 @import "src/blocks/ui-page/ui-page";
+@import "src/blocks/header/header";
+@import "src/blocks/footer/footer";
+@import "src/blocks/field-sample/field-sample";
 @import "src/blocks/text-field/text-field";
+@import "src/blocks/subscription-text-field/subscription-text-field";
+@import "src/blocks/button/button";
 
 body {
   background-color: #e5e5e5;
+}
+.ui-page__item {
+  margin-bottom: 30px;
 }
