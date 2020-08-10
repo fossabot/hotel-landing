@@ -1,5 +1,3 @@
-include  ../../blocks/stepper/stepper
-
 mixin dropdown({placeholder='Open', items=[]})
     .dropdown__container
         div(class='dropdown__input')
@@ -8,5 +6,8 @@ mixin dropdown({placeholder='Open', items=[]})
         .dropdown__options
             block dropdown_options
                 for item in items
-                    .dropdown__option= item.tag
-                        +stepper({label: item.text, initial: 0})
+                    if typeof item === 'string'
+                        .dropdown__option=item
+                    else
+                        .dropdown__option= item.tag
+                            +stepper({label: item.text, initial: 0})

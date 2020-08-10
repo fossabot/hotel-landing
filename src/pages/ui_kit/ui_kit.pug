@@ -4,6 +4,8 @@ include ../../blocks/header/header
 include ../../blocks/footer/footer
 include ../../blocks/field-sample/field-sample
 include ../../blocks/text-field/text-field
+include ../../blocks/dropdown/dropdown
+include ../../blocks/stepper/stepper
 include ../../blocks/button/button
 
 
@@ -28,6 +30,9 @@ block content
             .ui-page__item
                 +field-sample({name: 'text field', status: 'hover/ focus'})
                     +text-field({placeholder: 'This is pretty awesome'})
+            .ui-page__item
+                +field-sample({name: 'dropdown', status: 'default'})
+                    +dropdown({placeholder: 'Сколько гостей',items: ['item1', 'item2']})
             .ui-page__item
                 +field-sample({name: 'subscription text field', status: 'default'})
                     +subscription-text-field()

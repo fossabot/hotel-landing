@@ -1,5 +1,3 @@
-import("./dropdown.scss");
-
 function openDropdown() {
     const options = document.querySelector('.dropdown__options');
     const optionsOpen = 'dropdown__options_open';

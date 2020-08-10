@@ -1,0 +1,7 @@
+mixin stepper({ label, initial=0 })
+    .stepper
+        .stepper__label= label
+        .stepper__input
+            .stepper__decrement -
+            .stepper__value= initial
+            .stepper__increment +

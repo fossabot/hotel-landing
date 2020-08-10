@@ -1,0 +1,28 @@
+@import "src/styles/base";
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 320px;
+  @include label-font;
+  &__label {
+    line-height: 30px;
+  }
+  &__input {
+    display: flex;
+  }
+  &__value {
+    margin: 0 1rem;
+    line-height: 30px;
+  }
+  &__decrement,
+  &__increment {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid $c-primary-light;
+    line-height: 30px;
+    color: $c-primary-light;
+    text-align: center;
+  }
+}
+
