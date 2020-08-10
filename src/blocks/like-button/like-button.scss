@@ -1,0 +1,62 @@
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  .like-button {
+    border: 1px solid $c-primary-light;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    position: relative;
+    &:focus-within {
+      box-shadow: 0 0 0 2px $c-brand-alpha;
+    }
+    &__input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: none;
+      width: 40px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      &:focus, &:active {
+        box-shadow: none;
+        outline: none;
+      }
+      &::after {
+        content: "favorite_border";
+        font-family: "Material Icons", sans-serif;
+        color: $c-primary-light;
+        transition: color 0.2s ease;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &:checked {
+        &::after {
+          content: "favorite";
+          color: $c-brand;
+          transition: color 0.3s ease, margin-left 0.3s ease-out;
+        }
+        &~.like-button__label {
+          color: $c-brand;
+        }
+      }
+    }
+    &__label {
+      width: 18px;
+      height: 22px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      color: $c-primary-light;
+      position: absolute;
+      right: 3px;
+      z-index: -1;
+    }
+  }
+}

@@ -5,6 +5,14 @@
   border-top: 2px solid $c-primary-medium;
   border-bottom: 2px solid $c-primary-medium;
   background-color: #f4f4f6;
+  &__content_columned {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 126px;
+  }
+  &__content_full-width {
+    display: block;
+  }
   &_with-background {
     background-color: white;
     box-shadow: 0 0 5px 0 $c-primary-lighter;
@@ -13,6 +21,8 @@
     padding-left: 0;
     padding-right: 0;
   }
+
+
   &__logo {
     position: absolute;
     top: 30px;

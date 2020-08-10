@@ -1,0 +1,11 @@
+mixin checkbox({ text = '', name='', defaultValue=false })
+    .checkbox-button
+        input(
+            class=`checkbox-button__input checkbox-${name}`
+            type="checkbox"
+            name= name
+            id= name
+            checked= defaultValue
+        )
+        label.checkbox-button__label(for=name)= text
+

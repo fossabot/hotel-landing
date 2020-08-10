@@ -1,0 +1,10 @@
+mixin rate-button({rating = 0})
+    - let i = 0
+    .rate-button
+        while i < 5
+            .rate-button__icon.material-icons("data-id"= i+1)
+                if i < rating
+                    | star
+                else
+                    | star_border
+            - i++

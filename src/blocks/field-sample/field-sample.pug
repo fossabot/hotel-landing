@@ -1,6 +1,7 @@
-mixin field-sample(options)
+mixin field-sample({name, status, noMargin=false})
     .field-sample
-        .field-sample__caption
-            p.field-sample__name= options.name
-            p.field-sample__status= options.status
+        .field-sample__caption(class=noMargin? 'field-sample__caption_no-margin': '')
+            p.field-sample__name= name
+            if status
+                p.field-sample__status= status
         block

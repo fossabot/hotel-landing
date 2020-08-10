@@ -1,0 +1,32 @@
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  .radiobutton {
+    @include checkbox-base;
+    &__input {
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      margin-right: 9.74px;
+      justify-content: center;
+      &::after {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+      &:checked {
+        &::after {
+          opacity: 1;
+          transition: opacity 0.3s ease;
+        }
+      }
+    }
+    &__option {
+      display: flex;
+      align-items: center;
+      &:not(last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}

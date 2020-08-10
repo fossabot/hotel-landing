@@ -1,0 +1,9 @@
+mixin like-button({value=0, defaultValue=false})
+    .like-button
+        input(
+            name="like-button",
+            type="checkbox",
+            value=defaultValue
+            class="like-button__input"
+            )
+        label(for="like-button" class="like-button__label")= value

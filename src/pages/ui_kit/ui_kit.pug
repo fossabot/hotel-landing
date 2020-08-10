@@ -6,7 +6,14 @@ include ../../blocks/field-sample/field-sample
 include ../../blocks/text-field/text-field
 include ../../blocks/dropdown/dropdown
 include ../../blocks/stepper/stepper
+include ../../blocks/checkbox/checkbox
+include ../../blocks/radiobutton/radiobutton
+include ../../blocks/rate-button/rate-button
+include ../../blocks/like-button/like-button
+include ../../blocks/toggle/toggle
 include ../../blocks/button/button
+include ../../blocks/pagination/pagination
+
 
 
 block variables
@@ -24,23 +31,61 @@ block content
         +ui-page({withBackground: true})
     p.ui-page__title=pages[1].title
         +ui-page({withBackground: true})
-            .ui-page__item
-                +field-sample({name: 'text field', status: 'default'})
-                    +text-field({placeholder: 'Email'})
-            .ui-page__item
-                +field-sample({name: 'text field', status: 'hover/ focus'})
-                    +text-field({placeholder: 'This is pretty awesome'})
-            .ui-page__item
-                +field-sample({name: 'dropdown', status: 'default'})
-                    +dropdown({placeholder: 'Сколько гостей',items: ['item1', 'item2']})
-            .ui-page__item
-                +field-sample({name: 'subscription text field', status: 'default'})
-                    +subscription-text-field()
+            .ui-page__column
+                .ui-page__item
+                    +field-sample({name: 'text field', status: 'default', noMargin: true})
+                        +text-field({placeholder: 'Email'})
+                .ui-page__item
+                    +field-sample({name: 'text field', status: 'hover/ focus', noMargin: true})
+                        +text-field({placeholder: 'This is pretty awesome'})
+                .ui-page__item
+                    +field-sample({name: 'dropdown', status: 'default', noMargin: true})
+                        +dropdown({placeholder: 'Сколько гостей',items: ['item1', 'item2']})
+                .ui-page__item
+                    +field-sample({name: 'subscription text field', status: 'default', noMargin: true})
+                        +subscription-text-field()
+            .ui-page__column
+                .ui-page__item
+                    +field-sample({name: 'checkbox buttons'})
+                        +checkbox({text: 'Можно курить', name: 'smokingAllowed'})
+                        +checkbox({text: 'Можно с питомцами', name: 'petsAllowed', defaultValue: true})
+                        +checkbox({text: 'Можно пригласить гостей (до 10 человек)', name: 'guestsAllowed', defaultValue: true})
+                .ui-page__item
+                    +field-sample({name: 'radiobuttons'})
+                        +radiobutton({name: 'gender', options: ['Мужчина', 'Женщина']})
+                .ui-page__item
+                    +field-sample({name: 'toggle'})
+                        +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
+                        +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked', defaultValue: true})
+                .ui-page__item
+                    +field-sample({name: 'like button'})
+                        +like-button({value:0})
+                        +like-button({value:11, defaultValue:true})
+                .ui-page__item
+                    +field-sample({name: 'rate button'})
+                        +rate-button({rating: 3})
+                        +rate-button({rating: 5})
+            .ui-page__column
+                .ui-page__item
+                    +field-sample({name: 'range slider'})
+                        +checkbox({text: 'Можно курить', name: 'smokingAllowed'})
+
+                .ui-page__item
+                    +field-sample({name: 'buttons'})
+                        +button({text: 'click me', type: ''})
+                        +button({text: 'click me', type: 'outlined'})
+                        +button({text: 'click me', type: 'text'})
+                        +button({text: 'перейти к оплате', type: 'wide'})
+
+                .ui-page__item
+                    +field-sample({name: 'pagination'})
+                        +pagination({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
+
     p.ui-page__title=pages[2].title
         +ui-page()
     p.ui-page__title=pages[3].title
         +ui-page({fullWidth:true})
-            .ui-page__item
+            .ui-page__item.ui-page__item
                 +header()
             .ui-page__item
                 +header({loggedIn: true, name: 'Юлий Цезарь'})

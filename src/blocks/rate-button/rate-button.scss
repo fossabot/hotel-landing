@@ -1,0 +1,12 @@
+.rate-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &__icon {
+    //color: $c-brand;
+    font-size: 24px;
+    background: $brand-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

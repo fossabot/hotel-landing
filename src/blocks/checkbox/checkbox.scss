@@ -1,0 +1,29 @@
+.checkbox-button__label {
+  max-width: 192px;
+  width: 100%;
+}
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  .checkbox-button {
+    @include checkbox-base;
+    align-items: flex-start;
+    &__input {
+      width: 20px;
+      height: 20px;
+      margin: 2px 9.74px 0 0;
+      &:after {
+        transition: opacity .2s;
+      }
+      &:checked {
+        &:after {
+          font-family: "Material Icons", sans-serif;
+          content: "check";
+          font-size: 17px;
+          font-weight: bold;
+          background: $brand-gradient;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,14 @@
 .field-sample {
   max-width: 320px;
+
   &__caption {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 12px;
+    &_no-margin {
+      margin-bottom: 0;
+    }
   }
   &__name {
     @include label-font;

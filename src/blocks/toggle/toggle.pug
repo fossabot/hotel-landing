@@ -1,0 +1,10 @@
+mixin toggle({name, label, defaultValue=false})
+    .toggle
+        input(
+            name=name,
+            type="checkbox",
+            value=idx+1
+            class='toggle__input'
+            checked=defaultValue
+            )
+        label(for=name class='toggle__label')= label

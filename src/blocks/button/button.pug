@@ -1,5 +1,6 @@
 mixin button({ text = '', type = 'contained' })
-    button(class=`button button_${type} ${attributes.class}`)
+    - const typeClass = type==='contained'? '': type
+    button(class=`button button_${typeClass}`)
         =text
         if type === 'wide'
             i.material-icons.button__arrow arrow_forward
