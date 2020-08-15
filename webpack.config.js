@@ -1,11 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-
-module.exports = (env, options) => {
-  const isDev = options.mode === 'development';
+module.exports = () => {
   const PATHS = {
     src: path.join(__dirname, 'src'),
     dist: path.join(__dirname, 'dist'),
@@ -16,18 +14,17 @@ module.exports = (env, options) => {
     'ui_kit',
     'registration_login',
     'room_details',
-    'search_room'
+    'search_room',
   ]
-    .map((name) => {
-      return new HtmlWebpackPlugin({
-        template: `./src/pages/${name}/${name}.pug`,
-        filename: `${name}.html`,
-        chunks: [name, 'vendors'],
-      })
-    })
+    .map((name) => new HtmlWebpackPlugin({
+      template: `./src/pages/${name}/${name}.pug`,
+      filename: `${name}.html`,
+      chunks: [name, 'vendors'],
+    }));
   return {
     entry: {
-      index: './src/index.js',
+      main: './src/main.js',
+      index: './src/pages/index/index.js',
       ui_kit:  './src/pages/ui_kit/ui_kit.js',
       'registration_login': `${PAGES_DIR}/registration_login/registration_login.js`,
       'room_details': `${PAGES_DIR}/room_details/room_details.js`,
@@ -41,10 +38,10 @@ module.exports = (env, options) => {
       },
       watchOptions: {
         ignored: /node_modules/,
-      }
+      },
     },
     output: {
-      filename: "js/[name].[hash].js",
+      filename: 'js/[name].[hash].js',
     },
     plugins: [
       ...pages,
@@ -76,7 +73,7 @@ module.exports = (env, options) => {
         loader: 'pug-loader',
       }, {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: ['babel-loader', 'eslint-loader'],
         exclude: '/node_modules/',
       },
       {
@@ -87,7 +84,7 @@ module.exports = (env, options) => {
           'css-loader',
           'postcss-loader',
           'sass-loader',
-        ]
+        ],
       }, {
         test: /\.(png|svg|jpg|gif)$/,
         include: [
@@ -107,14 +104,14 @@ module.exports = (env, options) => {
       }, {
         test: /\.woff2?/,
         use: {
-          loader: "file-loader",
+          loader: 'file-loader',
           options: {
             name: '[name].[ext]',
             outputPath: 'fonts',
             publicPath: 'fonts',
-          }
-        }
-      }]
-    }
-  }
-}
+          },
+        },
+      }],
+    },
+  };
+};
