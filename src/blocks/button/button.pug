@@ -1,6 +1,9 @@
-mixin button({ text = '', type = 'contained' })
-    - const typeClass = type==='contained'? '': type
-    button(class=`button button_${typeClass}`)
+mixin button({ tag = 'button', text = '', type = 'contained', link=null})
+    - const layoutClass = attributes.class ? ` ${attributes.class}` : ''
+    #{tag}(
+        class=`button button_${type}${layoutClass}`
+        href=link? link: false
+    )
         =text
         if type === 'wide'
             i.material-icons.button__arrow arrow_forward

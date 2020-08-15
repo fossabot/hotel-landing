@@ -2,6 +2,9 @@
   background: $brand-gradient;
   border-radius: 22px;
   @include label-font;
+  text-decoration: none;
+  text-align: center;
+  line-height: normal;
   color: white;
   padding: 14px 20px;
   border: none;
@@ -43,8 +46,7 @@
     }
   }
   &_wide {
-    width: 100%;
-    max-width: 320px;
+    width: 320px;
     position: relative;
   }
   &__arrow {
