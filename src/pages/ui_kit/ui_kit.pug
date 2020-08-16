@@ -10,37 +10,35 @@ include ../../blocks/checkbox/checkbox
 include ../../blocks/radiobutton/radiobutton
 include ../../blocks/rate-button/rate-button
 include ../../blocks/like-button/like-button
+include ../../blocks/range-slider/range-slider
 include ../../blocks/toggle/toggle
 include ../../blocks/button/button
 include ../../blocks/pagination/pagination
 
 
-
-block variables
-    -
-        let pages = [{'title' : 'Colors and Typography'},
-                    {'title': 'Form Elements'},
-                    {'title': 'Cards'},
-                    {'title': 'Headers and Footers'}
-        ]
-
 block content
     h1 UI KIT
     a(href='index.html') index
-    p.ui-page__title=pages[0].title
+    p.ui-page__title Colors and Typography
         +ui-page({withBackground: true})
-    p.ui-page__title=pages[1].title
+    p.ui-page__title Form Elements
         +ui-page({withBackground: true})
             .ui-page__column
                 .ui-page__item
                     +field-sample({name: 'text field', status: 'default', noMargin: true})
                         +text-field({placeholder: 'Email'})
                 .ui-page__item
-                    +field-sample({name: 'text field', status: 'hover/ focus', noMargin: true})
-                        +text-field({placeholder: 'This is pretty awesome'})
-                .ui-page__item
                     +field-sample({name: 'dropdown', status: 'default', noMargin: true})
                         +dropdown({placeholder: 'Сколько гостей',items: ['item1', 'item2']})
+                .ui-page__item
+                    +field-sample({name: 'masked field', noMargin: true})
+                        +text-field({placeholder: 'ДД.ММ.ГГ'})
+                .ui-page__item
+                    +field-sample({name: 'date dropdown', noMargin: true})
+                        +text-field({placeholder: 'ДД.ММ.ГГ'})
+                .ui-page__item
+                    +field-sample({name: 'filter date dropdown', noMargin: true})
+                        +text-field({placeholder: '19 авг - 23 авг'})
                 .ui-page__item
                     +field-sample({name: 'subscription text field', status: 'default', noMargin: true})
                         +subscription-text-field()
@@ -58,7 +56,7 @@ block content
                         +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
                         +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked', defaultValue: true})
                 .ui-page__item
-                    +field-sample({name: 'like button'})
+                    +field-sample({name: 'like button'})&attributes({class: 'row'})
                         +like-button({value:0})
                         +like-button({value:11, defaultValue:true})
                 .ui-page__item
@@ -68,22 +66,24 @@ block content
             .ui-page__column
                 .ui-page__item
                     +field-sample({name: 'range slider'})
+                        +range-slider({text:'range', name: 'range'})
                         +checkbox({text: 'Можно курить', name: 'smokingAllowed'})
-
                 .ui-page__item
                     +field-sample({name: 'buttons'})
                         +button({text: 'click me', type: ''})
                         +button({text: 'click me', type: 'outlined'})
                         +button({text: 'click me', type: 'text'})
                         +button({text: 'перейти к оплате', type: 'wide'})
-
                 .ui-page__item
                     +field-sample({name: 'pagination'})
                         +pagination({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
 
-    p.ui-page__title=pages[2].title
+    p.ui-page__title Cards
         +ui-page()
-    p.ui-page__title=pages[3].title
+            .ui-page__column
+            .ui-page__column
+            .ui-page__column
+    p.ui-page__title Headers and Footers
         +ui-page({fullWidth:true})
             .ui-page__item.ui-page__item
                 +header()

@@ -17,4 +17,13 @@
     @include label-font;
     font-weight: normal;
   }
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    > * {
+      margin-right: 20px;
+    }
+  }
+
 }
