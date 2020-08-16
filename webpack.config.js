@@ -25,10 +25,10 @@ module.exports = () => {
     entry: {
       main: './src/main.js',
       index: './src/pages/index/index.js',
-      ui_kit:  './src/pages/ui_kit/ui_kit.js',
-      'registration_login': `${PAGES_DIR}/registration_login/registration_login.js`,
-      'room_details': `${PAGES_DIR}/room_details/room_details.js`,
-      'search_room': `${PAGES_DIR}/search_room/search_room.js`
+      ui_kit: './src/pages/ui_kit/ui_kit.js',
+      registration_login: `${PAGES_DIR}/registration_login/registration_login.js`,
+      room_details: `${PAGES_DIR}/room_details/room_details.js`,
+      search_room: `${PAGES_DIR}/search_room/search_room.js`,
     },
     devtool: 'eval-source-map',
     devServer: {
@@ -51,7 +51,7 @@ module.exports = () => {
           filename: '[name].css',
           chunkFilename: '[name].css',
           ignoreOrder: true,
-        }
+        },
       ),
     ],
     optimization: {

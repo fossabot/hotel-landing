@@ -1,1 +1,1 @@
-import("./field-sample.scss");
+import('./field-sample.scss');

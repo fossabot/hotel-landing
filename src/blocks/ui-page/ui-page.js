@@ -1,1 +1,1 @@
-import "./ui-page.scss";
+import './ui-page.scss';
