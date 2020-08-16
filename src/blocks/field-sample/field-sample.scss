@@ -17,6 +17,10 @@
     @include label-font;
     font-weight: normal;
   }
+  &__column {
+    display: flex;
+    flex-direction: column;
+  }
   &__row {
     display: flex;
     flex-direction: row;

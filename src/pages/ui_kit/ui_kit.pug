@@ -4,6 +4,7 @@ include ../../blocks/header/header
 include ../../blocks/footer/footer
 include ../../blocks/field-sample/field-sample
 include ../../blocks/text-field/text-field
+include ../../blocks/masked-input/masked-input
 include ../../blocks/dropdown/dropdown
 include ../../blocks/stepper/stepper
 include ../../blocks/checkbox/checkbox
@@ -32,7 +33,7 @@ block content
                         +dropdown({placeholder: 'Сколько гостей',items: ['item1', 'item2']})
                 .ui-page__item
                     +field-sample({name: 'masked field', noMargin: true})
-                        +text-field({placeholder: 'ДД.ММ.ГГ'})
+                        +masked-input({placeholder: 'ДД.ММ.ГГ'})
                 .ui-page__item
                     +field-sample({name: 'date dropdown', noMargin: true})
                         +text-field({placeholder: 'ДД.ММ.ГГ'})

@@ -1,11 +1,10 @@
 mixin range-slider({ text = '', name='', defaultValue=false })
     .range-slider
         input(
-            class=`range-slider__input checkbox-${name}`
+            class=`range-slider__input`
             type="range"
             name= name
             id= name
-            min="1" max="100" value="50"
         )
         label.range-slider__label(for=name)= text
 

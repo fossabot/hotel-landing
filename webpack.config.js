@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = () => {
@@ -24,8 +25,8 @@ module.exports = () => {
   return {
     entry: {
       main: './src/main.js',
-      index: './src/pages/index/index.js',
-      ui_kit: './src/pages/ui_kit/ui_kit.js',
+      index: `${PAGES_DIR}/index/index.js`,
+      ui_kit: `${PAGES_DIR}/ui_kit/ui_kit.js`,
       registration_login: `${PAGES_DIR}/registration_login/registration_login.js`,
       room_details: `${PAGES_DIR}/room_details/room_details.js`,
       search_room: `${PAGES_DIR}/search_room/search_room.js`,
@@ -53,6 +54,7 @@ module.exports = () => {
           ignoreOrder: true,
         },
       ),
+      new FaviconsWebpackPlugin(`${PATHS.src}/favicons/favicon.png`),
     ],
     optimization: {
       splitChunks: {

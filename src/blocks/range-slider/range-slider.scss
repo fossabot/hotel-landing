@@ -1,25 +1,22 @@
-.range-slider__label {
-  max-width: 192px;
-  width: 100%;
-}
-@supports (-webkit-appearance: none) or (-moz-appearance: none) {
-  .range-slider {
-    align-items: flex-start;
-    &__input {
-      margin: 2px 9.74px 0 0;
-      &:after {
-        transition: opacity .2s;
-      }
-      &:checked {
-        &:after {
-          content: "";
-          font-size: 17px;
-          font-weight: bold;
-          background: $brand-gradient;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-      }
-    }
-  }
-}
+
+//@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+//  .range-slider {
+//    align-items: flex-start;
+//    &__input {
+//      margin: 2px 9.74px 0 0;
+//      &:after {
+//        transition: opacity .2s;
+//      }
+//      &:checked {
+//        &:after {
+//          content: "";
+//          font-size: 17px;
+//          font-weight: bold;
+//          background: $brand-gradient;
+//          -webkit-background-clip: text;
+//          -webkit-text-fill-color: transparent;
+//        }
+//      }
+//    }
+//  }
+//}

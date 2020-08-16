@@ -56,7 +56,8 @@
       color: $c-primary-light;
       position: absolute;
       right: 3px;
-      z-index: -1;
+      z-index: 0;
+      pointer-events: none;
     }
   }
 }
