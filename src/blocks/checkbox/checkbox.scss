@@ -1,12 +1,20 @@
-.checkbox-button__label {
-  max-width: 192px;
-  width: 100%;
-}
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   .checkbox-button {
     @include checkbox-base;
     align-items: flex-start;
     padding-bottom: 10px;
+    &__label {
+      width: 230px;
+    }
+    &__header {
+      font-family: Montserrat, sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 24px;
+    }
+    &__subheader {
+      font-size: 12px;
+    }
     &__input {
       width: 20px;
       height: 20px;
@@ -28,3 +36,4 @@
     }
   }
 }
+
