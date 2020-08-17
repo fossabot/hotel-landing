@@ -1,0 +1,1 @@
+import "./color-sample.scss";

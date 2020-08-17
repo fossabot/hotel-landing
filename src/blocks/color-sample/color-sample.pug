@@ -1,0 +1,5 @@
+mixin color-sample({ color: {variable, name, code} })
+  .color-sample.ui-section__item
+    div(class='color-sample__square color-sample__square_' + variable)
+    h3.color-sample__name= name
+    .color-sample__code= code

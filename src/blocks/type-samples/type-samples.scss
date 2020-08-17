@@ -1,0 +1,36 @@
+@import "src/styles/base";
+
+.type-sample {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+.type-sample__tag {
+  flex: 0 0 67px;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  justify-self: self-start;
+  &_title {
+    font-size: $title-font-size;
+  }
+  &_subtitle {
+    font-size: $subtitle-font-size;
+  }
+  &_label-text {
+    font-size: $label-font-size;
+  }
+}
+.type-sample__text {
+
+  &_title {
+    @include title-font;
+  }
+  &_subtitle {
+    @include subtitle-font;
+  }
+  &_label-text {
+    @include label-font;
+  }
+
+}

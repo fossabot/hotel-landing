@@ -1,5 +1,7 @@
 extends ../base/base
 include ../../blocks/ui-page/ui-page
+include ../../blocks/color-sample/color-sample
+include ../../blocks/type-samples/type-samples
 include ../../blocks/header/header
 include ../../blocks/footer/footer
 include ../../blocks/field-sample/field-sample
@@ -22,10 +24,76 @@ include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
 
 
 block content
+    -
+        const colors = [
+            {
+                name: "Dark Shade 100%",
+                code: "#1F2041",
+                variable: "c-darker"
+            },
+            {
+                name: "Dark Shade 75%",
+                code: "#1F2041",
+                variable: "c-dark"
+            },
+            {
+                name: "Dark Shade 50%",
+                code: "#1F2041",
+                variable: "c-medium"
+            },
+            {
+                name: "Dark Shade 25%",
+                code: "#1F2041",
+                variable: "c-light"
+            },
+            {
+                name: "Dark Shade 5%",
+                code: "#1F2041",
+                variable: "c-lighter"
+            },
+            {
+                name: "Purple",
+                code: "#BC9CFF",
+                variable: "c-brand"
+            },
+            {
+                name: "Green",
+                code: "#6FCF97",
+                variable: "c-accent"
+            }
+        ]
+    -
+        const typeValues = [
+                    {
+                        tag: 'H1',
+                        text: "This one is the sub-section or widget title",
+                        font: "title"
+                    },
+                    {
+                        tag: 'H2',
+                        text: "Next one is the item title inside widgets",
+                        font: "subtitle"
+                    },
+                    {
+                        tag: 'H3',
+                        text: "THIS IS A LABEL OR CTA TEXT",
+                        font: "label-text"
+                    },
+                    {
+                        tag: 'Body',
+                        text: "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
+                        font: "body-text"
+                    }
+                ]
     h1 UI KIT
     a(href='index.html') index
     p.ui-page__title Colors and Typography
         +ui-page({withBackground: true})
+            .ui-page__column.colors-block
+                each c in colors
+                    +color-sample({color: c})
+            .ui-page__column.typography
+                +type-samples({typography: typeValues})
     p.ui-page__title Form Elements
         +ui-page({withBackground: true})
             .ui-page__column

@@ -1,0 +1,46 @@
+.color-sample {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 1rem;
+    &__square {
+        width: 70px;
+        height: 70px;
+        border-radius: 6px;
+        grid-row: 1 / 3;
+        margin-right: 40px;
+        &_c-darker {
+            background-color: $c-primary-darker;
+        }
+        &_c-dark {
+            background-color: $c-primary-dark;
+        }
+        &_c-medium {
+            background-color: $c-primary-medium;
+        }
+        &_c-light {
+            background-color: $c-primary-light;
+        }
+        &_c-lighter {
+            background-color: $c-primary-lighter;
+        }
+        &_c-brand {
+            background-color: $c-brand;
+        }
+        &_c-accent {
+            background-color: $c-accent;
+        }
+    }
+    &__name {
+        font-size: 1.3571428571428572rem;
+        font-family: Quicksand, sans-serif;
+        font-weight: bold;
+    }
+    &__code {
+        font-size: 1.3571428571428572rem;
+        font-family: Quicksand, sans-serif;
+        font-weight: normal;
+        align-self: flex-start;
+    }
+}
