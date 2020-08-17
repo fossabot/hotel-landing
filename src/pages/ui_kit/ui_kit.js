@@ -5,4 +5,5 @@ import '../../blocks/masked-input/masked-input';
 import '../../blocks/radiobutton/radiobutton';
 import '../../blocks/range-slider/range-slider';
 import '../../blocks/rate-button/rate-button';
+import '../../blocks/expandable-checkbox-list/expandable-checkbox-list';
 import '../../blocks/toggle/toggle';

@@ -1,0 +1,9 @@
+include ../checkbox/checkbox
+
+mixin expandable-checkbox-list({title='', items=[]})
+    .expandable-checkbox-list
+        h2.expandable-checkbox-list__title= title
+        .expandable-checkbox-list__items
+            for item in items
+                +checkbox({text: item, name:item})
+                //text = '', name='', defaultValue=false

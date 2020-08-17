@@ -6,6 +6,7 @@
   .checkbox-button {
     @include checkbox-base;
     align-items: flex-start;
+    padding-bottom: 10px;
     &__input {
       width: 20px;
       height: 20px;

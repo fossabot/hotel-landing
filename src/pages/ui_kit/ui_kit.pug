@@ -15,6 +15,7 @@ include ../../blocks/range-slider/range-slider
 include ../../blocks/toggle/toggle
 include ../../blocks/button/button
 include ../../blocks/pagination/pagination
+include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
 
 
 block content
@@ -43,6 +44,13 @@ block content
                 .ui-page__item
                     +field-sample({name: 'subscription text field', status: 'default', noMargin: true})
                         +subscription-text-field()
+                .ui-page__item
+                    +field-sample({name: 'dropdown', status: 'default', noMargin: true})
+                        +subscription-text-field()
+                .ui-page__item
+                    +field-sample({name: '', status: 'default', noMargin: true})
+                        +expandable-checkbox-list({title: 'expandable checkbox list', items: ['завтрак','письменный стол','стул для кормления'
+                        ]})
             .ui-page__column
                 .ui-page__item
                     +field-sample({name: 'checkbox buttons'})
