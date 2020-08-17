@@ -1,0 +1,10 @@
+mixin login-card()
+    .login-card
+        h2.login-card__title Войти
+
+        +text-field({placeholder: 'Email'})
+        +text-field({placeholder: 'Пароль'})
+        +button({text: 'Войти', type: 'wide'})
+        .login-card__redirect-row
+            p.login-card__redirect-directions Нет аккаунта на Toxin?
+            +button({text: 'Создать', type: 'outlined'})&attributes({class: 'login-card__login-btn'})

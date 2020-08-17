@@ -4,7 +4,7 @@ include ../../blocks/color-sample/color-sample
 include ../../blocks/type-samples/type-samples
 include ../../blocks/header/header
 include ../../blocks/footer/footer
-include ../../blocks/field-sample/field-sample
+include ../../blocks/field-header/field-header
 include ../../blocks/text-field/text-field
 include ../../blocks/masked-input/masked-input
 include ../../blocks/dropdown/dropdown
@@ -21,6 +21,8 @@ include ../../blocks/bullet-list/bullet-list
 include ../../blocks/details-list/details-list
 include ../../blocks/review/review
 include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
+include ../../blocks/registration-card/registration-card
+include ../../blocks/login-card/login-card
 
 
 block content
@@ -98,32 +100,32 @@ block content
         +ui-page({withBackground: true})
             .ui-page__column
                 .ui-page__item
-                    +field-sample({name: 'text field', status: 'default', noMargin: true})
+                    +field-header({name: 'text field', status: 'default', noMargin: true})
                         +text-field({placeholder: 'Email'})
                 .ui-page__item
-                    +field-sample({name: 'dropdown', status: 'default', noMargin: true})
+                    +field-header({name: 'dropdown', status: 'default', noMargin: true})
                         +dropdown({placeholder: 'Сколько гостей',items: ['item1', 'item2']})
                 .ui-page__item
-                    +field-sample({name: 'masked field', noMargin: true})
+                    +field-header({name: 'masked field', noMargin: true})
                         +masked-input({placeholder: 'ДД.ММ.ГГ'})
                 .ui-page__item
-                    +field-sample({name: 'date dropdown', noMargin: true})
+                    +field-header({name: 'date dropdown', noMargin: true})
                         +text-field({placeholder: 'ДД.ММ.ГГ'})
                 .ui-page__item
-                    +field-sample({name: 'filter date dropdown', noMargin: true})
+                    +field-header({name: 'filter date dropdown', noMargin: true})
                         +text-field({placeholder: '19 авг - 23 авг'})
                 .ui-page__item
-                    +field-sample({name: 'subscription text field', status: 'default', noMargin: true})
+                    +field-header({name: 'subscription text field', status: 'default', noMargin: true})
                         +subscription-text-field()
                 .ui-page__item
-                    +field-sample({name: 'dropdown', status: 'default', noMargin: true})
+                    +field-header({name: 'dropdown', status: 'default', noMargin: true})
                         +subscription-text-field()
                 .ui-page__item
-                    +field-sample({name: '', status: '', noMargin: true})
+                    +field-header({name: '', status: '', noMargin: true})
                         +expandable-checkbox-list({title: 'expandable checkbox list', items: ['завтрак','письменный стол','стул для кормления'
                         ]})
                 .ui-page__item
-                    +field-sample({name: '', status: '', noMargin: true})
+                    +field-header({name: '', status: '', noMargin: true})
                         +details-list({items:[
                             {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
                             {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой комнате'},
@@ -132,30 +134,30 @@ block content
                     +review({authorImg: 'user1.png'})
             .ui-page__column
                 .ui-page__item
-                    +field-sample({name: 'checkbox buttons'})
+                    +field-header({name: 'checkbox buttons'})
                         +checkbox({text: 'Можно курить', name: 'smokingAllowed'})
                         +checkbox({text: 'Можно с питомцами', name: 'petsAllowed', defaultValue: true})
                         +checkbox({text: 'Можно пригласить гостей (до 10 человек)', name: 'guestsAllowed', defaultValue: true})
                 .ui-page__item
-                    +field-sample({name: 'radiobuttons'})
+                    +field-header({name: 'radiobuttons'})
                         +radiobutton({name: 'gender', options: ['Мужчина', 'Женщина']})
                 .ui-page__item
-                    +field-sample({name: 'toggle'})
+                    +field-header({name: 'toggle'})
                         +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
                         +toggle({
                             label: 'Получать спецпредложения',
                             name: 'subscriptionChecked',
                             defaultValue: true})
                 .ui-page__item
-                    +field-sample({name: 'like button'})&attributes({class: 'row'})
+                    +field-header({name: 'like button'})&attributes({class: 'row'})
                         +like-button({value:0})
                         +like-button({value:11, defaultValue:true})
                 .ui-page__item
-                    +field-sample({name: 'rate button'})
+                    +field-header({name: 'rate button'})
                         +rate-button({rating: 3})
                         +rate-button({rating: 5})
                 .ui-page__item
-                    +field-sample({name: 'rich checkbox buttons'})
+                    +field-header({name: 'rich checkbox buttons'})
                         +checkbox({
                             text: 'Ширина коридоров в номере не менее 91 см.',
                             name: 'hall', header: 'Широкий коридор'})
@@ -164,20 +166,20 @@ block content
                             name: 'helper', header: 'Помощник для инвалидов'})
             .ui-page__column
                 .ui-page__item
-                    +field-sample({name: 'range slider'})
+                    +field-header({name: 'range slider'})
                         +range-slider({text:'range', name: 'range'})
                         +checkbox({text: 'Можно курить', name: 'smokingAllowed'})
                 .ui-page__item
-                    +field-sample({name: 'buttons'})
+                    +field-header({name: 'buttons'})
                         +button({text: 'click me', type: ''})
                         +button({text: 'click me', type: 'outlined'})
                         +button({text: 'click me', type: 'text'})
                         +button({text: 'перейти к оплате', type: 'wide'})
                 .ui-page__item
-                    +field-sample({name: 'pagination'})
+                    +field-header({name: 'pagination'})
                         +pagination({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
                 .ui-page__item
-                    +field-sample({name: 'bullet list'})
+                    +field-header({name: 'bullet list'})
                         +bullet-list({items: [
                                 'Нельзя с питомцами',
                                 'Без вечеринок и мероприятий',
@@ -188,8 +190,15 @@ block content
     p.ui-page__title Cards
         +ui-page()
             .ui-page__column
+                +registration-card()
+                //+search-card()
             .ui-page__column
+                //+booking-card()
+                +login-card()
             .ui-page__column
+                //+calendar-card()
+                //+room-details-card()
+                //+room-details-card()
     p.ui-page__title Headers and Footers
         +ui-page({fullWidth:true})
             .ui-page__item.ui-page__item

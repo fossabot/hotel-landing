@@ -1,0 +1,7 @@
+.registration-card {
+  @include card-base;
+
+  &__redirect-row {
+  @include flex-row;
+  }
+}

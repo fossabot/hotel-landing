@@ -1,0 +1,9 @@
+mixin field-header({name, status, noMargin=false})
+    - const layout = attributes.class || 'column'
+    .field-header
+        .field-header__caption(class=noMargin? 'field-header__caption_no-margin': '')
+            p.field-header__name= name
+            if status
+                p.field-header__status= status
+        div(class=`field-header__${layout}`)
+            block

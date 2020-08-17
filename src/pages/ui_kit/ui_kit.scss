@@ -6,7 +6,7 @@
 @import "src/blocks/type-samples/type-samples";
 @import "src/blocks/header/header";
 @import "src/blocks/footer/footer";
-@import "src/blocks/field-sample/field-sample";
+@import "src/blocks/field-header/field-header";
 @import "src/blocks/text-field/text-field";
 @import "src/blocks/masked-input/masked-input";
 @import "src/blocks/dropdown/dropdown";
@@ -24,6 +24,8 @@
 @import "src/blocks/details-list/details-list";
 @import "src/blocks/review/review";
 @import "src/blocks/expandable-checkbox-list/expandable-checkbox-list";
+@import "src/blocks/registration-card/registration-card";
+@import "src/blocks/login-card/login-card";
 
 body {
   background-color: #e5e5e5;
