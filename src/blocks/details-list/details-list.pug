@@ -1,0 +1,9 @@
+
+mixin details-list({items=[{icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'}]} = {})
+
+    ul.details-list
+        each item in items
+            li.details-list__item
+                .details-list__icon.material-icons= item.icon
+                .details-list__title= item.title
+                .details-list__text= item.text

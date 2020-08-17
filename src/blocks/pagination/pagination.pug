@@ -1,2 +1,13 @@
-mixin pagination()
-    .pagination pagination
+mixin pagination({pages=[1,2,3,'...',15],currentPage=1, itemsOnPage='1-12', total='100+'} = {})
+    .pagination
+        ul.pagination__items
+            each page in pages
+                if page === '...'
+                    li.pagination__item.pagination__item_ellipsis ...
+                else
+                    if page === currentPage
+                        li.pagination__item.pagination__item_current= page
+                    else
+                        li.pagination__item= page
+            li.pagination__item.pagination__item_next
+                i.material-icons arrow_forward

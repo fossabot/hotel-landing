@@ -1,0 +1,32 @@
+.review {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: "image name"
+                        "image date"
+                        "likes text";
+  column-gap: 14px;
+  &__author-image {
+    height: 48px;
+    width: 48px;
+    grid-area: image;
+  }
+  &__author-name{
+    grid-area: name;
+    font-size: 14px;
+    font-family: "Montserrat", 'sans-serif';
+    font-weight: bold;
+  }
+  &__date {
+    grid-area: date;
+  }
+  &__likes {
+    grid-area: likes;
+    padding-top: 15px;
+    justify-self: center;
+  }
+  &__text {
+    grid-area: text;
+    padding-top: 9px;
+  }
+}

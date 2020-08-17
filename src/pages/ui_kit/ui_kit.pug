@@ -15,6 +15,9 @@ include ../../blocks/range-slider/range-slider
 include ../../blocks/toggle/toggle
 include ../../blocks/button/button
 include ../../blocks/pagination/pagination
+include ../../blocks/bullet-list/bullet-list
+include ../../blocks/details-list/details-list
+include ../../blocks/review/review
 include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
 
 
@@ -48,9 +51,17 @@ block content
                     +field-sample({name: 'dropdown', status: 'default', noMargin: true})
                         +subscription-text-field()
                 .ui-page__item
-                    +field-sample({name: '', status: 'default', noMargin: true})
+                    +field-sample({name: '', status: '', noMargin: true})
                         +expandable-checkbox-list({title: 'expandable checkbox list', items: ['завтрак','письменный стол','стул для кормления'
                         ]})
+                .ui-page__item
+                    +field-sample({name: '', status: '', noMargin: true})
+                        +details-list({items:[
+                            {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
+                            {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой комнате'},
+                            ]})
+                .ui-page__item
+                    +review({authorImg: 'user1.png'})
             .ui-page__column
                 .ui-page__item
                     +field-sample({name: 'checkbox buttons'})
@@ -63,7 +74,10 @@ block content
                 .ui-page__item
                     +field-sample({name: 'toggle'})
                         +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
-                        +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked', defaultValue: true})
+                        +toggle({
+                            label: 'Получать спецпредложения',
+                            name: 'subscriptionChecked',
+                            defaultValue: true})
                 .ui-page__item
                     +field-sample({name: 'like button'})&attributes({class: 'row'})
                         +like-button({value:0})
@@ -74,8 +88,12 @@ block content
                         +rate-button({rating: 5})
                 .ui-page__item
                     +field-sample({name: 'rich checkbox buttons'})
-                        +checkbox({text: 'Ширина коридоров в номере не менее 91 см.', name: 'hall', header: 'Широкий коридор'})
-                        +checkbox({text: 'На 1 этаже вас встретит специалист  и проводит до номера.', name: 'helper', header: 'Помощник для инвалидов'})
+                        +checkbox({
+                            text: 'Ширина коридоров в номере не менее 91 см.',
+                            name: 'hall', header: 'Широкий коридор'})
+                        +checkbox({
+                            text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+                            name: 'helper', header: 'Помощник для инвалидов'})
             .ui-page__column
                 .ui-page__item
                     +field-sample({name: 'range slider'})
@@ -90,6 +108,14 @@ block content
                 .ui-page__item
                     +field-sample({name: 'pagination'})
                         +pagination({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
+                .ui-page__item
+                    +field-sample({name: 'bullet list'})
+                        +bullet-list({items: [
+                                'Нельзя с питомцами',
+                                'Без вечеринок и мероприятий',
+                                'Время прибытия — после 13:00, а выезд до 12:00',
+                            ]})
+
 
     p.ui-page__title Cards
         +ui-page()

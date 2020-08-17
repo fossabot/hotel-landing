@@ -1,0 +1,9 @@
+include ../like-button/like-button
+mixin review({authorImg='', authorName='Мурад Сарафанов', reviewDate='5 дней назад', likes=12, text='Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}={})
+    .review
+        img.review__author-image(src=require(`../../assets/${authorImg}`) alt='reviewer photo')
+        p.review__author-name= authorName
+        date.review__date= reviewDate
+        .review__likes
+            +like-button({value: 12, defaultValue: true})
+        p.review__text= text

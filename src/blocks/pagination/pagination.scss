@@ -1,0 +1,25 @@
+.pagination {
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+  }
+  &__item {
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    &_current {
+      background: $brand-gradient;
+      border-radius: 50%;
+      color:white;
+    }
+    &_next {
+      background: $accent-gradient;
+      border-radius: 50%;
+      color:white;
+      font-size: 24px;
+    }
+  }
+}

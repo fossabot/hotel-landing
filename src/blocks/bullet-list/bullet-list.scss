@@ -1,0 +1,14 @@
+.list {
+  list-style: none outside none;
+
+  &__item {
+    &::before {
+      content: "•";
+      font-size: 5rem;
+      line-height: 0;
+      position: relative;
+      top: 1rem;
+      color: $c-primary-light;
+    }
+  }
+}
