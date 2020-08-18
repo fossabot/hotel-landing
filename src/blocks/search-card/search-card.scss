@@ -1,7 +1,16 @@
 .search-card {
   @include card-base;
-
+  &__title {
+    @include title-font;
+    margin-bottom: 17px;
+  }
+  &__field-header_with-top-margin {
+    margin-top: 15px;
+  }
   &__redirect-row {
   @include flex-row;
+  }
+  &__button {
+    margin-top: 30.44px;
   }
 }
