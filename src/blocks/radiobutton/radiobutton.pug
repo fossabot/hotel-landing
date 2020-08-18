@@ -1,11 +1,12 @@
 mixin radiobutton({name, options})
-    .radiobutton
-        each option, idx in options
-            .radiobutton__option
-                input(
-                    name=name,
-                    type="radio",
-                    value=idx+1
-                    class='radiobutton__input'
-                    )
-                label(for=option class='radiobutton__label')= option
+    - const layoutClass = attributes.class ? ` ${attributes.class}` : ''
+    div(class=`radiobutton${layoutClass}`)
+            each option, idx in options
+                .radiobutton__option
+                    input(
+                        name=name,
+                        type="radio",
+                        value=idx+1
+                        class='radiobutton__input'
+                        )
+                    label(for=option class='radiobutton__label')= option

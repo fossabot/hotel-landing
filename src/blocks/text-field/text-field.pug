@@ -1,7 +1,8 @@
 mixin text-field(options)
+    - const layoutClass = attributes.class ? ` ${attributes.class}` : ''
     input(
         type='text'
-        class='text-field'
+        class=`text-field${layoutClass}`
         placeholder=options.placeholder
         )
 
