@@ -1,7 +1,19 @@
 .login-card {
   @include card-base;
 
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__email-field {
+    margin-bottom: 10px;
+  }
+  &__password-field {
+  }
+  &__login-btn {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
   &__redirect-row {
-  @include flex-row;
+    @include flex-row;
   }
 }

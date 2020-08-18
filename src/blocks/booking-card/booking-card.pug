@@ -1,0 +1,34 @@
+mixin booking-card({roomNo=888, roomType='lux', roomPrice=9990, days=4, discount=2179, additionalFee=300}={})
+    -
+        const format = (number) => {
+           const thousands = Math.floor(number / 1000)
+           return `${thousands} ${number - thousands*1000}`
+        }
+    -const roomPriceRub = format(roomPrice)
+    .booking-card
+        .booking-card__room-info-row
+            p.booking-card__room-no №
+                span.booking-card__room-no-span=roomNo
+                if roomType === 'lux'
+                    span.booking-card__room-type люкс
+            p.booking-card__room-price
+                span.booking-card__room-price-amount #{roomPriceRub}₽
+                span.booking-card__room-price-period &nbsp;в сутки
+        +field-header({name: 'Прибытие-выезд', noMargin: true})
+            +masked-input({placeholder: 'ДД.ММ.ГГ'})
+        +field-header({name: 'Гости', noMargin: true})
+            +text-field({placeholder: 'Сколько гостей'})
+        .booking-card__charges-row
+            .booking-card__charge-calculation #{roomPriceRub}₽ x #{days} суток
+            .booking-card__charge-amount #{format(roomPrice*days)}₽
+        .booking-card__charges-row
+            .booking-card__charge-calculation Сбор за услуги: скидка #{format(discount)} ₽
+            .booking-card__charge-amount 0₽
+        .booking-card__charges-row
+            .booking-card__charge-calculation Сбор за дополнительные услуги
+            .booking-card__charge-amount #{format(additionalFee)}₽
+        .booking-card__total-row
+            .booking-card__total-description Итого
+            .booking-card__total-amount #{format(roomPrice*days-discount+additionalFee)}₽
+
+        +button({text: 'Подобрать номер', type: 'wide'})

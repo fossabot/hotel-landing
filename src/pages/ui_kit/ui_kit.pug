@@ -23,6 +23,10 @@ include ../../blocks/review/review
 include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
 include ../../blocks/registration-card/registration-card
 include ../../blocks/login-card/login-card
+include ../../blocks/search-card/search-card
+include ../../blocks/booking-card/booking-card
+include ../../blocks/room-details/room-details
+include ../../blocks/calendar-card/calendar-card
 
 
 block content
@@ -189,16 +193,23 @@ block content
 
     p.ui-page__title Cards
         +ui-page()
+            .ui-page__column.ui-page__column_cards
+                .ui-page__card
+                    +search-card()
+                .ui-page__card
+                    +registration-card()
             .ui-page__column
-                +registration-card()
-                //+search-card()
+                .ui-page__card
+                    +booking-card()
+                .ui-page__card
+                    +login-card()
             .ui-page__column
-                //+booking-card()
-                +login-card()
-            .ui-page__column
-                //+calendar-card()
-                //+room-details-card()
-                //+room-details-card()
+                .ui-page__card
+                    +calendar-card()
+                .ui-page__card
+                    +room-details()
+                .ui-page__card
+                    +room-details()
     p.ui-page__title Headers and Footers
         +ui-page({fullWidth:true})
             .ui-page__item.ui-page__item

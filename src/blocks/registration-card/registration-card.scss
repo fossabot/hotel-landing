@@ -1,6 +1,18 @@
 .registration-card {
   @include card-base;
-
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__item_small-margin {
+    margin-bottom: 10px;
+  }
+  &__item_large-margin {
+    margin-bottom: 20px;
+  }
+  &__register-button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
   &__redirect-row {
   @include flex-row;
   }

@@ -8,7 +8,7 @@
   &__content_columned {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 126px;
+    grid-gap: 40px;
   }
   &__content_full-width {
     display: block;

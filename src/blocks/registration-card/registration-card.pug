@@ -1,16 +1,16 @@
 mixin registration-card()
     .registration-card
         h2.registration-card__title Регистрация аккаунта
-        +text-field({placeholder: 'Имя'})
-        +text-field({placeholder: 'Фамилия'})
-        +radiobutton({name: 'gender', options: ['Мужчина', 'Женщина']})
+        +text-field({placeholder: 'Имя'})&attributes({class:'registration-card__item_small-margin'})
+        +text-field({placeholder: 'Фамилия'})&attributes({class:'registration-card__item_small-margin'})
+        +radiobutton({name: 'gender', options: ['Мужчина', 'Женщина']})&attributes({class:'registration-card__item_large-margin'})
         +field-header({name: 'Дата рождения', noMargin: true})
-            +masked-input({placeholder: 'ДД.ММ.ГГ'})
+            +masked-input({placeholder: 'ДД.ММ.ГГ'})&attributes({class:'registration-card__item_large-margin'})
         +field-header({name: 'данные для входа в сервис', noMargin: true})
-            +text-field({placeholder: 'Email'})
-            +text-field({placeholder: 'Пароль'})
+            +text-field({placeholder: 'Email'})&attributes({class:'registration-card__item_small-margin'})
+            +text-field({placeholder: 'Пароль'})&attributes({class:'registration-card__item_small-margin'})
         +toggle()
-        +button({text: 'перейти к оплате', type: 'wide'})
+        +button({text: 'перейти к оплате', type: 'wide'})&attributes({class:'registration-card__register-button'})
         .registration-card__redirect-row
             p.registration-card__redirect-directions Уже есть аккаунт на Toxin?
             +button({text: 'Войти', type: 'outlined'})&attributes({class: 'registration-card__login-btn'})

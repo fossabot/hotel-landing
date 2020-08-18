@@ -1,0 +1,49 @@
+.room-details {
+  @include card-base;
+  max-width: 270px;
+  width: 100%;
+  padding:0;
+
+  &__image-slideshow {
+  }
+  &__image {
+    background-size: cover;
+    width: 100%;
+  }
+  &__description {
+    padding: 20px 18px 19px 20px;
+  }
+  &__detail-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding-bottom: 10px;
+    position: relative;
+    &::after {
+    content: '';
+    background: $c-primary-ten;
+    height: 1px;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    }
+  }
+  &__room {
+    font-family: Quicksand, "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  &__no {
+    font-size: 19px;
+  }
+  &__lux {
+    font-family: "Montserrat", 'sans-serif';
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  &__rating-row {
+    @include flex-row;
+
+  }
+}

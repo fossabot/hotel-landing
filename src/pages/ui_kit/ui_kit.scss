@@ -26,10 +26,17 @@
 @import "src/blocks/expandable-checkbox-list/expandable-checkbox-list";
 @import "src/blocks/registration-card/registration-card";
 @import "src/blocks/login-card/login-card";
+@import "src/blocks/search-card/search-card";
+@import "src/blocks/booking-card/booking-card";
+@import "src/blocks/room-details/room-details";
+@import "src/blocks/calendar-card/calendar-card";
 
 body {
   background-color: #e5e5e5;
 }
 .ui-page__item {
+  margin-bottom: 30px;
+}
+.ui-page__card {
   margin-bottom: 30px;
 }

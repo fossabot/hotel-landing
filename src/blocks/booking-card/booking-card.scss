@@ -1,0 +1,17 @@
+.booking-card {
+  @include card-base;
+
+  &__room-info-row {
+  @include flex-row;
+  }
+  &__charges-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__total-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
