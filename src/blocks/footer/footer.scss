@@ -5,13 +5,16 @@
   grid-gap: 40px;
   justify-content: space-between;
   background-color: white;
-  padding: 100px 140px;
+  padding: 105px 140px;
   &__logo {
-    margin-bottom: 20px;
+    margin-top: -4px;
+    margin-bottom: 16px;
   }
   &__nav-heading {
     @include label-font;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
+    font-size: 12px;
+    line-height: 15px;
     &:hover, &:active, &:focus {
       color:$c-primary-dark;
     }
@@ -23,15 +26,19 @@
   &__nav-list {
     list-style: none;
   }
+  &__nav-item {
+    margin-bottom: 14px;
+  }
   &__nav-link {
     text-decoration: none;
     @include body-text;
+    line-height: 17px;
     color: $c-primary-medium;
   }
   &__subscription-heading {
     cursor: pointer;
     @include label-font;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
     &:hover, &:active, &:focus {
       color:$c-primary-dark;
     }

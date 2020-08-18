@@ -45,6 +45,7 @@ $label-font-size: 12px;
 @mixin label-font {
     font-family: Montserrat, sans-serif;
     font-size: $label-font-size;
+    line-height: 15px;
     font-weight: bold;
     color: $c-primary-darker;
     text-transform: uppercase;
