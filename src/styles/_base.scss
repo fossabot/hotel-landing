@@ -30,13 +30,14 @@ $subtitle-font-size: 19px;
 $label-font-size: 12px;
 
 @mixin title-font {
-    font-family: Quicksand, sans-serif;
+    font-family: Quicksand, "Open Sans", sans-serif;
     font-size: $title-font-size;
+    line-height: 1.2;
     font-weight: bold;
     color: $c-primary-darker;
 }
 @mixin subtitle-font {
-    font-family: Quicksand, sans-serif;
+    font-family: Quicksand, "Open Sans", sans-serif;
     font-size: $subtitle-font-size;
     font-weight: bold;
     color: $c-primary-darker;
@@ -141,7 +142,7 @@ $label-font-size: 12px;
     width: 100%;
     background-color: white;
     border-radius: 4px;
-    padding: 40px 30px;
+    padding: 40px 30px 30px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 }
