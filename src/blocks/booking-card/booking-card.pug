@@ -1,8 +1,10 @@
 mixin booking-card({roomNo=888, roomType='lux', roomPrice=9990, days=4, discount=2179, additionalFee=300}={})
     -
         const format = (number) => {
+            if (number < 1000) return number
            const thousands = Math.floor(number / 1000)
-           return `${thousands} ${number - thousands*1000}`
+            const rest = (number - thousands*1000).toString().padStart(3, '0');
+           return `${thousands} ${rest}`
         }
     -const roomPriceRub = format(roomPrice)
     .booking-card
@@ -13,22 +15,28 @@ mixin booking-card({roomNo=888, roomType='lux', roomPrice=9990, days=4, discount
                     span.booking-card__room-type люкс
             p.booking-card__room-price
                 span.booking-card__room-price-amount #{roomPriceRub}₽
-                span.booking-card__room-price-period &nbsp;в сутки
+                span.booking-card__room-price-period в сутки
         +field-header({name: 'Прибытие-выезд', noMargin: true})
             +masked-input({placeholder: 'ДД.ММ.ГГ'})
-        +field-header({name: 'Гости', noMargin: true})
-            +text-field({placeholder: 'Сколько гостей'})
+        .booking-card__guests-input
+            +field-header({name: 'Гости', noMargin: true})
+                +text-field({placeholder: 'Сколько гостей'})
         .booking-card__charges-row
-            .booking-card__charge-calculation #{roomPriceRub}₽ x #{days} суток
+            .booking-card__charge-description #{roomPriceRub}₽ x #{days} суток
+            div
             .booking-card__charge-amount #{format(roomPrice*days)}₽
         .booking-card__charges-row
-            .booking-card__charge-calculation Сбор за услуги: скидка #{format(discount)} ₽
+            .booking-card__charge-description Сбор за услуги: скидка #{format(discount)} ₽
+            div
+                span.booking-card__info-link i
             .booking-card__charge-amount 0₽
         .booking-card__charges-row
             .booking-card__charge-calculation Сбор за дополнительные услуги
+            div
+                span.booking-card__info-link i
             .booking-card__charge-amount #{format(additionalFee)}₽
         .booking-card__total-row
             .booking-card__total-description Итого
             .booking-card__total-amount #{format(roomPrice*days-discount+additionalFee)}₽
 
-        +button({text: 'Подобрать номер', type: 'wide'})
+        +button({text: 'Забронировать', type: 'wide'})&attributes({class: 'booking-card__button'})

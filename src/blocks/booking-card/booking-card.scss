@@ -3,6 +3,7 @@
 
   &__room-info-row {
   @include flex-row;
+    margin-bottom: 19px;
   }
   &__charges-row {
     display: flex;
@@ -13,5 +14,66 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+  &__room-no {
+    font-family: Quicksand, "Open Sans", sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: bold;
+  }
+  &__room-no-span {
+    padding-left: 8px;
+    padding-right: 3px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  &__room-type {
+    @include label-font;
+    color: $c-brand;
+  }
+  &__room-price {
+    line-height: 18px;
+    color: $c-primary-medium;
+  }
+  &__room-price-amount {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  &__room-price-period {
+    font-size: 12px;
+  }
+  &__guests-input {
+    margin-top: 20px;
+    margin-bottom: 20.56px;
+  }
+  &__charges-row {
+    margin-bottom: 10px;
+    color: $c-primary-dark;
+    display: grid;
+    grid-template-columns: 215px 1fr 80px;
+  }
+  &__charge-calculation {
+    max-width: 214px;
+  }
+  &__info-link {
+    border: 1px solid $c-primary-light;
+    border-radius: 50%;
+    justify-self: center;
+    margin-left: 6px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+  &__charge-amount {
+    justify-self: end;
+  }
+  &__total-row {
+    font-family: Quicksand, "Open Sans", sans-serif;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  &__button {
+    margin-top: 20px;
   }
 }

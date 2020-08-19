@@ -5,5 +5,4 @@ mixin field-header({name, status, noMargin=false}={})
             p.field-header__name= name
             if status
                 p.field-header__status= status
-        div(class=`field-header`)
-            block
+        block
