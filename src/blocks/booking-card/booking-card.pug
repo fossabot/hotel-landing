@@ -19,8 +19,7 @@ mixin booking-card({roomNo=888, roomType='lux', roomPrice=9990, days=4, discount
         +field-header({name: 'Прибытие-выезд', noMargin: true})
             +masked-input({placeholder: 'ДД.ММ.ГГ'})
         .booking-card__guests-input
-            +field-header({name: 'Гости', noMargin: true})
-                +text-field({placeholder: 'Сколько гостей'})
+            +text-field({placeholder: 'Сколько гостей', label: 'Гости'})
         .booking-card__charges-row
             .booking-card__charge-description #{roomPriceRub}₽ x #{days} суток
             div

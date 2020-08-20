@@ -104,20 +104,16 @@ block content
         +ui-page({withBackground: true})
             .ui-page__column
                 .ui-page__item
-                    +field-header({name: 'text field', status: 'default', noMargin: true})
-                        +text-field({placeholder: 'Email'})
+                    +text-field({placeholder: 'Email', label: 'text field', status: 'default'})
                 .ui-page__item
                     +field-header({name: 'dropdown', status: 'default', noMargin: true})
                         +dropdown({placeholder: 'Сколько гостей',items: ['item1', 'item2']})
                 .ui-page__item
-                    +field-header({name: 'masked field', noMargin: true})
-                        +masked-input({placeholder: 'ДД.ММ.ГГ'})
+                    +masked-input({placeholder: 'ДД.ММ.ГГ', label: 'masked field'})
                 .ui-page__item
-                    +field-header({name: 'date dropdown', noMargin: true})
-                        +text-field({placeholder: 'ДД.ММ.ГГ'})
+                    +text-field({placeholder: 'ДД.ММ.ГГ', label: 'date dropdown'})
                 .ui-page__item
-                    +field-header({name: 'filter date dropdown', noMargin: true})
-                        +text-field({placeholder: '19 авг - 23 авг'})
+                    +text-field({placeholder: '19 авг - 23 авг', label: 'filter date dropdown'})
                 .ui-page__item
                     +field-header({name: 'subscription text field', status: 'default', noMargin: true})
                         +subscription-text-field()

@@ -38,4 +38,4 @@ class MaskedDateInput {
   }
 }
 /* eslint-disable no-new */
-new MaskedDateInput('.masked-input');
+new MaskedDateInput('.masked-input__input');

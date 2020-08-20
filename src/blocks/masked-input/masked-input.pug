@@ -1,8 +1,8 @@
-mixin masked-input({placeholder = ''} = {})
+mixin masked-input({placeholder = '', label=''} = {})
     - const layoutClass = attributes.class ? ` ${attributes.class}` : ''
-
-    input(
+    label.masked-input__label= label
+        input(
             type='text'
-            class=`masked-input${layoutClass}`
+            class=`masked-input__input${layoutClass}`
             placeholder=placeholder
             )

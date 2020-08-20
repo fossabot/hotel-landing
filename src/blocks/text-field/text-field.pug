@@ -1,8 +1,9 @@
-mixin text-field(options)
+mixin text-field({placeholder = '', label = ''}={})
     - const layoutClass = attributes.class ? ` ${attributes.class}` : ''
-    input(
-        type='text'
-        class=`text-field${layoutClass}`
-        placeholder=options.placeholder
-        )
+    label.text-field__label= label
+        input(
+            type='text'
+            class=`text-field__input${layoutClass}`
+            placeholder=placeholder
+            )
 

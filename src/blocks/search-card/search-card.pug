@@ -3,6 +3,5 @@ mixin search-card()
         h2.search-card__title Найдем номера под ваши пожелания
         +field-header({name: 'Прибытие-выезд'})
             +masked-input({placeholder: 'ДД.ММ.ГГ'})
-        +field-header({name: 'Гости'})&attributes({class:'search-card__field-header_with-top-margin'})
-            +text-field({placeholder: 'Сколько гостей'})
+        +text-field({placeholder: 'Сколько гостей', label: 'Гости'})&attributes({class:'search-card__field-header_with-top-margin'})
         +button({text: 'Подобрать номер', type: 'wide'})&attributes({class:'search-card__button'})
