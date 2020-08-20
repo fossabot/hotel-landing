@@ -1,0 +1,15 @@
+@import "src/styles/_variables";
+@import "src/styles/_base";
+
+@import "src/blocks/header/header";
+@import "src/blocks/footer/footer";
+
+.search-room {
+  display: grid;
+  grid-template-columns: 266px auto;
+  column-gap: 60px;
+  &__filter {
+    display: flex;
+    flex-direction: column;
+  }
+}
