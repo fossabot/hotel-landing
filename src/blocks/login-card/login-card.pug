@@ -1,3 +1,7 @@
+include ../text-field/text-field
+include ../button/button
+
+
 mixin login-card()
     .login-card
         h2.login-card__title Войти
@@ -7,4 +11,4 @@ mixin login-card()
         +button({text: 'Войти', type: 'wide'})&attributes({class: 'login-card__login-btn'})
         .login-card__redirect-row
             p.login-card__redirect-directions Нет аккаунта на Toxin?
-            +button({text: 'Создать', type: 'outlined'})
+            +button({text: 'Создать', type: 'outlined', tag: 'a', link: 'register.html'})

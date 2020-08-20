@@ -13,7 +13,8 @@ module.exports = () => {
   const pages = [
     'index',
     'ui_kit',
-    'registration_login',
+    'register',
+    'login',
     'room_details',
     'search_room',
   ]
@@ -27,7 +28,8 @@ module.exports = () => {
       main: './src/main.js',
       index: `${PAGES_DIR}/index/index.js`,
       ui_kit: `${PAGES_DIR}/ui_kit/ui_kit.js`,
-      registration_login: `${PAGES_DIR}/registration_login/registration_login.js`,
+      login: `${PAGES_DIR}/login/login.js`,
+      register: `${PAGES_DIR}/register/register.js`,
       room_details: `${PAGES_DIR}/room_details/room_details.js`,
       search_room: `${PAGES_DIR}/search_room/search_room.js`,
     },

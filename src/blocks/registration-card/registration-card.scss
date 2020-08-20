@@ -1,3 +1,8 @@
+@import "../../blocks/text-field/text-field";
+@import "../../blocks/toggle/toggle";
+@import "../../blocks/field-header/field-header";
+@import "../../blocks/radiobutton/radiobutton";
+@import "../../blocks/masked-input/masked-input";
 .registration-card {
   @include card-base;
   &__title {

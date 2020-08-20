@@ -1,3 +1,10 @@
+include ../../blocks/text-field/text-field
+include ../../blocks/radiobutton/radiobutton
+include ../../blocks/field-header/field-header
+include ../../blocks/toggle/toggle
+include ../../blocks/button/button
+include ../../blocks/masked-input/masked-input
+
 mixin registration-card()
     .registration-card
         h2.registration-card__title Регистрация аккаунта
@@ -13,4 +20,4 @@ mixin registration-card()
         +button({text: 'перейти к оплате', type: 'wide'})&attributes({class:'registration-card__register-button'})
         .registration-card__redirect-row
             p.registration-card__redirect-directions Уже есть аккаунт на Toxin?
-            +button({text: 'Войти', type: 'outlined'})&attributes({class: 'registration-card__login-btn'})
+            +button({text: 'Войти', type: 'outlined', tag: 'a', link: 'login.html'})&attributes({class: 'registration-card__login-btn'})

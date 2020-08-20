@@ -1,0 +1,19 @@
+@import "src/styles/_variables";
+@import "src/styles/_base";
+
+@import "src/blocks/header/header";
+@import "src/blocks/footer/footer";
+@import '../../blocks/registration-card/registration-card';
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.registration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 684px;
+  background: url('../../assets/login.png') no-repeat center center;
+  background-size: cover;
+}
