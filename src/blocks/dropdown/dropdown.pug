@@ -1,13 +1,17 @@
-mixin dropdown({placeholder='Open', items=[]})
-    .dropdown__container
+include ../select-option/select-option
+
+mixin dropdown({placeholder='Open', items=[], hasButtons=false})
+    .dropdown(class=attributes.class)
         div(class='dropdown__input')
-            p.dropdown__content= placeholder
+            p.dropdown__content.dropdown__content_placeholder= placeholder
             i.material-icons.dropdown__arrow keyboard_arrow_down
         .dropdown__options
-            block dropdown_options
-                for item in items
-                    if typeof item === 'string'
-                        .dropdown__option=item
-                    else
-                        .dropdown__option= item.tag
-                            +stepper({label: item.text, initial: 0})
+            for item in items
+                .dropdown__option
+                    +select-option({name: item.name, label: item.label})
+            if hasButtons
+                .dropdown__buttons
+                    .dropdown__clear.dropdown__clear_disabled
+                        +button({text: 'очистить', type: 'text'})&attributes({class: 'dropdown__clear-btn js-clear'})
+                    .dropdown__apply
+                        +button({text: 'применить', type: 'text'})&attributes({class: 'js-apply'})

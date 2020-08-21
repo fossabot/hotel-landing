@@ -1,0 +1,7 @@
+mixin select-option({name = 'option', label= 'option', quantity = 0}={})
+    .select-option(class=`js-${name}`)
+        .select-option__label= label
+        .select-option__controls
+            button.select-option__btn(class='js-minus js-disabled') -
+            .select-option__value= quantity
+            button.select-option__btn(class='js-plus') +

@@ -1,0 +1,86 @@
+{
+  "colors": [
+  {
+    "name": "Dark Shade 100%",
+    "code": "#1F2041",
+    "variable": "c-darker"
+  },
+  {
+    "name": "Dark Shade 75%",
+    "code": "#1F2041",
+    "variable": "c-dark"
+  },
+  {
+    "name": "Dark Shade 50%",
+    "code": "#1F2041",
+    "variable": "c-medium"
+  },
+  {
+    "name": "Dark Shade 25%",
+    "code": "#1F2041",
+    "variable": "c-light"
+  },
+  {
+    "name": "Dark Shade 5%",
+    "code": "#1F2041",
+    "variable": "c-lighter"
+  },
+  {
+    "name": "Purple",
+    "code": "#BC9CFF",
+    "variable": "c-brand"
+  },
+  {
+    "name": "Green",
+    "code": "#6FCF97",
+    "variable": "c-accent"
+  }
+    ],
+  "typeValues": [
+    {
+      "tag": "H1",
+      "text": "This one is the sub-section or widget title",
+      "font": "title"
+    },
+    {
+      "tag": "H2",
+      "text": "Next one is the item title inside widgets",
+      "font": "subtitle"
+    },
+    {
+      "tag": "H3",
+      "text": "THIS IS A LABEL OR CTA TEXT",
+      "font": "label-text"
+    },
+    {
+      "tag": "Body",
+      "text": "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
+      "font": "body-text"
+    }
+  ],
+  "guestDropdown": {
+    "placeholder": "Сколько гостей",
+    "items": [
+      {"name":  "adults", "label":  "Взрослые"},
+      {"name":  "children", "label":  "Дети"},
+      {"name":  "infants", "label":  "Младенцы"}
+    ],
+    "groups": {
+      "guests": [
+        "adults",
+        "children"
+      ]
+    },
+    "singleItems": ["infants"]
+  },
+  "conveniencesDropdown": {
+    "placeholder": "Выберите удобства",
+    "items": [
+      {"name":  "bedrooms", "label":  "Спальни"},
+      {"name":  "beds", "label":  "Кровати"},
+      {"name":  "bathrooms", "label":  "Ванные комнаты"}
+    ],
+    "groups": null,
+    "singleItems": ["bedrooms", "beds", "bathrooms"]
+  }
+}

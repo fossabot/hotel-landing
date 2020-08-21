@@ -1,7 +1,6 @@
+@import "src/blocks/select-option/select-option";
 .dropdown {
-  &__container {
-    position: relative;
-  }
+  position: relative;
   &__input {
     display: flex;
     justify-content: space-between;
@@ -9,11 +8,20 @@
     &_open {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+      border-color: $c-primary-medium;
     }
+  }
+  &__content {
+    color: $c-primary-dark;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 47px;
   }
   &__arrow {
     flex: 0 0 1rem;
     font-size:24px;
+    pointer-events: none;
   }
   &__options {
       opacity: 0;
@@ -21,8 +29,10 @@
       transform-origin: top;
       transform: scaleY(0);
       transition: transform 160ms ease, opacity 60ms ease;
+      z-index: 0;
     &_open {
       opacity: 1;
+      z-index: 1;
       height: auto;
       border: 1px solid $c-primary-medium;
       border-bottom-left-radius: 4px;
@@ -38,5 +48,14 @@
   }
   &__option {
     padding: 7px 7px 7px 15px;
+  }
+  &__buttons {
+    @include flex-row;
+  }
+  &__clear {
+    display: block;
+    &_disabled > .dropdown__clear-btn{
+      display: none;
+    }
   }
 }
