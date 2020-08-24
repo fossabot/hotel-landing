@@ -12,4 +12,9 @@ $c-accent: #6fcf97; //hsl(144,50,62)rgb(111,207,151)
 
 $c-brand-alpha: rgba(188,156,255, 0.4);
 $brand-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$brand-gradient-light: linear-gradient(180deg, rgba(188,156,255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+$brand-gradient-light-hover: linear-gradient(180deg, rgba(188,156,255, 0.6) 0%, rgba(139, 164, 249, 0.6) 100%);
 $accent-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+
+//layout
+$breakpoint-tablet: 768px;

@@ -76,7 +76,7 @@ $dp-range-today-background-color: red;
 // the provided variables, but overriding the background here, instead.
 @import '../../../node_modules/vanillajs-datepicker/sass/datepicker';
 .datepicker-picker {
-  min-width: 320px;
+  max-width: 320px;
   padding: 20px;
 }
 .datepicker-header {
@@ -94,7 +94,7 @@ $dp-range-today-background-color: red;
 }
 .datepicker-cell.range-start::after {
   content: '';
-  //background: $brand-gradient-light;
+  background: $brand-gradient-light;
   position: absolute;
   height: 100%;
   width: 50%;
@@ -102,33 +102,49 @@ $dp-range-today-background-color: red;
 }
 .datepicker-cell.range-end::after {
   content: '';
-  //background: $brand-gradient-light;
+  background: $brand-gradient-light;
   position: absolute;
   height: 100%;
   width: 50%;
   left:0;
 }
 .datepicker-cell.range {
-  //background: $brand-gradient-light;
+  background: $brand-gradient-light;
 
   &:not(.disabled):not(.focused):not(.today):hover {
-    //background: $brand-gradient-light;
+    background: $brand-gradient-light;
   }
 
   &.focused {
-    //background: $brand-gradient-light;
+    background: $brand-gradient-light;
   }
 
   &:not(.disabled):not(.focused):not(.today):hover {
-    //background: $brand-gradient-light-hover;
+    background: $brand-gradient-light-hover;
   }
 }
 .datepicker-cell.today {
-  //background: $accent-gradient;
+  background: $accent-gradient;
   border-radius: 50%;
+  &.range {
+    color: red;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $brand-gradient-light;
+      &:hover {
+        background: $brand-gradient-light-hover;
+      }
+    }
+  }
 }
 .datepicker-icon {
-  //color: $c-brand;
+  color: $c-brand;
   font-size: 24px;
   line-height: 20px;
   font-weight: normal;
