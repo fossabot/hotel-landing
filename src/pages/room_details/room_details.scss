@@ -3,4 +3,21 @@
 
 @import "src/blocks/header/header";
 @import "src/blocks/footer/footer";
+@import "src/blocks/booking-card/booking-card";
+@import "src/blocks/details-list/details-list";
+
+.room-details {
+  &__images {
+    display: grid;
+    grid-template-columns: 1fr 2.137fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  &__large-image {
+    grid-row: 1/3;
+  }
+  &__data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 

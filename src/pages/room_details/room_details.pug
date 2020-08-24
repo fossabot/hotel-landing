@@ -1,7 +1,29 @@
 extends ../base/layout
+include ../../blocks/booking-card/booking-card
+include ../../blocks/details-list/details-list
 
 block title
-    title Index Document
+    title Room details
 block content
-    a(href='ui_kit.html')
-        h1 ui kit
+    .room-details
+        .room-details__images
+            img(src=require('../../assets/room-detail-large.png') class="room-details__large-image")
+            img(src=require('../../assets/room-details-small-1.png') class="room-details__small-image")
+            img(src=require('../../assets/room-details-small-2.png') class="room-details__small-image")
+        main.room-details__data
+            .room-details__info
+                h2.room-details__info-heading Сведения о номере
+                    +details-list({
+                        items: [
+                            {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
+                            {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой комнате'},
+                            {icon: 'whatshot', title: 'Уют', text: 'Номер оснащён камином'},
+                        ]
+                    })
+            .room-details__ratings
+            .room-details__reviews
+            .room-details__rules
+            .room-details__cancellation
+        aside.room-details__booking
+            +booking-card({number: 888, isLux: false, price: 9990, days: 4, discount: 2179, additionalFee: 300})
+
