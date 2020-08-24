@@ -1,29 +1,41 @@
-mixin booking-card({roomNo=888, roomType='lux', roomPrice=9990, days=4, discount=2179, additionalFee=300}={})
+include ../field-header/field-header
+include ../masked-input/masked-input
+include ../text-field/text-field
+include ../dropdown/dropdown
+include ../button/button
+
+mixin booking-card({number=888, isLux=false, price=9990, days=4, discount=2179, additionalFee=300}={})
     -
         const format = (number) => {
-            if (number < 1000) return number
-           const thousands = Math.floor(number / 1000)
-            const rest = (number - thousands*1000).toString().padStart(3, '0');
+           if (number < 1000) return number;
+           const thousands = Math.floor(number / 1000);
+           const rest = (number - thousands*1000).toString().padStart(3, '0');
            return `${thousands} ${rest}`
         }
-    -const roomPriceRub = format(roomPrice)
+    -const priceInRub = format(price)
+    - const { guestDropdown } = require('../../data.json')
     .booking-card
         .booking-card__room-info-row
             p.booking-card__room-no №
-                span.booking-card__room-no-span=roomNo
-                if roomType === 'lux'
+                span.booking-card__room-no-span=number
+                if isLux
                     span.booking-card__room-type люкс
             p.booking-card__room-price
-                span.booking-card__room-price-amount #{roomPriceRub}₽
+                span.booking-card__room-price-amount #{priceInRub}₽
                 span.booking-card__room-price-period в сутки
         +field-header({name: 'Прибытие-выезд', noMargin: true})
             +masked-input({placeholder: 'ДД.ММ.ГГ'})
-        .booking-card__guests-input
-            +text-field({placeholder: 'Сколько гостей', label: 'Гости'})
+
+        +field-header({name: 'гости'})&attributes({class:'.booking-card__guests-input'})
+            +dropdown({
+                placeholder: guestDropdown.placeholder,
+                items: guestDropdown.items,
+                hasButtons: true
+            })&attributes({class: 'js-guestDropdown'})
         .booking-card__charges-row
-            .booking-card__charge-description #{roomPriceRub}₽ x #{days} суток
+            .booking-card__charge-description #{priceInRub}₽ x #{days} суток
             div
-            .booking-card__charge-amount #{format(roomPrice*days)}₽
+            .booking-card__charge-amount #{format(price*days)}₽
         .booking-card__charges-row
             .booking-card__charge-description Сбор за услуги: скидка #{format(discount)} ₽
             div
@@ -36,6 +48,6 @@ mixin booking-card({roomNo=888, roomType='lux', roomPrice=9990, days=4, discount
             .booking-card__charge-amount #{format(additionalFee)}₽
         .booking-card__total-row
             .booking-card__total-description Итого
-            .booking-card__total-amount #{format(roomPrice*days-discount+additionalFee)}₽
+            .booking-card__total-amount #{format(price*days-discount+additionalFee)}₽
 
         +button({text: 'Забронировать', type: 'wide'})&attributes({class: 'booking-card__button'})
