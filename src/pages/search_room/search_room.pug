@@ -1,9 +1,57 @@
 extends ../base/layout
+include ../../blocks/date-filter/date-filter
+include ../../blocks/field-header/field-header
+include ../../blocks/dropdown/dropdown
+include ../../blocks/range-slider/range-slider
+include ../../blocks/checkbox/checkbox
+include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
+include ../../blocks/room-details/room-details
+include ../../blocks/pagination/pagination
 
 block title
     title Search room
+block variables
+    - const { guestDropdown, conveniencesDropdown } = require('../../data.json')
+    - const { count, rooms } = require('./searchData.json')
+
 block content
     .search-room
         aside.search-room__filter
+            +date-filter()
+            +field-header({name: 'гости', status: 'default', noMargin: true})
+                +dropdown({
+                    placeholder: guestDropdown.placeholder,
+                    items: guestDropdown.items,
+                    hasButtons: true
+                })&attributes({class: 'js-guestDropdown'})
+            +range-slider()
+            +field-header({name: 'checkbox buttons'})
+                +checkbox({text: 'Можно курить', name: 'smokingAllowed'})
+                +checkbox({text: 'Можно с питомцами', name: 'petsAllowed', defaultValue: true})
+                +checkbox({text: 'Можно пригласить гостей (до 10 человек)', name: 'guestsAllowed', defaultValue: true})
+            +field-header({name: 'Доступность'})
+                +checkbox({
+                    text: 'Ширина коридоров в номере не менее 91 см.',
+                    name: 'hall', header: 'Широкий коридор'
+                })
+                +checkbox({
+                    text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+                    name: 'helper', header: 'Помощник для инвалидов'
+                })
+            +field-header({name: 'Удобства номера'})
+                +dropdown({
+                    placeholder: conveniencesDropdown.placeholder,
+                    items: conveniencesDropdown.items
+                })&attributes({class: 'js-conveniencesDropdown'})
+            +field-header({name: '', status: '', noMargin: true})
+                +expandable-checkbox-list({
+                    title: 'expandable checkbox list', items: ['завтрак', 'письменный стол', 'стул для кормления'
+                    ]
+                })
         main.search-room__results
             h2.search-room__heading Номера, которые мы для вас подобрали
+            .search-room__grid
+                each room in rooms
+                    +room-details(room)
+            .search-room__pagination
+                +pagination()

@@ -3,13 +3,32 @@
 
 @import "src/blocks/header/header";
 @import "src/blocks/footer/footer";
+@import "src/blocks/date-filter/date-filter";
+@import "src/blocks/field-header/field-header";
+@import "src/blocks/dropdown/dropdown";
+@import "src/blocks/checkbox/checkbox";
+@import "src/blocks/room-details/room-details";
+@import "src/blocks/expandable-checkbox-list/expandable-checkbox-list";
+@import "src/blocks/pagination/pagination";
 
 .search-room {
   display: grid;
-  grid-template-columns: 266px auto;
+  grid-template-columns: 1fr 2.5fr;
   column-gap: 60px;
+  padding-right: 140px;
+  padding-left: 140px;
+  padding-top: 36px;
+  &__heading {
+    margin-bottom: 20px;
+  }
   &__filter {
     display: flex;
     flex-direction: column;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    row-gap: 20px;
+    justify-items: center;
   }
 }

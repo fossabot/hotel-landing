@@ -1,18 +1,21 @@
-mixin room-details({roomImg='room888.png', roomNo=888, isLux=true, roomPrice=9990, rating=5, reviews=145}={})
+include ../rate-button/rate-button
+mixin room-details({number, isLux, price, rating, reviewCount})
     .room-details
         .room-details__image-slideshow
-            img.room-details__image(src=require(`../../assets/${roomImg}`) alt=`room ${roomNo}`)
+            // - const roomImg = `room${roomNo}.png`
+            - const roomImg = 'room888.png'
+            img.room-details__image(src=require(`../../assets/${roomImg}`) alt=`room ${number}`)
         .room-details__description
             .room-details__detail-row
                 p.room-details__room №&nbsp;
-                    span.room-details__no #{roomNo}
+                    span.room-details__no #{number}
                     if isLux
                         span.room-details__lux &nbsp;люкс
                 p.room-details__price
-                    span.room-details__amount #{`${Math.floor(roomPrice / 1000)} ${roomPrice - Math.floor(roomPrice / 1000)*1000}`}₽
+                    span.room-details__amount #{`${Math.floor(price / 1000)} ${price - Math.floor(price / 1000)*1000}`}₽
                     span.room-details__period &nbsp;в сутки
             .room-details__rating-row
                 +rate-button({rating: rating})
                 p.room-details__reviews
-                    span.room-details__review-no= reviews
+                    span.room-details__review-no= reviewCount
                     span.room-details__review &nbsp;Отзывов

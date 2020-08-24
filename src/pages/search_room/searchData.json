@@ -1,0 +1,89 @@
+{
+  "count": 12,
+  "rooms": [
+    {
+      "number": "888",
+      "isLux": true,
+      "price": 9990,
+      "rating": 5,
+      "reviewCount": 145
+    },
+    {
+      "number": "840",
+      "isLux": false,
+      "price": 9900,
+      "rating": 4,
+      "reviewCount": 65
+    },
+    {
+      "number": "980",
+      "isLux": true,
+      "price": 8500,
+      "rating": 3,
+      "reviewCount": 35
+    },
+    {
+      "number": "856",
+      "isLux": true,
+      "price": 7300,
+      "rating": 5,
+      "reviewCount": 19
+    },
+    {
+      "number": "740",
+      "isLux": false,
+      "price": 6000,
+      "rating": 4,
+      "reviewCount": 44
+    },
+    {
+      "number": "982",
+      "isLux": false,
+      "price": 5800,
+      "rating": 3,
+      "reviewCount": 56
+    },
+    {
+      "number": "678",
+      "isLux": false,
+      "price": 5500,
+      "rating": 5,
+      "reviewCount": 45
+    },
+    {
+      "number": "450",
+      "isLux": false,
+      "price": 5300,
+      "rating": 4,
+      "reviewCount": 39
+    },
+    {
+      "number": "350",
+      "isLux": false,
+      "price": 5000,
+      "rating": 3,
+      "reviewCount": 77
+    },
+    {
+      "number": "666",
+      "isLux": false,
+      "price": 5000,
+      "rating": 5,
+      "reviewCount": 25
+    },
+    {
+      "number": "444",
+      "isLux": false,
+      "price": 5000,
+      "rating": 3,
+      "reviewCount": 15
+    },
+    {
+      "number": "352",
+      "isLux": false,
+      "price": 5000,
+      "rating": 3,
+      "reviewCount": 55
+    }
+  ]
+}
