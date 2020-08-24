@@ -1,7 +1,9 @@
-.list {
+.bullet-list {
   list-style: none outside none;
 
   &__item {
+    @include body-text;
+
     &::before {
       content: "•";
       font-size: 5rem;

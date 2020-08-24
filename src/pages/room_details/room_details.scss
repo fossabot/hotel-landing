@@ -5,6 +5,7 @@
 @import "src/blocks/footer/footer";
 @import "src/blocks/booking-card/booking-card";
 @import "src/blocks/details-list/details-list";
+@import "src/blocks/bullet-list/bullet-list";
 
 .room-details {
   &__images {
@@ -18,6 +19,36 @@
   &__data {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "info ratings booking"
+                          "reviews reviews booking"
+                          "rules cancellation ."
+  }
+  &__info {
+    grid-area: info;
+  }
+  &__ratings {
+    grid-area: ratings;
+
+  }
+  &__reviews {
+    grid-area: reviews;
+  }
+  &__reviews-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__reviews-count {
+    font-weight: normal;
+  }
+  &__rules {
+    grid-area: rules;
+  }
+  &__cancellation {
+    grid-area: cancellation;
+  }
+  &__booking {
+    grid-area: booking;
   }
 }
 

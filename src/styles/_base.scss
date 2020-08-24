@@ -54,6 +54,7 @@ $label-font-size: 12px;
 @mixin body-text {
     color: $c-primary-dark;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-weight: normal;
     font-size: $root-font-size;
     line-height: 24px;
 }

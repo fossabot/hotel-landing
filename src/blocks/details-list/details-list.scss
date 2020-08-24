@@ -33,6 +33,7 @@
     font-size: 14px;
   }
   &__text {
+    @include body-text;
     grid-row: 2/3;
     grid-column: 2/3;
   }

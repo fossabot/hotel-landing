@@ -1,6 +1,7 @@
 extends ../base/layout
 include ../../blocks/booking-card/booking-card
 include ../../blocks/details-list/details-list
+include ../../blocks/bullet-list/bullet-list
 
 block title
     title Room details
@@ -21,9 +22,25 @@ block content
                         ]
                     })
             .room-details__ratings
+                h2.room-details__rating-heading Впечатления от номера
+
             .room-details__reviews
+                h2.room-details__reviews-heading Отзывы посетителей номера
+                    span.room-details__reviews-count 2 отзыва
             .room-details__rules
+                h2.room-details__rules-heading Правила
+                    +bullet-list({
+                        items: [
+                            'Нельзя с питомцами',
+                            'Без вечеринок и мероприятий',
+                            'Время прибытия — после 13:00, а выезд до 12:00',
+                        ]
+                    })
             .room-details__cancellation
-        aside.room-details__booking
-            +booking-card({number: 888, isLux: false, price: 9990, days: 4, discount: 2179, additionalFee: 300})
+                h2.room-details__cancellation-heading Отмена
+                .room-details__cancellation-text
+                    | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее
+                    | чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+            aside.room-details__booking
+                +booking-card({number: 888, isLux: false, price: 9990, days: 4, discount: 2179, additionalFee: 300})
 
