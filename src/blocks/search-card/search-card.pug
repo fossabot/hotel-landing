@@ -5,8 +5,9 @@ include ../field-header/field-header
 
 mixin search-card()
     - const { guestDropdown } = require('../../data.json')
+    - const layoutClass = attributes.class ? attributes.class : ''
 
-    .search-card
+    .search-card(class=layoutClass)
         h2.search-card__title Найдем номера под ваши пожелания
         +date-filter()
         +field-header({name: 'гости'})

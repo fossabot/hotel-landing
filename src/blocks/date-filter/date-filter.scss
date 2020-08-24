@@ -1,11 +1,10 @@
-//@import '../../styles/_variables.scss';
-//@import '../../styles/_base.scss';
 
 .date-filter {
   &__container {
     position: relative;
     @include flex-row;
     width: 100%;
+    margin-bottom: 22px;
   }
   &__label {
     @include label-font;
@@ -27,6 +26,11 @@
     justify-content: space-between;
     @include input-base;
     max-width: 150px;
+    margin-top: 7px;
+    @include body-text;
+    line-height: 18px;
+    padding-top: 11px;
+    padding-bottom: 11px;
   }
   &__arrow {
     flex: 0 0 1rem;

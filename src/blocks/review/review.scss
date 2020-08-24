@@ -11,10 +11,10 @@
     width: 48px;
     grid-area: image;
   }
-  &__author-name{
+  &__author-name {
     grid-area: name;
     font-size: 14px;
-    font-family: "Montserrat", 'sans-serif';
+    font-family: "Montserrat", sans-serif;
     font-weight: bold;
   }
   &__date {
@@ -28,5 +28,6 @@
   &__text {
     grid-area: text;
     padding-top: 9px;
+    @include body-text;
   }
 }

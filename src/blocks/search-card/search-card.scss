@@ -3,6 +3,7 @@
 @import "../dropdown/dropdown";
 .search-card {
   @include card-base;
+  max-width: 382px;
   &__title {
     @include title-font;
     margin-bottom: 17px;
