@@ -10,9 +10,9 @@ import '../../blocks/expandable-checkbox-list/expandable-checkbox-list';
 import '../../blocks/toggle/toggle';
 
 import Dropdown from '../../blocks/dropdown/dropdown';
-import DateFilter from '../../blocks/date-filter/date-filter';
-
-console.log(DateFilter);
+// import DateFilter from '../../blocks/date-filter/date-filter';
+//
+// console.log(DateFilter);
 const data = require('./data.json');
 
 const uiKitDropdowns = [];

@@ -1,3 +1,6 @@
+@import "../date-filter/date-filter.scss";
+@import "../field-header/field-header";
+@import "../dropdown/dropdown";
 .search-card {
   @include card-base;
   &__title {

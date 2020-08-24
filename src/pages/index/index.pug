@@ -1,7 +1,12 @@
 extends ../base/layout
+include ../../blocks/search-card/search-card
 
 block title
     title Index Document
 block content
-     a(href='ui_kit.html')
+    main.index
+        .index__search_card
+            +search-card()
+        .index__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
+    a(href='ui_kit.html')
          h1 ui kit
