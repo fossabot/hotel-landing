@@ -2,8 +2,7 @@ include ../rate-button/rate-button
 mixin room-details({number, isLux, price, rating, reviewCount})
     .room-details
         .room-details__image-slideshow
-            // - const roomImg = `room${roomNo}.png`
-            - const roomImg = 'room888.png'
+            - const roomImg = `room${number}.png`
             img.room-details__image(src=require(`../../assets/${roomImg}`) alt=`room ${number}`)
         .room-details__description
             .room-details__detail-row

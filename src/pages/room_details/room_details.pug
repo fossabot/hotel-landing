@@ -3,6 +3,7 @@ include ../../blocks/booking-card/booking-card
 include ../../blocks/details-list/details-list
 include ../../blocks/bullet-list/bullet-list
 include ../../blocks/review/review
+include ../../blocks/chart/chart
 
 block title
     title Room details
@@ -24,7 +25,7 @@ block content
                 })
             .room-details__ratings
                 h2.room-details__ratings-heading Впечатления от номера
-
+                +chart()
             .room-details__reviews
                 h2.room-details__reviews-heading Отзывы посетителей номера
                     span.room-details__reviews-count 2 отзыва
