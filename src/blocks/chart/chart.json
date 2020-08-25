@@ -1,0 +1,38 @@
+{
+  "total": 260,
+  "values": [
+    {
+      "label": "Великолепно",
+      "percentage": 50,
+      "colors": [
+        "#FFE39C",
+        "#FFBA9C"
+      ],
+      "name": "excellent"
+    },
+    {
+      "label": "Хорошо",
+      "percentage": 25,
+      "colors": [
+        "#6FCF97", "#66D2EA"
+      ],
+      "name": "good"
+    },
+    {
+      "label": "Удовлетворительно",
+      "percentage": 25,
+      "colors": [
+        "#BC9CFF", "#8BA4F9"
+      ],
+      "name": "satisfactory"
+    },
+    {
+      "label": "Разочарован",
+      "percentage": 25,
+      "colors": [
+        "#909090", "#3D4975"
+      ],
+      "name": "disappointed"
+    }
+    ]
+}

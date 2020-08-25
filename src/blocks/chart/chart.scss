@@ -1,0 +1,53 @@
+.chart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 22px;
+  &__wrapper {
+    position: relative;
+  }
+  &__donut {
+    height: 120px;
+    width: 120px;
+  }
+  &__label {
+    font-family: Quicksand, "Open Sans", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: $c-brand;
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 33%;
+    left: 10%;
+  }
+  &__sublabel {
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: $c-brand;
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 51%;
+    left: 10%;
+  }
+  &__legend {
+    align-self: flex-end;
+    list-style: none;
+  }
+  &__legend-item {
+    position: relative;
+    padding-left:15px;
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: calc(50% - 5px);
+      background: $brand-gradient;
+    }
+  }
+}
