@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = () => {
   const PATHS = {
     src: path.join(__dirname, 'src'),
-    dist: path.join(__dirname, 'dist'),
+    dist: path.join(__dirname, 'docs'),
   };
   const PAGES_DIR = path.join(PATHS.src, 'pages');
   const pages = [
@@ -20,6 +20,7 @@ module.exports = () => {
   ]
     .map((name) => new HtmlWebpackPlugin({
       template: `./src/pages/${name}/${name}.pug`,
+      pretty: true,
       filename: `${name}.html`,
       chunks: [name, 'vendors'],
     }));
@@ -44,6 +45,7 @@ module.exports = () => {
       },
     },
     output: {
+      path: path.resolve(__dirname, 'docs'),
       filename: 'js/[name].[hash].js',
     },
     plugins: [
