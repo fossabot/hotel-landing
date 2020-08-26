@@ -20,7 +20,6 @@ module.exports = () => {
   ]
     .map((name) => new HtmlWebpackPlugin({
       template: `./src/pages/${name}/${name}.pug`,
-      pretty: true,
       filename: `${name}.html`,
       chunks: [name, 'vendors'],
     }));
@@ -46,6 +45,7 @@ module.exports = () => {
     },
     output: {
       path: path.resolve(__dirname, 'docs'),
+      publicPath: "/",
       filename: 'js/[name].[hash].js',
     },
     plugins: [
