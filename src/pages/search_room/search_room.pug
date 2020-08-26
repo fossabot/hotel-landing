@@ -17,7 +17,7 @@ block variables
 block content
     .search-room
         aside.search-room__filter
-            +date-filter()
+            +date-filter({isRange: false, labels: ['даты пребывания в отеле']})
             +field-header({name: 'гости', status: 'default', noMargin: true})
                 +dropdown({
                     placeholder: guestDropdown.placeholder,

@@ -13,15 +13,17 @@
 
 .search-room {
   display: grid;
-  grid-template-columns: 1fr 2.5fr;
+  grid-template-columns: 266px 1fr;
   column-gap: 60px;
   padding-right: 140px;
   padding-left: 140px;
-  padding-top: 36px;
+  padding-top: 30px;
   &__heading {
+    @include title-font;
     margin-bottom: 20px;
   }
   &__filter {
+    max-width: 266px;
     display: flex;
     flex-direction: column;
   }
@@ -30,5 +32,10 @@
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     row-gap: 20px;
     justify-items: center;
+  }
+  &__pagination {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
   }
 }
