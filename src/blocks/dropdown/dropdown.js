@@ -33,6 +33,8 @@ class Dropdown {
     const selectKeys = Object.keys(this.values);
     selectKeys.forEach((key) => { this.values[key] = 0; });
     this.options.forEach((item) => { item.setOptionValue(0); });
+    this.updateValue();
+    // TODO: disable minuses
     this.disableClear();
   }
 
