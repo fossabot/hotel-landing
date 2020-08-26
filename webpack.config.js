@@ -4,7 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = () => {
+module.exports = (env, argv) => {
+  const isProduction = argv.mode === 'production';
   const PATHS = {
     src: path.join(__dirname, 'src'),
     dist: path.join(__dirname, 'docs'),
@@ -45,7 +46,7 @@ module.exports = () => {
     },
     output: {
       path: path.resolve(__dirname, 'docs'),
-      publicPath: "/",
+      publicPath: isProduction ? "/hotel-landing/": "/",
       filename: 'js/[name].[hash].js',
     },
     plugins: [
