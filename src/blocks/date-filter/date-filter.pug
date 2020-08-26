@@ -1,6 +1,11 @@
-mixin date-filter()
+mixin date-filter({isRange=true, labels=['прибытие', 'выезд']}={})
     .date-filter__container.js-dates
-        label.date-filter__label прибытие
-            input(class='date-filter__input js-start' type='text' placeholder='дд.мм.ггг')
-        label.date-filter__label выезд
-            input(class='date-filter__input js-end' type='text' placeholder='дд.мм.ггг')
+        if isRange
+            - const [labelStart, labelEnd] = labels
+            label(class='date-filter__label date-filter__label_range')=labelStart
+                input(class='date-filter__input js-start' type='text' placeholder='дд.мм.ггг')
+            label(class='date-filter__label date-filter__label_range')=labelEnd
+                input(class='date-filter__input js-end' type='text' placeholder='дд.мм.ггг')
+        else
+            label(class='date-filter__label date-filter__label_single')=labels[0]
+                input(class='date-filter__input js-single-date' type='text' placeholder='дд.мм.ггг')

@@ -7,6 +7,7 @@
     margin-bottom: 22px;
   }
   &__label {
+    width: 100%;
     @include label-font;
     position:relative;
     &::after {
@@ -20,12 +21,18 @@
       right: 12px;
       color: $c-primary-medium;
     }
+    &_range {
+      margin-left: 20px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
   }
   &__input {
     display: flex;
     justify-content: space-between;
     @include input-base;
-    max-width: 150px;
+    width: 100%;
     margin-top: 7px;
     @include body-text;
     line-height: 18px;
