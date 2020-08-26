@@ -10,6 +10,8 @@ mixin header({loggedIn=false, name} = {})
     header.header(class= loggedIn ? 'logged-in' : 'not-logged-in')
         a.header__logo-link(href='index.html')
             +logo()
+        input(class='header__nav-opener' type='checkbox')
+
         nav.header__nav
             ul.header__navlist
                 each link in links
@@ -23,5 +25,3 @@ mixin header({loggedIn=false, name} = {})
             else
                 +button({text: 'Войти', type: 'outlined', tag:'a', link:'login.html'})&attributes({class: 'header__button'})
                 +button({text: 'Зарегистрироваться', tag:'a', link:'register.html'})&attributes({class: 'header__button'})
-
-

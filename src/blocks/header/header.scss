@@ -6,14 +6,45 @@
   align-items: center;
   background-color: white;
   padding: 15px 140px;
+  position: relative;
+  @media (max-width: 1024px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   &__nav {
-    display: inherit;
+    display: flex;
     align-items: inherit;
+    @media (max-width: 1024px) {
+      display: none;
+      position: absolute;
+      flex-direction: column;
+      height: auto;
+      background: white;
+      z-index: 1;
+      top: 70px;
+      right: 0;
+    }
+  }
+  &__nav-opener {
+    display: none;
+    @media (max-width: 1024px) {
+      display: block;
+      &:checked {
+        color: red;
+        &+.header__nav {
+          display: flex;
+        }
+    }
+    }
+
   }
   &__navlist {
     display: flex;
     flex-direction: row;
     list-style: none;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
   }
   &__navlink {
     padding-left: 20px;
