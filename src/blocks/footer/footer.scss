@@ -2,13 +2,29 @@
 .footer {
   display: grid;
   grid-template-columns: minmax(260px, 1fr) repeat(3, 1fr) minmax(260px, 1fr);
-  grid-gap: 40px;
+  column-gap: 40px;
   justify-content: space-between;
   background-color: white;
   padding: 105px 140px;
-  &__logo {
-    margin-top: -4px;
+  @media (max-width: 1024px) {
+    padding: 120px 0 140px 0;
+    grid-template-columns: 100%;
+    justify-items: center;
+    column-gap: 0;
+  }
+    &__logo {
+    margin-top: 0;
     margin-bottom: 16px;
+  }
+  &__description {
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+  &__column {
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
   &__nav-heading {
     @include label-font;
@@ -51,14 +67,30 @@
     margin-top: 20px;
   }
   &__bottom {
+    grid-column: 1 / 6;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 22.5px 140px;
     border-top: 1px solid $c-primary-light;
     background-color: white;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      padding: 0;
+      border-top: none;
+    }
+  }
+  &__social-icons {
+    @media (max-width: 1024px) {
+      margin-top: 20px;
+    }
   }
   &__social-icon {
     margin-left: 20px;
+   @media (max-width: 1024px) {
+     &:first-child {
+       margin-left: 0;
+     }
+   }
   }
 }

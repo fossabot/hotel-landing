@@ -10,7 +10,7 @@ mixin footer()
             { heading: 'Служба поддержки', items: ['Соглашения', 'Сообщества', 'Связь с нами'] }
         ]
     footer.footer
-        .footer__column
+        .footer__about-column
             .logo.footer__logo
                 +logo()
             .footer__description
@@ -30,10 +30,10 @@ mixin footer()
             .footer__subscription-text
                 | Получайте специальные предложения и новости сервиса
             +subscription-text-field()
-    footer.footer__bottom
-        p.footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
-        .footer__social-icons
-            img.footer__social-icon(src=require('../../assets/twitter_logo.svg'))
-            img.footer__social-icon(src=require('../../assets/fb_logo.svg'))
-            img.footer__social-icon(src=require('../../assets/insta_logo.svg'))
+        section.footer__bottom
+            p.footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
+            .footer__social-icons
+                img.footer__social-icon(src=require('../../assets/twitter_logo.svg'))
+                img.footer__social-icon(src=require('../../assets/fb_logo.svg'))
+                img.footer__social-icon(src=require('../../assets/insta_logo.svg'))
 
