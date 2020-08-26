@@ -1,6 +1,7 @@
 @import "src/blocks/rate-button/rate-button";
 .room-details {
   @include card-base;
+  border-radius: 4px 4px 0 0;
   max-width: 270px;
   width: 100%;
   padding:0;

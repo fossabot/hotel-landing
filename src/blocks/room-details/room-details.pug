@@ -1,5 +1,11 @@
 include ../rate-button/rate-button
 mixin room-details({number, isLux, price, rating, reviewCount})
+    -
+        const formatPrice = (price) => {
+            const thousands = Math.floor(price / 1000);
+            const ones = price - thousands * 1000;
+            return `${thousands} ${ones.toString().padStart(3, '0')}`
+        }
     .room-details
         .room-details__image-slideshow
             - const roomImg = `room${number}.png`
@@ -11,7 +17,7 @@ mixin room-details({number, isLux, price, rating, reviewCount})
                     if isLux
                         span.room-details__lux &nbsp;люкс
                 p.room-details__price
-                    span.room-details__amount #{`${Math.floor(price / 1000)} ${price - Math.floor(price / 1000)*1000}`}₽
+                    span.room-details__amount #{formatPrice(price)}₽
                     span.room-details__period &nbsp;в сутки
             .room-details__rating-row
                 +rate-button({rating: rating})
