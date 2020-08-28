@@ -46,7 +46,7 @@ module.exports = (env, argv) => {
     },
     output: {
       path: path.resolve(__dirname, 'docs'),
-      publicPath: isProduction ? "/hotel-landing/": "/",
+      publicPath: isProduction ? '/hotel-landing/' : '/',
       filename: 'js/[name].[hash].js',
     },
     plugins: [
@@ -93,6 +93,10 @@ module.exports = (env, argv) => {
           'sass-loader',
         ],
       }, {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
         test: /\.(png|svg|jpg|gif)$/,
         include: [
           path.resolve(PATHS.src, 'assets'),

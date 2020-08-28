@@ -1,0 +1,5 @@
+include ../checkbox/checkbox
+mixin checkbox-list({ label = 'checkbox buttons', items = [] })
+    h3.checkbox-list__label=label
+    each item in items
+        +checkbox(item)
