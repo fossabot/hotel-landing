@@ -1,0 +1,16 @@
+mixin text-input({placeholder = '', label = '', status=''}={})
+    -
+        let inputClass = 'text-input__input'
+        if (status && status.toLowerCase() !== 'default') {
+            inputClass = `${inputClass} text-input__input_hovered`
+        }
+    label.text-input
+        span.text-input__labels
+            span.text-input__label=label
+            if status
+                span.text-input__status=status
+        input(
+            type='text'
+            class=inputClass
+            placeholder=placeholder
+            )
