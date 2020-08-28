@@ -1,17 +1,17 @@
 mixin checkbox({ text = '', name='', defaultValue=false, header='' })
-    .checkbox-button
+    .checkbox
         input(
-            class=`checkbox-button__input checkbox-${name}`
+            class=`checkbox__input checkbox-${name}`
             type="checkbox"
             name= name
             id= name
             checked= defaultValue
         )
 
-        label.checkbox-button__label(for=name)
+        label.checkbox__label(for=name)
             if header
-                span.checkbox-button__header= header
+                span.checkbox__header= header
                 br
-                span.checkbox-button__subheader= text
+                span.checkbox__subheader= text
             else
                 =text

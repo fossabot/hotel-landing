@@ -1,10 +1,14 @@
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
-  .checkbox-button {
+  .checkbox {
     @include checkbox-base;
     align-items: flex-start;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     &__label {
       width: 230px;
+      @include body-text;
+      text-transform: initial;
+      font-size: 14px;
+      line-height: 18px;
     }
     &__header {
       font-family: Montserrat, sans-serif;
