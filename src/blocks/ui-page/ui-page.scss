@@ -1,18 +1,11 @@
 .ui-page {
   margin-bottom: 1rem;
   padding: 140px;
+  padding-left: 141px;
   position: relative;
   border-top: 2px solid $c-primary-medium;
   border-bottom: 2px solid $c-primary-medium;
   background-color: #f4f4f6;
-  &__content_columned {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 40px;
-  }
-  &__content_full-width {
-    display: block;
-  }
   &_with-background {
     background-color: white;
     box-shadow: 0 0 5px 0 $c-primary-lighter;
@@ -21,8 +14,19 @@
     padding-left: 0;
     padding-right: 0;
   }
-
-
+  &__content {
+    &_columned {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 40px;
+    }
+    &_form-elements {
+      column-gap: 128px;
+    }
+    &_full-width {
+        display: block;
+    }
+  }
   &__logo {
     position: absolute;
     top: 30px;
@@ -33,7 +37,14 @@
     margin-bottom: 0.5rem;
     padding-left: 30px;
   }
+  &__column {
+    max-width: 320px;
+  }
   &__item {
     margin-bottom: 20px;
+    &_small-margin {
+      margin-bottom: 19px;
+    }
   }
+
 }

@@ -1,10 +1,13 @@
 include ../logo/logo
-mixin ui-page({withBackground=false, fullWidth=false} = {})
-    - let classes = withBackground ? "ui-page_with-background": ""
-    - classes = `${classes}${fullWidth ? ' ui-page_full-width' : ''}`
+mixin ui-page({withBackground=false, fullWidth=false, pageName=''} = {})
+    -
+        let classes = withBackground ? "ui-page_with-background": ""
+        classes = `${classes}${fullWidth ? ' ui-page_full-width' : ''}`
+        let contentModifier = fullWidth ? 'full-width': 'columned'
+        const contentClass = `ui-page__content_${contentModifier} ui-page__content_${pageName}`
     article.ui-page(class=classes)
         +logo({className:'ui-page__logo', type: 'light'})
-        .ui-page__content(class=fullWidth ? 'ui-page__content_full-width': 'ui-page__content_columned')
+        .ui-page__content(class=contentClass)
             if block
                 block
 
