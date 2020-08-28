@@ -1,10 +1,9 @@
 .chart {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-top: 22px;
   &__wrapper {
     position: relative;
+    margin-right: 30px;
   }
   &__donut {
     height: 120px;
