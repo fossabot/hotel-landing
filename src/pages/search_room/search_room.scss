@@ -18,6 +18,13 @@
   padding-right: 140px;
   padding-left: 140px;
   padding-top: 30px;
+  @media (max-width: 1200px) {
+    padding: 30px 10px;
+  }
+  @media (max-width: 575px) {
+    grid-template-columns: 100%;
+    column-gap: 0;
+  }
   &__heading {
     @include title-font;
     margin-bottom: 20px;
@@ -31,6 +38,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     row-gap: 20px;
+    column-gap: 12px;
     justify-items: center;
   }
   &__pagination {

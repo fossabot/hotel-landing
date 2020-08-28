@@ -68,7 +68,7 @@ $label-font-size: 12px;
     border-radius: 4px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 14px;
-    line-height: 44px;
+    line-height: 42px;
     color: $c-primary-dark;
     text-overflow: ellipsis;
     padding-left: 13px;
@@ -79,7 +79,6 @@ $label-font-size: 12px;
     }
     &:hover, &:focus {
         border-color: $c-primary-medium;
-        border-width: 1px;
         outline: none;
         &::placeholder {
             color: $c-primary-dark;
@@ -87,7 +86,6 @@ $label-font-size: 12px;
     }
     &:active {
         border-color: $c-primary-medium;
-        border-width: 1px;
     }
 }
 @mixin checkbox-base {

@@ -6,7 +6,7 @@ include ../../blocks/type-samples/type-samples
 include ../../blocks/header/header
 include ../../blocks/footer/footer
 include ../../blocks/field-header/field-header
-include ../../blocks/text-field/text-field
+include ../../blocks/text-input/text-input
 include ../../blocks/masked-input/masked-input
 include ../../blocks/dropdown/dropdown
 include ../../blocks/stepper/stepper
@@ -14,7 +14,6 @@ include ../../blocks/checkbox/checkbox
 include ../../blocks/radiobutton/radiobutton
 include ../../blocks/rate-button/rate-button
 include ../../blocks/like-button/like-button
-include ../../blocks/range-slider/range-slider
 include ../../blocks/toggle/toggle
 include ../../blocks/button/button
 include ../../blocks/pagination/pagination
@@ -29,6 +28,8 @@ include ../../blocks/search-card/search-card
 include ../../blocks/booking-card/booking-card
 include ../../blocks/room-details/room-details
 include ../../blocks/calendar-card/calendar-card
+include ../../blocks/checkbox-list/checkbox-list
+include ../../blocks/slider/slider
 
 
 block content
@@ -38,111 +39,136 @@ block content
 
     h1 UI KIT
     a(href='index.html') index
-    p.ui-page__title Colors and Typography
-        +ui-page({withBackground: true})
-            .ui-page__column.colors-block
-                each c in colors
-                    +color-sample({color: c})
-            .ui-page__column.typography
-                +type-samples({typography: typeValues})
-    p.ui-page__title Form Elements
-        +ui-page({withBackground: true})
-            .ui-page__column
-                .ui-page__item
-                    +text-field({placeholder: 'Email', label: 'text field', status: 'default'})
-                .ui-page__item
-                    +field-header({name: 'dropdown', status: 'default', noMargin: true})
-                        +dropdown({
-                            placeholder: conveniencesDropdown.placeholder,
-                            items: conveniencesDropdown.items
-                        })&attributes({class:'js-conveniencesDropdown'})
-                    +field-header({name: 'dropdown', status: 'default', noMargin: true})
-                        +dropdown({
-                            placeholder: guestDropdown.placeholder,
-                            items: guestDropdown.items,
-                            hasButtons: true
-                        })&attributes({class:'js-guestDropdown'})
-                .ui-page__item
-                    +masked-input({placeholder: 'ДД.ММ.ГГ', label: 'masked field'})
-                .ui-page__item
-                    +text-field({placeholder: 'ДД.ММ.ГГ', label: 'date dropdown'})
-                .ui-page__item
-                    +text-field({placeholder: '19 авг - 23 авг', label: 'filter date dropdown'})
-                .ui-page__item
-                    +field-header({name: 'subscription text field', status: 'default', noMargin: true})
-                        +subscription-text-field()
-                .ui-page__item
-                    +field-header({name: 'dropdown', status: 'default', noMargin: true})
-                        +subscription-text-field()
-                .ui-page__item
-                    +field-header({name: '', status: '', noMargin: true})
-                        +expandable-checkbox-list({title: 'expandable checkbox list', items: ['завтрак','письменный стол','стул для кормления'
+    h3.ui-page__title Colors and Typography
+    +ui-page({withBackground: true})
+        .ui-page__column.colors-block
+            each c in colors
+                +color-sample({color: c})
+        .ui-page__column.typography
+            +type-samples({typography: typeValues})
+    h3.ui-page__title Form Elements
+    +ui-page({withBackground: true, pageName: 'form-elements'})
+        .ui-page__column
+            .ui-page__item_small-margin
+                +text-input({placeholder: 'Email', label: 'text field', status: 'default'})
+            .ui-page__item_small-margin
+                +text-input({placeholder: 'This is pretty awesome', label: 'text field', status: 'hover / focus'})
+            .ui-page__item_small-margin
+                +dropdown({
+                    placeholder: conveniencesDropdown.placeholder,
+                    items: conveniencesDropdown.items,
+                    status: 'default'
+                })&attributes({class:'js-conveniencesDropdown'})
+            .ui-page__item
+                +masked-input({placeholder: 'ДД.ММ.ГГ', label: 'masked text field'})
+            .ui-page__item
+                +date-filter({labels: ['date dropdown','date dropdown']})
+            .ui-page__item
+                h3.ui-page__heading Subscription text field
+                +subscription-text-field()
+            .ui-page__item
+                +dropdown({
+                    placeholder: guestDropdown.placeholder,
+                    items: guestDropdown.items,
+                    hasButtons: true
+                })&attributes({class:'js-guestDropdown'})
+
+            .ui-page__item
+                +text-input({placeholder: 'ДД.ММ.ГГ', label: 'date dropdown'})
+            .ui-page__item
+                +text-input({placeholder: '19 авг - 23 авг', label: 'filter date dropdown'})
+            .ui-page__item
+                +field-header({name: 'dropdown', status: 'default', noMargin: true})
+                    +subscription-text-field()
+            .ui-page__item
+                +field-header({name: '', status: '', noMargin: true})
+                    +expandable-checkbox-list({title: 'expandable checkbox list', items: ['завтрак','письменный стол','стул для кормления'
+                    ]})
+            .ui-page__item
+                +field-header({name: '', status: '', noMargin: true})
+                    +details-list({items:[
+                        {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
+                        {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой комнате'},
                         ]})
-                .ui-page__item
-                    +field-header({name: '', status: '', noMargin: true})
-                        +details-list({items:[
-                            {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
-                            {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой комнате'},
-                            ]})
-                .ui-page__item
-                    +review({authorImg: 'user1.png'})
-            .ui-page__column
-                .ui-page__item
-                    +field-header({name: 'checkbox buttons'})
-                        +checkbox({text: 'Можно курить', name: 'smokingAllowed'})
-                        +checkbox({text: 'Можно с питомцами', name: 'petsAllowed', defaultValue: true})
-                        +checkbox({text: 'Можно пригласить гостей (до 10 человек)', name: 'guestsAllowed', defaultValue: true})
-                .ui-page__item
-                    +field-header({name: 'radiobuttons'})
-                        +radiobutton({name: 'gender', options: ['Мужчина', 'Женщина']})
-                .ui-page__item
-                    +field-header({name: 'toggle'})
-                        +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
-                        +toggle({
-                            label: 'Получать спецпредложения',
-                            name: 'subscriptionChecked',
-                            defaultValue: true})
-                .ui-page__item
-                    +field-header({name: 'like button'})&attributes({class: 'row'})
-                        +like-button({value:0})
-                        +like-button({value:11, defaultValue:true})
-                .ui-page__item
-                    +field-header({name: 'rate button'})
-                        +rate-button({rating: 3})
-                        +rate-button({rating: 5})
-                .ui-page__item
-                    +field-header({name: 'rich checkbox buttons'})
-                        +checkbox({
-                            text: 'Ширина коридоров в номере не менее 91 см.',
-                            name: 'hall', header: 'Широкий коридор'})
-                        +checkbox({
-                            text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-                            name: 'helper', header: 'Помощник для инвалидов'})
-            .ui-page__column
-                .ui-page__item
-                    +field-header({name: 'range slider'})
-                        +range-slider({text:'range', name: 'range'})
-                        +checkbox({text: 'Можно курить', name: 'smokingAllowed'})
-                .ui-page__item
-                    +field-header({name: 'buttons'})
+            .ui-page__item
+                +review({authorImg: 'user1.png'})
+        .ui-page__column
+            .ui-page__item
+                +checkbox-list(
+                    {items: [
+                        {text: 'Можно курить',
+                            name: 'smokingAllowed'},
+                        {text: 'Можно с питомцами',
+                            name: 'petsAllowed',
+                            defaultValue: true},
+                          {
+                        text: 'Можно пригласить гостей (до 10 человек)',
+                        name: 'guestsAllowed',
+                        defaultValue: true
+                    }]})
+            .ui-page__item
+                +field-header({name: 'radiobuttons'})
+                    +radiobutton({name: 'gender', options: ['Мужчина', 'Женщина']})
+            .ui-page__item
+                +field-header({name: 'toggle'})
+                    +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
+                    +toggle({
+                        label: 'Получать спецпредложения',
+                        name: 'subscriptionChecked',
+                        defaultValue: true})
+            .ui-page__item
+                +field-header({name: 'like button'})&attributes({class: 'row'})
+                    +like-button({value:0})
+                    +like-button({value:11, defaultValue:true})
+            .ui-page__item
+                +field-header({name: 'rate button'})
+                    +rate-button({rating: 3})
+                    +rate-button({rating: 5})
+            .ui-page__item
+                +field-header({name: 'rich checkbox buttons'})
+                    +checkbox({
+                        text: 'Ширина коридоров в номере не менее 91 см.',
+                        name: 'hall', header: 'Широкий коридор'})
+                    +checkbox({
+                        text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+                        name: 'helper', header: 'Помощник для инвалидов'})
+        .ui-page__column
+            .ui-page__item_small-margin
+                .ui-page__slider
+                    +slider()
+            .ui-page__item
+                h3.ui-page__heading Buttons
+                .ui-page__button-row
+                    .ui-page__left-button
                         +button({text: 'click me', type: ''})
+                    .ui-page__button
+                        +button({text: 'click me', type: ''})
+                .ui-page__button-row
+                    .ui-page__left-button
                         +button({text: 'click me', type: 'outlined'})
+                    .ui-page__button
+                        +button({text: 'click me', type: 'outlined'})
+                .ui-page__button-row
+                    .ui-page__left-button
                         +button({text: 'click me', type: 'text'})
-                        +button({text: 'перейти к оплате', type: 'wide'})
-                .ui-page__item
-                    +field-header({name: 'pagination'})
-                        +pagination({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
-                .ui-page__item
-                    +field-header({name: 'bullet list'})
-                        +bullet-list({items: [
-                                'Нельзя с питомцами',
-                                'Без вечеринок и мероприятий',
-                                'Время прибытия — после 13:00, а выезд до 12:00',
-                            ]})
+                    .ui-page__button
+                        +button({text: 'click me', type: 'text'})
+                .ui-page__button-row
+                    +button({text: 'перейти к оплате', type: 'wide'})
+            .ui-page__item
+                h3.ui-page__heading Pagination
+                +pagination({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
+            .ui-page__item
+                h3.ui-page__heading bullet list
+                +bullet-list({items: [
+                        'Нельзя с питомцами',
+                        'Без вечеринок и мероприятий',
+                        'Время прибытия — после 13:00, а выезд до 12:00',
+                    ]})
 
 
-    p.ui-page__title Cards
-        +ui-page()
+    h3.ui-page__title Cards
+    +ui-page()
             .ui-page__column.ui-page__column_cards
                 .ui-page__card
                     +search-card()
@@ -160,12 +186,12 @@ block content
                     +room-details({number: 888, isLux: true, roomPrice: 9990, rating: 5, reviews: 145})
                 .ui-page__card
                     +room-details({number: 888, isLux: true, roomPrice: 9990, rating: 5, reviews: 145})
-    p.ui-page__title Headers and Footers
-        +ui-page({fullWidth:true})
-            .ui-page__item.ui-page__item
-                +header()
-            .ui-page__item
-                +header({loggedIn: true, name: 'Юлий Цезарь'})
-            .ui-page__item
-                +footer()
+    h3.ui-page__title Headers and Footers
+    +ui-page({fullWidth:true})
+        .ui-page__item.ui-page__item
+            +header()
+        .ui-page__item
+            +header({loggedIn: true, name: 'Юлий Цезарь'})
+        .ui-page__item
+            +footer()
 

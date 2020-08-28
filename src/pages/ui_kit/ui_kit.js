@@ -8,6 +8,7 @@ import '../../blocks/range-slider/range-slider';
 import '../../blocks/rate-button/rate-button';
 import '../../blocks/expandable-checkbox-list/expandable-checkbox-list';
 import '../../blocks/toggle/toggle';
+import '../../blocks/slider/slider';
 
 import Dropdown from '../../blocks/dropdown/dropdown';
 // import DateFilter from '../../blocks/date-filter/date-filter';

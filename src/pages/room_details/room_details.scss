@@ -20,9 +20,9 @@
     grid-row: 1/3;
   }
   &__data {
-    padding: 70px 170px;
+    padding: 70px 140px 70px 140px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 292px repeat(2, 1fr);
     grid-template-areas: "info ratings booking"
                           "reviews reviews booking"
                           "rules cancellation .";
@@ -33,6 +33,8 @@
   }
   &__info-heading {
     @include subtitle-font;
+    font-size: 16px;
+    line-height: 1;
     margin-bottom: 20px;
   }
   &__ratings {
@@ -40,7 +42,9 @@
   }
   &__ratings-heading {
     @include subtitle-font;
-    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 22px;
   }
   &__reviews {
     grid-area: reviews;
@@ -50,23 +54,34 @@
     flex-direction: row;
     justify-content: space-between;
     @include subtitle-font;
-    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 17px;
+    margin-bottom: 15px;
   }
   &__reviews-count {
     @include body-text;
   }
+  &__review {
+    margin-bottom: 25px;
+  }
   &__rules {
     grid-area: rules;
+    font-size: 12px;
   }
   &__rules-heading {
     @include subtitle-font;
+    font-size: 16px;
     margin-bottom: 20px;
+    margin-top: 8px;
+    padding-left: 22px;
   }
   &__cancellation {
     grid-area: cancellation;
+    padding-top: 7px;
   }
   &__cancellation-heading {
     @include subtitle-font;
+    font-size: 16px;
     margin-bottom: 20px;
   }
   &__cancellation-text {

@@ -5,5 +5,5 @@ mixin review({authorImg='', authorName='Мурад Сарафанов', reviewDa
         p.review__author-name= authorName
         date.review__date= reviewDate
         .review__likes
-            +like-button({value: 12, defaultValue: true})
+            +like-button({value: likes, defaultValue: true})
         p.review__text= text

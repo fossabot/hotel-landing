@@ -7,7 +7,7 @@
 @import "src/blocks/header/header";
 @import "src/blocks/footer/footer";
 @import "src/blocks/field-header/field-header";
-@import "src/blocks/text-field/text-field";
+@import "src/blocks/text-input/text-input";
 @import "src/blocks/masked-input/masked-input";
 @import "src/blocks/dropdown/dropdown";
 @import "src/blocks/stepper/stepper";
@@ -31,13 +31,34 @@
 @import "src/blocks/room-details/room-details";
 @import "src/blocks/calendar-card/calendar-card";
 @import "src/blocks/date-filter/date-filter";
+@import "src/blocks/checkbox-list/checkbox-list";
+@import "src/blocks/slider/slider";
 
 body {
   background-color: #e5e5e5;
 }
-.ui-page__item {
-  margin-bottom: 40px;
+.ui-page {
+  &__item {
+    margin-bottom: 40px;
+  }
+  &__card {
+    margin-bottom: 43px;
+  }
+  &__slider {
+    margin-bottom: 43px;
+  }
+  &__button-row {
+    display: flex;
+    flex-direction: row;
+  }
+  &__heading {
+    @include label-font;
+  }
+  &__button-row {
+    margin-bottom: 30px;
+  }
+  &__left-button {
+    margin-right: 20px;
+  }
 }
-.ui-page__card {
-  margin-bottom: 43px;
-}
+
