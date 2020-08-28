@@ -1,6 +1,17 @@
 @import "src/blocks/select-option/select-option";
+
 .dropdown {
   position: relative;
+  &__labels {
+    width: 100%;
+    @include flex-row;
+    @include label-font;
+    margin-bottom: 5px;
+  }
+  &__status {
+    font-weight: normal;
+    padding-bottom: 3px;
+  }
   &__input {
     display: flex;
     justify-content: space-between;

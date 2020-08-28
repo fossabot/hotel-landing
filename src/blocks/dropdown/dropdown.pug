@@ -1,7 +1,11 @@
 include ../select-option/select-option
 
-mixin dropdown({placeholder='Open', items=[], hasButtons=false})
+mixin dropdown({label='dropdown', placeholder='Open', items=[], hasButtons=false, status=''}={})
     .dropdown(class=attributes.class)
+        p.dropdown__labels
+            span.text-input__label=label
+            if status
+                span.text-input__status=status
         div(class='dropdown__input')
             p.dropdown__content.dropdown__content_placeholder= placeholder
             i.material-icons.dropdown__arrow keyboard_arrow_down
