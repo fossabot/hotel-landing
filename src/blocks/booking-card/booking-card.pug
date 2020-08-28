@@ -1,8 +1,8 @@
 include ../field-header/field-header
-include ../masked-input/masked-input
 include ../text-field/text-field
 include ../dropdown/dropdown
 include ../button/button
+include ../date-filter/date-filter
 
 mixin booking-card({number=888, isLux=false, price=9990, days=4, discount=2179, additionalFee=300}={})
     -
@@ -23,11 +23,10 @@ mixin booking-card({number=888, isLux=false, price=9990, days=4, discount=2179, 
             p.booking-card__room-price
                 span.booking-card__room-price-amount #{priceInRub}₽
                 span.booking-card__room-price-period в сутки
-        +field-header({name: 'Прибытие-выезд', noMargin: true})
-            +masked-input({placeholder: 'ДД.ММ.ГГ'})
-
-        +field-header({name: 'гости'})&attributes({class:'.booking-card__guests-input'})
+        +date-filter()
+        .booking-card__guests-dropdown
             +dropdown({
+                label: 'гости',
                 placeholder: guestDropdown.placeholder,
                 items: guestDropdown.items,
                 hasButtons: true

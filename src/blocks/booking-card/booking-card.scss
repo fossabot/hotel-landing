@@ -1,15 +1,18 @@
 @import "src/blocks/button/button";
 @import "src/blocks/field-header/field-header";
-@import "src/blocks/masked-input/masked-input";
+@import "src/blocks/date-filter/date-filter";
 @import "src/blocks/dropdown/dropdown";
 .booking-card {
   @include card-base;
-
+  padding-top: 36px;
+  border: none;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   &__room-info-row {
   @include flex-row;
-    margin-bottom: 19px;
+    margin-bottom: 13px;
   }
   &__charges-row {
+    @include body-text;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -22,8 +25,9 @@
   &__room-no {
     font-family: Quicksand, "Open Sans", sans-serif;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 35px;
     font-weight: bold;
+    color: $c-primary-dark;
   }
   &__room-no-span {
     padding-left: 8px;
@@ -33,6 +37,7 @@
   }
   &__room-type {
     @include label-font;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
     color: $c-brand;
   }
   &__room-price {
@@ -42,13 +47,15 @@
   &__room-price-amount {
     font-size: 14px;
     font-weight: bold;
+    padding-right: 7px;
+    line-height: 37px;
   }
   &__room-price-period {
     font-size: 12px;
   }
-  &__guests-input {
+  &__guests-dropdown {
     margin-top: 20px;
-    margin-bottom: 20.56px;
+    margin-bottom: 18px;
   }
   &__charges-row {
     margin-bottom: 10px;
@@ -57,6 +64,7 @@
     grid-template-columns: 215px 1fr 80px;
   }
   &__charge-calculation {
+    line-height: 21px;
     max-width: 214px;
   }
   &__info-link {
@@ -75,7 +83,7 @@
     font-size: 19px;
     line-height: 24px;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 26px;
   }
   &__button {
     margin-top: 20px;
