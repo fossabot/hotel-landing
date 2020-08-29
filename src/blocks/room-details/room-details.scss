@@ -2,7 +2,7 @@
 .room-details {
   @include card-base;
   border-radius: 4px 4px 0 0;
-  max-width: 270px;
+  //max-width: 270px;
   width: 100%;
   padding:0;
 
@@ -11,16 +11,17 @@
   &__image {
     background-size: cover;
     width: 100%;
+    height: 151px;
   }
   &__description {
-    padding: 20px 18px 19px 20px;
+    padding: 20px 17px 16px 20px;
   }
   &__detail-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 4px;
-    padding-bottom: 10px;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
     position: relative;
     &::after {
     content: '';
@@ -38,14 +39,33 @@
   }
   &__no {
     font-size: 19px;
+    padding-left: 5px;
+    padding-right: 6px;
   }
   &__lux {
     font-family: "Montserrat", 'sans-serif';
     font-size: 12px;
     text-transform: uppercase;
   }
+  &__price {
+    font-size: 12px;
+    line-height: 30px;
+  }
+  &__amount {
+    font-weight: bold;
+    padding-right: 4px;
+    font-size: 15px;
+
+  }
   &__rating-row {
     @include flex-row;
-
+  }
+  &__reviews {
+    margin-right: 3px;
+    line-height: 28px;
+  }
+  &__review-count {
+    padding-right: 5px;
+    font-weight: bold;
   }
 }

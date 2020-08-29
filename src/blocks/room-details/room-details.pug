@@ -12,15 +12,15 @@ mixin room-details({number, isLux, price, rating, reviewCount})
             img.room-details__image(src=require(`../../assets/${roomImg}`) alt=`room ${number}`)
         .room-details__description
             .room-details__detail-row
-                p.room-details__room №&nbsp;
+                p.room-details__room №
                     span.room-details__no #{number}
                     if isLux
-                        span.room-details__lux &nbsp;люкс
+                        span.room-details__lux люкс
                 p.room-details__price
                     span.room-details__amount #{formatPrice(price)}₽
-                    span.room-details__period &nbsp;в сутки
+                    span.room-details__period в сутки
             .room-details__rating-row
                 +rate-button({rating: rating})
                 p.room-details__reviews
-                    span.room-details__review-no= reviewCount
-                    span.room-details__review &nbsp;Отзывов
+                    span.room-details__review-count= reviewCount
+                    span.room-details__review Отзывов
