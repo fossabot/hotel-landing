@@ -1,3 +1,8 @@
-mixin slider({label='range slider'} = {})
-    p.slider__label= label
-    .slider.js-slider
+mixin slider({label='range slider', caption='', range=''} = {})
+    .slider
+        p.slider__label= label
+            if range
+                span.slider__range= range
+        .slider.js-slider
+        if caption
+            .slider__caption=caption
