@@ -10,6 +10,7 @@
 @import "src/blocks/room-details/room-details";
 @import "src/blocks/expandable-checkbox-list/expandable-checkbox-list";
 @import "src/blocks/pagination/pagination";
+@import "src/blocks/slider/slider";
 
 .search-room {
   display: grid;
@@ -34,15 +35,43 @@
     display: flex;
     flex-direction: column;
   }
+  &__filter-header {
+    @include label-font;
+    margin-bottom: 16px;
+  }
+  &__guests-dropdown {
+    margin-bottom: 25px;
+  }
+  &__slider {
+    margin-bottom: 22px;
+  }
+  &__amenities-filter {
+    max-width: 244px;
+    margin-bottom: 18px;
+  }
+  &__accessibility-filter {
+    margin-bottom: 16px;
+  }
+  &__conveniences-filter {
+    margin-bottom: 28px;
+  }
+  &__checkbox_wide {
+    max-width: 252px;
+  }
+  &__checkbox_narrow {
+    max-width: 230px;
+  }
   &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    row-gap: 20px;
+    align-items: flex-start;
+    justify-items: stretch;
+    row-gap: 17px;
     column-gap: 12px;
-    justify-items: center;
   }
   &__pagination {
-    margin-top: 50px;
+    margin-top: 40px;
+    padding-right: 15px;
     display: flex;
     justify-content: center;
   }

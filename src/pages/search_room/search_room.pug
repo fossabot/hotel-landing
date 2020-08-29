@@ -2,7 +2,7 @@ extends ../base/layout
 include ../../blocks/date-filter/date-filter
 include ../../blocks/field-header/field-header
 include ../../blocks/dropdown/dropdown
-include ../../blocks/range-slider/range-slider
+include ../../blocks/slider/slider
 include ../../blocks/checkbox/checkbox
 include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
 include ../../blocks/room-details/room-details
@@ -18,36 +18,42 @@ block content
     .search-room
         aside.search-room__filter
             +date-filter({isRange: false, labels: ['даты пребывания в отеле']})
-            +field-header({name: 'гости', status: 'default', noMargin: true})
+            .search-room__guests-dropdown
                 +dropdown({
+                    label: 'гости',
                     placeholder: guestDropdown.placeholder,
                     items: guestDropdown.items,
                     hasButtons: true
                 })&attributes({class: 'js-guestDropdown'})
-            +range-slider()
-            +field-header({name: 'checkbox buttons'})
+            .search-room__slider
+                +slider({label: 'Диапазон цены', caption: 'Стоимость за сутки пребывания в номере', range: '5 000₽ - 10 000₽'})
+            .search-room__amenities-filter
+                h3.search-room__filter-header checkbox buttons
                 +checkbox({text: 'Можно курить', name: 'smokingAllowed'})
                 +checkbox({text: 'Можно с питомцами', name: 'petsAllowed', defaultValue: true})
                 +checkbox({text: 'Можно пригласить гостей (до 10 человек)', name: 'guestsAllowed', defaultValue: true})
-            +field-header({name: 'Доступность'})
-                +checkbox({
-                    text: 'Ширина коридоров в номере не менее 91 см.',
-                    name: 'hall', header: 'Широкий коридор'
-                })
-                +checkbox({
-                    text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-                    name: 'helper', header: 'Помощник для инвалидов'
-                })
-            +field-header({name: 'Удобства номера'})
+            .search-room__accessibility-filter
+                h3.search-room__filter-header Доступность
+                .search-room__checkbox_narrow
+                    +checkbox({
+                        text: 'Ширина коридоров в номере не менее 91 см.',
+                        name: 'hall', header: 'Широкий коридор'
+                    })
+                .search-room__checkbox_wide
+                    +checkbox({
+                        text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+                        name: 'helper', header: 'Помощник для инвалидов'
+                    })
+            .search-room__conveniences-filter
                 +dropdown({
+                    label: 'Удобства номера',
                     placeholder: conveniencesDropdown.placeholder,
                     items: conveniencesDropdown.items
                 })&attributes({class: 'js-conveniencesDropdown'})
-            +field-header({name: '', status: '', noMargin: true})
-                +expandable-checkbox-list({
-                    title: 'expandable checkbox list', items: ['завтрак', 'письменный стол', 'стул для кормления'
-                    ]
-                })
+            +expandable-checkbox-list({
+                title: 'дополнительные удобства', items: ['завтрак', 'письменный стол', 'стул для кормления'
+                ]
+            })
         main.search-room__results
             h2.search-room__heading Номера, которые мы для вас подобрали
             .search-room__grid
