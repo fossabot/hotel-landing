@@ -58,7 +58,8 @@
     }
   }
   &__option {
-    padding: 7px 7px 7px 15px;
+    height: 100%;
+    padding: 4px 7px 4px 13px;
   }
   &__buttons {
     @include flex-row;

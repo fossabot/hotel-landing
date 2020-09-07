@@ -137,7 +137,7 @@ class Dropdown {
   handleDocumentClick() {
     const stopDropdownClickPropagation = (e) => e.stopPropagation();
     this.dropdownContainer.addEventListener('click', stopDropdownClickPropagation);
-    document.addEventListener('click', this.closeDropdown);
+    // document.addEventListener('click', this.closeDropdown);
   }
 
   toggleDropdown(e) {

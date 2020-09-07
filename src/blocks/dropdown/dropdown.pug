@@ -1,15 +1,17 @@
 include ../select-option/select-option
 
 mixin dropdown({label='dropdown', placeholder='Open', items=[], hasButtons=false, status=''}={})
+    -const inputOpenClass = status === 'expanded' ? ' dropdown__input_open': ''
+    -const optionsOpenClass = status === 'expanded' ? ' dropdown__options_open': ''
     .dropdown(class=attributes.class)
         p.dropdown__labels
             span.text-input__label=label
             if status
                 span.text-input__status=status
-        div(class='dropdown__input')
+        div(class=`dropdown__input${inputOpenClass}`)
             p.dropdown__content.dropdown__content_placeholder= placeholder
             i.material-icons.dropdown__arrow keyboard_arrow_down
-        .dropdown__options
+        div(class=`dropdown__options${optionsOpenClass}`)
             for item in items
                 .dropdown__option
                     +select-option({name: item.name, label: item.label})
