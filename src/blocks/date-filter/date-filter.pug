@@ -3,9 +3,9 @@ mixin date-filter({isRange=true, labels=['прибытие', 'выезд']}={})
         if isRange
             - const [labelStart, labelEnd] = labels
             label(class='date-filter__label date-filter__label_range')=labelStart
-                input(class='date-filter__input js-start' type='text' placeholder='дд.мм.ггг')
+                input(class='date-filter__input js-start' type='text' placeholder='ДД.ММ.ГГ')
             label(class='date-filter__label date-filter__label_range')=labelEnd
-                input(class='date-filter__input js-end' type='text' placeholder='дд.мм.ггг')
+                input(class='date-filter__input js-end' type='text' placeholder='ДД.ММ.ГГ')
         else
             label(class='date-filter__label date-filter__label_single')=labels[0]
-                input(class='date-filter__input js-single-date' type='text' placeholder='дд.мм.ггг')
+                input(class='date-filter__input js-single-date' type='text' placeholder='ДД.ММ.ГГ')
