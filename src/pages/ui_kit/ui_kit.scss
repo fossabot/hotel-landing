@@ -37,50 +37,88 @@
 body {
   background-color: #e5e5e5;
 }
+.form-elements {
+  padding-left: 140px;
+  padding-right: 140px;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 25px;
+  row-gap: 100px;
+  display: grid;
+  &__column {
+    &_wide {
+      max-width: 320px;
+    }
+    &_narrow {
+      padding-left: 50px;
+    }
+  }
+  &__item {
+    &_small-margin {
+      margin-bottom: 20px;
+    }
+    &_medium-margin {
+      margin-bottom: 25px;
+    }
+  }
+}
+
 .ui-kit {
   &__radio-heading,
   &__rate-heading,
   &__like-heading,
   &__toggle-heading {
+    width: 100%;
+    @include flex-row;
     @include label-font;
-    letter-spacing: -0.4px;
-    margin-bottom: 13px;
+    margin-bottom: 12px;
   }
   &__like-heading {
     line-height: 21px;
   }
   &__rate-heading {
-    margin-bottom: 14px;
+    margin-bottom: 17px;
   }
   &__like-buttons {
     @include flex-row;
     justify-content: initial;
   }
   &__like-button {
-    margin-right: 20px;
+    margin-right: 10px;
   }
   &__rate-buttons {
     display: flex;
     flex-direction: row;
   }
   &__rate-button {
-    margin-right: 10px;
+    margin-right: 21px;
   }
 }
 .ui-page {
   &__narrow-column {
     width: 266px;
   }
+  &__column_left-padding {
+    padding-left:26px;
+  }
   &__item {
     margin-bottom: 40px;
+    &_no-margin {
+      margin-bottom: 0;
+    }
     &_medium-margin {
       margin-bottom: 23px;
     }
+    &_ml-margin {
+      margin-bottom: 50px;
+    }
     &_large-margin {
-      margin-bottom: 100px;
+      margin-bottom: 98px;
     }
     &_xl-margin {
-      margin-bottom: 166px;
+      margin-bottom: 170px;
+    }
+    &_xxl-margin {
+      margin-bottom: 256px;
     }
   }
 
@@ -88,7 +126,7 @@ body {
     margin-bottom: 43px;
   }
   &__slider {
-    margin-bottom: 43px;
+    margin-bottom: 40px;
   }
   &__button-row {
     display: flex;
@@ -96,20 +134,20 @@ body {
   }
   &__heading {
     @include label-font;
+    @include flex-row;
     line-height: 21px;
-    letter-spacing: -0.4px;
     margin-bottom: 13px;
     &_no-margin {
+      @include flex-row;
       @include label-font;
-      line-height: 21px;
-      margin-bottom: 0;
+      line-height: 23px;
     }
   }
   &__button-row {
     margin-bottom: 30px;
   }
   &__left-button {
-    margin-right: 21px;
+    margin-right: 20px;
   }
 }
 

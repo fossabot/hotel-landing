@@ -1,31 +1,13 @@
 .ui-page {
   margin-bottom: 1rem;
-  padding: 140px;
-  padding-left: 141px;
   position: relative;
   border-top: 2px solid $c-primary-medium;
   border-bottom: 2px solid $c-primary-medium;
   background-color: #f4f4f6;
-  &_with-background {
+  padding-top: 143px;
+  &_white {
     background-color: white;
     box-shadow: 0 0 5px 0 $c-primary-lighter;
-  }
-  &_full-width {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  &__content {
-    &_columned {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      column-gap: 40px;
-    }
-    &_form-elements {
-      column-gap: 101px;
-    }
-    &_full-width {
-        display: block;
-    }
   }
   &__logo {
     position: absolute;
@@ -36,9 +18,6 @@
     margin-top: 2rem;
     margin-bottom: 0.5rem;
     padding-left: 30px;
-  }
-  &__column {
-    max-width: 320px;
   }
   &__item {
     margin-bottom: 20px;
