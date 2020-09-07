@@ -1,16 +1,11 @@
 .select-option {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  @include flex-row;
   height: 100%;
   &__label {
     @include label-font;
   }
   &__controls {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flex-row;
   }
   &__btn {
     background: white;
@@ -34,5 +29,6 @@
   &__value {
     width: 32px;
     text-align: center;
+    @include label-font;
   }
 }

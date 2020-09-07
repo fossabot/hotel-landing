@@ -1,8 +1,8 @@
 .checkbox-list {
   &__label {
+    width: 100%;
+    @include flex-row;
     @include label-font;
-    line-height: 21px;
-    letter-spacing: -0.4px;
-    margin-bottom: 13px;
+    margin-bottom: 18px;
   }
 }

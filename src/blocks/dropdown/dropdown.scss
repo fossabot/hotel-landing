@@ -2,11 +2,12 @@
 
 .dropdown {
   position: relative;
+  z-index: 1;
   &__labels {
     width: 100%;
     @include flex-row;
     @include label-font;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
   &__status {
     font-weight: normal;
@@ -16,6 +17,7 @@
     display: flex;
     justify-content: space-between;
     @include input-base;
+    padding-right: 11px;
     &_open {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
@@ -28,6 +30,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     padding-right: 47px;
+    line-height: 43px;
   }
   &__arrow {
     flex: 0 0 1rem;
@@ -40,11 +43,12 @@
       transform-origin: top;
       transform: scaleY(0);
       transition: transform 160ms ease, opacity 60ms ease;
-      z-index: 0;
+      z-index: -1;
     &_open {
       opacity: 1;
-      z-index: 1;
+      z-index: 2;
       height: auto;
+      padding-bottom: 3px;
       border: 1px solid $c-primary-medium;
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
@@ -55,6 +59,7 @@
       display: block;
       transform: scaleY(1);
       transition: transform 260ms ease, opacity 160ms ease;
+      box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
     }
   }
   &__option {
@@ -63,6 +68,9 @@
   }
   &__buttons {
     @include flex-row;
+    padding-right: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
   }
   &__clear {
     display: block;

@@ -3,10 +3,11 @@
   max-width: 266px;
   &__label {
     @include label-font;
-    line-height: 22px;
-    margin-bottom: 19px;
-    display: flex;
-    justify-content: space-between;
+    @include flex-row;
+    margin-bottom: 24px;
+  }
+  &__range {
+    font-weight: normal;
   }
   &__caption {
     font-size: 12px;
