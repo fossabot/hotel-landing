@@ -10,6 +10,11 @@ mixin room-details({number, isLux, price, rating, reviewCount})
         .room-details__image-slideshow
             - const roomImg = `room${number}.png`
             img.room-details__image(src=require(`../../assets/${roomImg}`) alt=`room ${number}`)
+            .room-details__slideshow_buttons
+                .room-details__slideshow_button.room-details__slideshow_button_active
+                .room-details__slideshow_button
+                .room-details__slideshow_button
+                .room-details__slideshow_button
         .room-details__description
             .room-details__detail-row
                 p.room-details__room №

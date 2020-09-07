@@ -53,45 +53,48 @@ block content
                 +text-input({placeholder: 'Email', label: 'text field', status: 'default'})
             .ui-page__item_small-margin
                 +text-input({placeholder: 'This is pretty awesome', label: 'text field', status: 'hover / focus'})
-            .ui-page__item_small-margin
+            .ui-page__item_medium-margin
                 +dropdown({
-                    placeholder: conveniencesDropdown.placeholder,
-                    items: conveniencesDropdown.items,
-                    status: 'default'
-                })&attributes({class:'js-conveniencesDropdown'})
-            .ui-page__item
-                +masked-input({placeholder: 'ДД.ММ.ГГ', label: 'masked text field'})
-            .ui-page__item
-                +date-filter({labels: ['date dropdown','date dropdown']})
-            .ui-page__item
-                h3.ui-page__heading Subscription text field
-                +subscription-text-field()
-            .ui-page__item
-                +dropdown({
+                    label: 'dropdown',
                     placeholder: guestDropdown.placeholder,
                     items: guestDropdown.items,
                     hasButtons: true
-                })&attributes({class:'js-guestDropdown'})
+                })&attributes({class: 'js-guestDropdown'})
 
             .ui-page__item
-                +text-input({placeholder: 'ДД.ММ.ГГ', label: 'date dropdown'})
+                +masked-input({placeholder: 'ДД.ММ.ГГ', label: 'masked text field'})
             .ui-page__item
-                +text-input({placeholder: '19 авг - 23 авг', label: 'filter date dropdown'})
-            .ui-page__item
-                +field-header({name: 'dropdown', status: 'default', noMargin: true})
+                +date-filter({labels: ['date dropdown', 'date dropdown']})
+            .ui-page__narrow-column
+                .ui-page__item
+                    +date-filter({isRange: false, labels: ['filter date dropdown']})
+                .ui-page__item.ui-page__item_large-margin
+                    h3.ui-page__heading_no-margin Subscription text field
                     +subscription-text-field()
-            .ui-page__item
-                +field-header({name: '', status: '', noMargin: true})
-                    +expandable-checkbox-list({title: 'expandable checkbox list', items: ['завтрак','письменный стол','стул для кормления'
-                    ]})
-            .ui-page__item
-                +field-header({name: '', status: '', noMargin: true})
-                    +details-list({items:[
-                        {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
-                        {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой комнате'},
+                .ui-page__item_small-margin
+                    +dropdown({
+                        placeholder: conveniencesDropdown.placeholder,
+                        items: conveniencesDropdown.items,
+                        status: 'default'
+                    })&attributes({class: 'js-conveniencesDropdown'})
+                .ui-page__item_xl-margin
+                    +dropdown({
+                        placeholder: conveniencesDropdown.placeholder,
+                        items: conveniencesDropdown.items,
+                        status: 'expanded'
+                    })&attributes({class: 'js-conveniencesDropdown'})
+                .ui-page__item.ui-page__item_small-margin
+                    +field-header({name: '', status: '', noMargin: true})
+                        +expandable-checkbox-list({title: 'expandable checkbox list', items: ['завтрак','письменный стол','стул для кормления'
                         ]})
-            .ui-page__item
-                +review({authorImg: 'user1.png'})
+                .ui-page__item
+                    +field-header({name: '', status: '', noMargin: true})
+                        +details-list({items:[
+                            {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
+                            {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой комнате'},
+                            ]})
+                .ui-page__item
+                    +review({authorImg: 'user1.png'})
         .ui-page__column
             .ui-page__item
                 +checkbox-list(
@@ -107,23 +110,28 @@ block content
                         defaultValue: true
                     }]})
             .ui-page__item
-                +field-header({name: 'radiobuttons'})
-                    +radiobutton({name: 'gender', options: ['Мужчина', 'Женщина']})
+                h3.ui-kit__radio-heading radio buttons
+                +radiobutton({name: 'gender', options: ['Мужчина', 'Женщина']})
             .ui-page__item
-                +field-header({name: 'toggle'})
-                    +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
-                    +toggle({
-                        label: 'Получать спецпредложения',
-                        name: 'subscriptionChecked',
-                        defaultValue: true})
+                h3.ui-kit__toggle-heading toggle
+                +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
+                +toggle({
+                    label: 'Получать спецпредложения',
+                    name: 'subscriptionChecked',
+                    defaultValue: true})
             .ui-page__item
-                +field-header({name: 'like button'})&attributes({class: 'row'})
-                    +like-button({value:0})
+                h3.ui-kit__like-heading like button
+                .ui-kit__like-buttons
+                    .ui-kit__like-button
+                        +like-button({value:0})
                     +like-button({value:11, defaultValue:true})
             .ui-page__item
-                +field-header({name: 'rate button'})
-                    +rate-button({rating: 3})
-                    +rate-button({rating: 5})
+                h3.ui-kit__rate-heading rate button
+                .ui-kit__rate-buttons
+                    .ui-kit__rate-button
+                        +rate-button({rating: 3})
+                    .ui-kit__rate-button
+                        +rate-button({rating: 5})
             .ui-page__item
                 +field-header({name: 'rich checkbox buttons'})
                     +checkbox({
@@ -132,6 +140,11 @@ block content
                     +checkbox({
                         text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
                         name: 'helper', header: 'Помощник для инвалидов'})
+            +dropdown({
+                placeholder: conveniencesDropdown.placeholder,
+                items: conveniencesDropdown.items,
+                status: 'default'
+            })&attributes({class: 'js-conveniencesDropdown'})
         .ui-page__column
             .ui-page__item_small-margin
                 .ui-page__slider
@@ -142,17 +155,17 @@ block content
                     .ui-page__left-button
                         +button({text: 'click me', type: ''})
                     .ui-page__button
-                        +button({text: 'click me', type: ''})
+                        +button({text: 'click me', type: 'default hovered'})
                 .ui-page__button-row
                     .ui-page__left-button
                         +button({text: 'click me', type: 'outlined'})
                     .ui-page__button
-                        +button({text: 'click me', type: 'outlined'})
+                        +button({text: 'click me', type: 'outlined hovered'})
                 .ui-page__button-row
                     .ui-page__left-button
                         +button({text: 'click me', type: 'text'})
                     .ui-page__button
-                        +button({text: 'click me', type: 'text'})
+                        +button({text: 'click me', type: 'text hovered'})
                 .ui-page__button-row
                     +button({text: 'перейти к оплате', type: 'wide'})
             .ui-page__item

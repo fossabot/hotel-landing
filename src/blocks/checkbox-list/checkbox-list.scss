@@ -1,6 +1,7 @@
 .checkbox-list {
   &__label {
     @include label-font;
+    line-height: 21px;
     letter-spacing: -0.4px;
     margin-bottom: 13px;
   }

@@ -2,16 +2,38 @@
 .room-details {
   @include card-base;
   border-radius: 4px 4px 0 0;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+
   //max-width: 270px;
   width: 100%;
   padding:0;
 
   &__image-slideshow {
+    height: 151px;
+    overflow: hidden;
+    position: relative;
   }
   &__image {
-    background-size: cover;
+    object-fit: cover;
     width: 100%;
-    height: 151px;
+  }
+  &__slideshow_buttons {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    display: flex;
+    flex-direction: row;
+  }
+  &__slideshow_button {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin-left: 3px;
+    box-shadow: 0 5px 5px rgba(31, 32, 65, 0.3);
+    &_active {
+      background: white;
+    }
   }
   &__description {
     padding: 20px 17px 16px 20px;

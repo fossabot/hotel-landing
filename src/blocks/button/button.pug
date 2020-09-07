@@ -1,7 +1,9 @@
 mixin button({ tag = 'button', text = '', type = 'contained', link=null})
     - const layoutClass = attributes.class ? ` ${attributes.class}` : ''
+    -
+        const typeClass = !type ? 'button_default' : type.split(' ').map((t) => `button_${t}`).join(' ')
     #{tag}(
-        class=`button button_${type}${layoutClass}`
+        class=`button ${typeClass}${layoutClass}`
         href=link? link: false
     )
         =text

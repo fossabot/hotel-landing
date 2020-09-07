@@ -37,10 +37,53 @@
 body {
   background-color: #e5e5e5;
 }
+.ui-kit {
+  &__radio-heading,
+  &__rate-heading,
+  &__like-heading,
+  &__toggle-heading {
+    @include label-font;
+    letter-spacing: -0.4px;
+    margin-bottom: 13px;
+  }
+  &__like-heading {
+    line-height: 21px;
+  }
+  &__rate-heading {
+    margin-bottom: 14px;
+  }
+  &__like-buttons {
+    @include flex-row;
+    justify-content: initial;
+  }
+  &__like-button {
+    margin-right: 20px;
+  }
+  &__rate-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+  &__rate-button {
+    margin-right: 10px;
+  }
+}
 .ui-page {
+  &__narrow-column {
+    width: 266px;
+  }
   &__item {
     margin-bottom: 40px;
+    &_medium-margin {
+      margin-bottom: 23px;
+    }
+    &_large-margin {
+      margin-bottom: 100px;
+    }
+    &_xl-margin {
+      margin-bottom: 166px;
+    }
   }
+
   &__card {
     margin-bottom: 43px;
   }
@@ -53,12 +96,20 @@ body {
   }
   &__heading {
     @include label-font;
+    line-height: 21px;
+    letter-spacing: -0.4px;
+    margin-bottom: 13px;
+    &_no-margin {
+      @include label-font;
+      line-height: 21px;
+      margin-bottom: 0;
+    }
   }
   &__button-row {
     margin-bottom: 30px;
   }
   &__left-button {
-    margin-right: 20px;
+    margin-right: 21px;
   }
 }
 

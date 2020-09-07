@@ -1,14 +1,16 @@
 mixin checkbox({ text = '', name='', defaultValue=false, header='' })
+    - const inputClass = header ? ' checkbox__input_rich' : ''
+    - const labelClass = header ? ' checkbox__label_rich' : ''
     .checkbox
         input(
-            class=`checkbox__input checkbox-${name}`
+            class=`checkbox__input ${inputClass}`
             type="checkbox"
             name= name
             id= name
             checked= defaultValue
         )
 
-        label.checkbox__label(for=name)
+        label(class=`checkbox__label${labelClass}` for=name)
             if header
                 span.checkbox__header= header
                 br

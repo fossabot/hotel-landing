@@ -1,9 +1,10 @@
 .masked-input {
   &__label {
-    min-width: 320px;
+    max-width: 320px;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    row-gap: 3px;
+    row-gap: 4px;
     @include label-font;
   }
   &__input {

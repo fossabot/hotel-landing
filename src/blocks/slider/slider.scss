@@ -5,6 +5,8 @@
     @include label-font;
     line-height: 22px;
     margin-bottom: 19px;
+    display: flex;
+    justify-content: space-between;
   }
   &__caption {
     font-size: 12px;

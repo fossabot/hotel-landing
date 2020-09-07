@@ -18,10 +18,10 @@
     &_columned {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: 40px;
+      column-gap: 40px;
     }
     &_form-elements {
-      column-gap: 128px;
+      column-gap: 101px;
     }
     &_full-width {
         display: block;

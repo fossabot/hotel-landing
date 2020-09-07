@@ -4,25 +4,33 @@
     align-items: flex-start;
     margin-bottom: 10px;
     &__label {
-      width: 230px;
       @include body-text;
       text-transform: initial;
-      font-size: 14px;
-      line-height: 18px;
+      line-height: 20px;
+      margin-left: 10px;
+      max-width: 200px;
+      &_rich {
+        padding-top: 0;
+      }
     }
     &__header {
-      font-family: Montserrat, sans-serif;
       font-weight: bold;
-      font-size: 14px;
-      line-height: 24px;
+      margin-top: 2px;
     }
     &__subheader {
       font-size: 12px;
+      line-height: 17px;
     }
     &__input {
       width: 20px;
       height: 20px;
-      margin: 2px 9.74px 0 0;
+      flex: 0 0 20px;
+      &_rich {
+        width: 22px;
+        margin-top: 0;
+        margin-right: 8px;
+        display: initial;;
+      }
       &:after {
         transition: opacity .2s;
       }

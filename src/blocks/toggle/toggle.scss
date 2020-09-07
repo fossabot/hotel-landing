@@ -1,7 +1,7 @@
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   .toggle {
-
     @include checkbox-base;
+    margin-bottom: 10px;
     &__input {
       width: 40px;
       height: 20px;

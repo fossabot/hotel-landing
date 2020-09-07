@@ -10,10 +10,9 @@ mixin search-card()
     .search-card(class=layoutClass)
         h2.search-card__title Найдем номера под ваши пожелания
         +date-filter()
-        +field-header({name: 'гости'})
-            +dropdown({
-                placeholder: guestDropdown.placeholder,
-                items: guestDropdown.items,
-                hasButtons: true
-            })&attributes({class: 'js-guestDropdown'})
+        +dropdown({label: 'гости',
+            placeholder: guestDropdown.placeholder,
+            items: guestDropdown.items,
+            hasButtons: true
+        })&attributes({class: 'js-guestDropdown'})
         +button({text: 'Подобрать номер', type: 'wide', tag: 'a', link: 'search_room.html'})&attributes({class:'search-card__button'})
