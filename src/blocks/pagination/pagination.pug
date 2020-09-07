@@ -1,4 +1,4 @@
-mixin pagination({pages=[1,2,3,'...',15],currentPage=1, itemsOnPage='1-12', total='100+'} = {})
+mixin pagination({pages=[1,2,3,'...',15],currentPage=1, itemsOnPage='1 - 12', total='100+'} = {})
     .pagination
         ul.pagination__items
             each page in pages
@@ -11,3 +11,4 @@ mixin pagination({pages=[1,2,3,'...',15],currentPage=1, itemsOnPage='1-12', tota
                         li.pagination__item= page
             li.pagination__item.pagination__item_next
                 i.material-icons arrow_forward
+        p.pagination__total=`${itemsOnPage} из ${total} вариантов аренды`

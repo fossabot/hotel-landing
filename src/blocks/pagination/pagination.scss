@@ -23,4 +23,14 @@
       font-size: 24px;
     }
   }
+  &__total {
+    color: $c-primary-dark;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 35px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 6px;
+  }
 }
