@@ -33,10 +33,7 @@ include ../../blocks/slider/slider
 
 
 block content
-
-
     - const { colors, typeValues, guestDropdown, conveniencesDropdown } = require('./data.json')
-
     h1 UI KIT
     a(href='index.html') index
     h3.ui-page__title Colors and Typography
@@ -140,7 +137,8 @@ block content
                         +dropdown({
                             placeholder: conveniencesDropdown.placeholder,
                             items: conveniencesDropdown.items,
-                            status: 'default'
+                            status: 'default',
+                            defaults: 'default'
                         })&attributes({class: 'js-conveniencesDropdown'})
                     .ui-page__item_xl-margin
                         +dropdown({
@@ -193,12 +191,14 @@ block content
 
             .form-elements__column_narrow
                 .ui-page__item_xxl-margin
+                    - let { placeholder, items, values } = guestDropdown
                     +dropdown({
-                        label: 'dropdown',
-                        placeholder: guestDropdown.placeholder,
-                        items: guestDropdown.items,
-                        hasButtons: true,
-                        status: 'expanded'
+                       label: 'dropdown',
+                       placeholder: placeholder,
+                       items: items,
+                       hasButtons: true,
+                       status: 'expanded',
+                       defaults: 'example'
                     })&attributes({class: 'js-guestDropdown'})
                 .ui-page__item
                     h3.ui-page__heading bullet list

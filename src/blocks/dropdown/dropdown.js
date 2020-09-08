@@ -13,7 +13,8 @@ class Dropdown {
     this.input = this.dropdownOpener.querySelector('.dropdown__content');
     this.options = this.findOptions();
     this.items = [...data.items];
-    this.values = this.createValues();
+    this.values = this.createValues(data.values[element.dataset.values]);
+    this.initValues();
     this.handleOptionChange = this.handleOptionChange.bind(this);
     this.bindHandlers();
     this.bindButtons();
@@ -38,10 +39,14 @@ class Dropdown {
     this.disableClear();
   }
 
-  createValues() {
+  createValues(defaults) {
     const values = {};
     this.items.forEach((item) => {
-      values[item.name] = 0;
+      if (defaults) {
+        values[item.name] = defaults[item.name] || 0;
+      } else {
+        values[item.name] = 0;
+      }
     });
     return values;
   }
@@ -68,6 +73,13 @@ class Dropdown {
       stringIndex = 2;
     }
     return locales[key][stringIndex];
+  }
+
+  initValues() {
+    this.options.forEach((o) => {
+      o.setOptionValue(this.values[o.name]);
+    });
+    this.updateValue();
   }
 
   updateValue() {

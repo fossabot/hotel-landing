@@ -71,7 +71,14 @@
         "children"
       ]
     },
-    "singleItems": ["infants"]
+    "singleItems": ["infants"],
+    "values": {
+      "default": null,
+      "example": {
+        "adults": 2,
+        "children": 1
+      }
+    }
   },
   "conveniencesDropdown": {
     "placeholder": "Выберите удобства",
@@ -81,6 +88,12 @@
       {"name":  "bathrooms", "label":  "Ванные комнаты"}
     ],
     "groups": null,
-    "singleItems": ["bedrooms", "beds", "bathrooms"]
+    "singleItems": ["bedrooms", "beds", "bathrooms"],
+    "values": {
+      "default": {
+        "bedrooms": 2,
+        "beds": 2
+      }
+    }
   }
 }
