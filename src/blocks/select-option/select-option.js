@@ -47,6 +47,7 @@ class DropdownOption {
     return parseInt(this.valueElement.textContent, 10);
   }
 
+  // public method
   setOptionValue(value) {
     this.valueElement.textContent = value;
     this.value = value;

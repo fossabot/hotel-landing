@@ -2,7 +2,10 @@ include ../checkbox/checkbox
 
 mixin expandable-checkbox-list({title='', items=[], isExpanded=false})
     .expandable-checkbox-list
-        h2.expandable-checkbox-list__title(class=`${isExpanded ? 'js-open' : ''}`)= title
+        h3.expandable-checkbox-list__title(class=`${isExpanded ? 'js-open' : ''}`)= title
         .expandable-checkbox-list__items(class=`${isExpanded ? 'js-open' : ''}`)
             for item in items
-                +checkbox({text: item, name:item})
+                if typeof item === "string"
+                    +checkbox({text: item, name:item})
+                else
+                    +checkbox({text: item.name, name:item.name, defaultValue: item.defaultValue})

@@ -24,4 +24,4 @@ mixin header({loggedIn=false, name} = {})
                 a.header__navlink.header__profile-link=name
             else
                 +button({text: 'Войти', type: 'outlined', tag:'a', link:'login.html'})&attributes({class: 'header__button'})
-                +button({text: 'Зарегистрироваться', tag:'a', link:'register.html'})&attributes({class: 'header__button'})
+                +button({text: 'Зарегистрироваться', type: 'default', tag:'a', link:'register.html'})&attributes({class: 'header__button'})

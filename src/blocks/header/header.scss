@@ -7,6 +7,7 @@
   background-color: white;
   padding: 15px 140px;
   position: relative;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   @media (max-width: 1200px) {
     padding-left: 10px;
     padding-right: 10px;
@@ -59,6 +60,7 @@
     }
   }
   &__button {
+    //max-height: 34px;
     margin-left: 20px;
   }
   &__profile-link {

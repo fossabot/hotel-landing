@@ -34,16 +34,17 @@ include ../../blocks/slider/slider
 
 block content
     - const { colors, typeValues, guestDropdown, conveniencesDropdown } = require('./data.json')
+    - let placeholder, items, values
     h1 UI KIT
     a(href='index.html') index
-    h3.ui-page__title Colors and Typography
+    h2.ui-kit__page-title Colors and Typography
     +ui-page({background: 'white'})
         .ui-page__column.colors-block
             each c in colors
                 +color-sample({color: c})
         .ui-page__column.typography
             +type-samples({typography: typeValues})
-    h3.ui-page__title Form Elements
+    h2.ui-kit__page-title Form Elements
     +ui-page({background: 'white', pageName: 'form-elements'})
         div.ui-page__content_.form-elements
             .form-elements__column_wide
@@ -72,16 +73,21 @@ block content
                 .ui-page__item
                     +checkbox-list(
                         {items: [
-                            {text: 'Можно курить',
-                                name: 'smokingAllowed'},
-                            {text: 'Можно с питомцами',
+                            {
+                                text: 'Можно курить',
+                                name: 'smokingAllowed'
+                            },
+                            {
+                                text: 'Можно с питомцами',
                                 name: 'petsAllowed',
-                                defaultValue: true},
-                              {
-                            text: 'Можно пригласить гостей (до 10 человек)',
-                            name: 'guestsAllowed',
-                            defaultValue: true
-                        }]})
+                                defaultValue: true
+                            },
+                            {
+                                text: 'Можно пригласить гостей (до 10 человек)',
+                                name: 'guestsAllowed',
+                                defaultValue: true
+                            }
+                            ]})
                 .ui-page__item
                     h3.ui-kit__radio-heading radio buttons
                     +radiobutton({name: 'gender', options: ['Мужчина', 'Женщина']})
@@ -98,7 +104,7 @@ block content
                         .ui-kit__like-button
                             +like-button({value:0})
                         +like-button({value:11, defaultValue:true})
-                .ui-page__item
+                .ui-page__item.ui-page__item_bottom
                     h3.ui-kit__rate-heading rate button
                     .ui-kit__rate-buttons
                         .ui-kit__rate-button
@@ -152,23 +158,19 @@ block content
                             items: ['завтрак', 'письменный стол', 'стул для кормления'
                             ]
                         })
-                    .ui-page__item.ui-page__item_large-margin
+                    .ui-page__item.ui-page__item_no-margin
                         +expandable-checkbox-list({
                             isExpanded: true,
                             title: 'expandable checkbox list',
-                            items: ['завтрак', 'письменный стол', 'стул для кормления', 'кроватка', 'телевизор', 'шампунь'
+                            items: [
+                                { name: 'завтрак', defaultValue: false },
+                                { name: 'письменный стол', defaultValue: true },
+                                { name: 'стул для кормления', defaultValue: true },
+                                { name: 'кроватка', defaultValue: true },
+                                { name: 'телевизор', defaultValue: false },
+                                { name: 'шампунь', defaultValue: false }
                             ]
                         })
-                    .ui-page__item
-                        +field-header({name: '', status: '', noMargin: true})
-                            +details-list({
-                                items: [
-                                    {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
-                                    {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой комнате'},
-                                ]
-                            })
-                    .ui-page__item
-                        +review({authorImg: 'user1.png'})
             .form-elements__column_narrow
                 .ui-page__item_xxl-margin
                     +dropdown({
@@ -209,7 +211,16 @@ block content
                             'Время прибытия — после 13:00, а выезд до 12:00',
                         ]
                     })
-    h3.ui-page__title Cards
+            .form-elements__item
+                +details-list({
+                    items: [
+                        {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
+                        {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой комнате'},
+                    ]
+                })
+            .form-elements__item.form-elements__review
+                +review({authorImg: 'user1.png'})
+    h2.ui-kit__page-title Cards
     +ui-page()
             .ui-page__column.ui-page__column_cards
                 .ui-page__card
@@ -228,7 +239,7 @@ block content
                     +room-details({number: 888, isLux: true, roomPrice: 9990, rating: 5, reviews: 145})
                 .ui-page__card
                     +room-details({number: 888, isLux: true, roomPrice: 9990, rating: 5, reviews: 145})
-    h3.ui-page__title Headers and Footers
+    h2.ui-kit__page-title Headers and Footers
     +ui-page({fullWidth:true})
         .ui-page__item.ui-page__item
             +header()

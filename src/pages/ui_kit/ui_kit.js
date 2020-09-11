@@ -11,9 +11,9 @@ import '../../blocks/toggle/toggle';
 import '../../blocks/slider/slider';
 
 import Dropdown from '../../blocks/dropdown/dropdown';
-// import DateFilter from '../../blocks/date-filter/date-filter';
-//
-// console.log(DateFilter);
+import DateFilter from '../../blocks/date-filter/date-filter';
+
+console.log(DateFilter);
 const data = require('./data.json');
 
 const uiKitDropdowns = [];

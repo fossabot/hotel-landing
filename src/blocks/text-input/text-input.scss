@@ -5,15 +5,13 @@
     @include label-font;
     margin-bottom: 5px;
   }
-  &__label {
-  }
   &__status {
     font-weight: normal;
   }
   &__input {
     color: $c-primary-dark;
     @include input-base;
-    width: 100%;
+    width: calc(100% - var(--horizontal-padding)*2);
     &_hovered {
         border-color: $c-primary-medium;
         border-width: 1px;

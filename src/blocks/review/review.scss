@@ -5,8 +5,8 @@
   grid-template-areas: "image name"
                         "image date"
                         "likes text";
-  font-size: 12px;
-  column-gap: 9px;
+  font-size: 14px;
+  column-gap: 12px;
   margin-bottom: 24px;
   &__author-image {
     height: 48px;
@@ -15,11 +15,18 @@
   }
   &__author-name {
     grid-area: name;
-    font-family: "Montserrat", sans-serif;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    line-height: 15px;
     font-weight: bold;
+    color: #1f2041;
+    font-size: 14px;
+    text-transform: capitalize;
+    align-self: self-end;
   }
   &__date {
     grid-area: date;
+    font-size: 14px;
+    align-self: self-end;
   }
   &__likes {
     grid-area: likes;
@@ -28,8 +35,7 @@
   }
   &__text {
     grid-area: text;
-    padding-top: 11px;
+    padding-top: 10px;
     @include body-text;
-    font-size: 12px;
   }
 }
