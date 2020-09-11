@@ -1,9 +1,9 @@
 .color-sample {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 6fr;
     grid-template-rows: 1fr 1fr;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
     &__square {
         width: 70px;
         height: 70px;
@@ -33,12 +33,15 @@
         }
     }
     &__name {
+        align-self: flex-end;
         font-size: 1.3571428571428572rem;
+        line-height: 29px;
         font-family: Quicksand, "Open Sans", sans-serif;
         font-weight: bold;
     }
     &__code {
         font-size: 1.3571428571428572rem;
+        line-height: 29px;
         font-family: Quicksand, "Open Sans", sans-serif;
         font-weight: normal;
         align-self: flex-start;

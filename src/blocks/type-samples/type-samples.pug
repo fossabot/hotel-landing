@@ -1,7 +1,0 @@
-mixin type-samples({ typography })
-    each sample in typography
-        .type-sample
-            p(class='type-sample__tag type-sample__tag_' + sample.font)
-                | #{sample.tag}
-            p(class='type-sample__text type-sample__text_' + sample.font)
-                | #{sample.text}

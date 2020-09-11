@@ -1,0 +1,6 @@
+mixin type-sample({ typeSample: {tag='h1', font='Quicksand', text='This is a heading'} })
+    .type-sample
+        p(class='type-sample__tag type-sample__tag_' + font)
+            | #{tag}
+        p(class='type-sample__text type-sample__text_' + font)
+            | #{text}

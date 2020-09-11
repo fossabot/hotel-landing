@@ -1,0 +1,46 @@
+@import "src/styles/_variables.scss";
+@import "src/styles/_base.scss";
+
+@import "src/blocks/color-sample/color-sample";
+@import "src/blocks/type-sample/type-sample";
+
+.ct {
+  &__body {
+    background-color: #e5e5e5;
+  }
+  &__page-title {
+    padding-left: 30px;
+  }
+  &__page {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 145px 191px 0 149px;
+    background-color: white;
+    @media(max-width: $breakpoint-desktop) {
+      padding: 145px 30px;
+    }
+  }
+  &__main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  &__column {
+    flex: 1;
+    margin-bottom: 60px;
+    &_colors {
+      min-width: 300px;
+      justify-self: self-start;
+    }
+    &_typography {
+      min-width: 300px;
+      justify-self: center;
+      max-width: 403px;
+    }
+  }
+  &__logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+}

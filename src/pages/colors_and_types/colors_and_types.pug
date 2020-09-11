@@ -1,0 +1,15 @@
+extends ../base/ui_kit
+include ../../blocks/color-sample/color-sample
+include ../../blocks/type-sample/type-sample
+
+block variables
+     - const mainClass = 'ct'
+     - const pageTitle = 'Colors and Types'
+     - const { colors, typeValues } = require('./colors_and_types.json')
+block content
+    .ct__column.ct__column_colors
+        each c in colors
+            +color-sample({color: c})
+    .ct__column.ct__column_typography
+        each t in typeValues
+            +type-sample({typeSample: t})

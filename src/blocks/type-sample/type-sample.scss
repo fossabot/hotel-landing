@@ -7,22 +7,27 @@
   margin-bottom: 50px;
 }
 .type-sample__tag {
-  flex: 0 0 67px;
+  flex: 0 0 37px;
+  margin-right: 30px;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   font-weight: normal;
   justify-self: self-start;
+  text-align: right;
   &_title {
     font-size: $title-font-size;
+    line-height: 29px;
   }
   &_subtitle {
     font-size: $subtitle-font-size;
+    line-height: 23px;
   }
   &_label-text {
     font-size: $label-font-size;
+    line-height: 15px;
   }
 }
 .type-sample__text {
-
+  max-width: 33ch;
   &_title {
     @include title-font;
   }

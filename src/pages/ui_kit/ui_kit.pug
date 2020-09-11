@@ -1,8 +1,7 @@
 extends ../base/base
 
 include ../../blocks/ui-page/ui-page
-include ../../blocks/color-sample/color-sample
-include ../../blocks/type-samples/type-samples
+
 include ../../blocks/header/header
 include ../../blocks/footer/footer
 include ../../blocks/field-header/field-header
@@ -37,13 +36,19 @@ block content
     - let placeholder, items, values
     h1 UI KIT
     a(href='index.html') index
-    h2.ui-kit__page-title Colors and Typography
-    +ui-page({background: 'white'})
-        .ui-page__column.colors-block
-            each c in colors
-                +color-sample({color: c})
-        .ui-page__column.typography
-            +type-samples({typography: typeValues})
+    h2 Contents
+    -
+        const uiKitItems = [
+            {title: 'Colors & Types', link: 'colors_and_types.html'},
+            {title: 'Form Elements', link: 'form_elements.html'},
+            {title: 'Cards', link: 'cards.html'},
+            {title: 'Headers & Footers', link: 'headers_and_footers.html'},
+        ]
+    ul.ui-kit__contents
+        each item in uiKitItems
+            li.ui-kit__item
+                a.ui-kit__item-link(href=item.link)=item.title
+
     h2.ui-kit__page-title Form Elements
     +ui-page({background: 'white', pageName: 'form-elements'})
         div.ui-page__content_.form-elements
