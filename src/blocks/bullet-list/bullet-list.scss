@@ -1,6 +1,13 @@
 .bullet-list {
   list-style: none outside none;
 
+  &__title {
+    @include label-font;
+    @include flex-row;
+    line-height: 21px;
+    margin-bottom: 13px;
+  }
+
   &__item {
     @include body-text;
 
