@@ -13,45 +13,46 @@ block content
             img(src=require('../../assets/room-detail-large.png') class="room-details__large-image")
             img(src=require('../../assets/room-details-small-1.png') class="room-details__small-image")
             img(src=require('../../assets/room-details-small-2.png') class="room-details__small-image")
-        main.room-details__data
-            .room-details__info
-                h2.room-details__info-heading Сведения о номере
-                +details-list({
+        .room-details__info1
+            main.room-details__main
+                .room-details__1
+                    h2.room-details__info-heading Сведения о номере
+                    +details-list({
                     items: [
                         {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
                         {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой из спален'},
                         {icon: 'whatshot', title: 'Уют', text: 'Номер оснащён камином'},
                     ]
                 })
-            .room-details__ratings
-                h2.room-details__ratings-heading Впечатления от номера
-                .room-details__ratings-chart
-                    +chart()
-            .room-details__reviews
-                h2.room-details__reviews-heading Отзывы посетителей номера
-                    span.room-details__reviews-count 2 отзыва
-                +review({authorImg: 'user1.png'})
-                +review(
-                    {authorImg: 'user2.png',
-                    authorName: 'Патрисия Стёклышкова',
-                    reviewDate: 'Неделю назад',
-                    likes: 2,
-                    text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
+                .room-details__ratings1
+                        h2.room-details__ratings-heading Впечатления от номера
+                        .room-details__ratings-chart
+                            +chart()
+                .room-details__reviews1
+                    h2.room-details__reviews-heading Отзывы посетителей номера
+                        span.room-details__reviews-count 2 отзыва
+                    +review({authorImg: 'user1.png'})
+                    +review(
+                        {authorImg: 'user2.png',
+                        authorName: 'Патрисия Стёклышкова',
+                        reviewDate: 'Неделю назад',
+                        likes: 2,
+                        text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
 
-            .room-details__rules
-                h2.room-details__rules-heading Правила
-                +bullet-list({
-                    items: [
-                        'Нельзя с питомцами',
-                        'Без вечеринок и мероприятий',
-                        'Время прибытия — после 13:00, а выезд до 12:00',
-                    ]
-                })
-            .room-details__cancellation
-                h2.room-details__cancellation-heading Отмена
-                .room-details__cancellation-text
-                    | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее
-                    | чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                .room-details__rules
+                    h2.room-details__rules-heading Правила
+                    +bullet-list({
+                        items: [
+                            'Нельзя с питомцами',
+                            'Без вечеринок и мероприятий',
+                            'Время прибытия — после 13:00, а выезд до 12:00',
+                        ]
+                    })
+                .room-details__cancellation
+                    h2.room-details__cancellation-heading Отмена
+                    .room-details__cancellation-text
+                        | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее
+                        | чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
             aside.room-details__booking
                 +booking-card({number: 888, isLux: true, price: 9990, days: 4, discount: 2179, additionalFee: 300})
 
