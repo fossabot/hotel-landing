@@ -1,27 +1,30 @@
 .button {
   display: flex;
-  width: fit-content;
-  background: $brand-gradient;
-  border: 2px solid transparent;
+  align-items: center;
+  min-height: 34px;
   border-radius: 22px;
   @include label-font;
   text-decoration: none;
   text-align: center;
   line-height: normal;
   color: white;
-  padding: 9px 19px 10.5px 19px;
-  padding: 7px 18px 8px 18px;
+  padding: 0 17px;
   cursor: pointer;
+  background: $brand-gradient;
+  border: 2px solid transparent;
   &.button_hovered,
   &:hover,
   &:active {
     opacity: 0.5;
+    outline: none;
   }
   &:focus {
     box-shadow: 0 0 0 5px $c-primary-medium;
+    outline: none;
   }
   &_default {
-    padding: 12px 17px;
+    background: $brand-gradient;
+    border: 2px solid transparent;
   }
   &_outlined {
     color: $c-brand;
@@ -29,8 +32,6 @@
     background-image: $brand-gradient;
     background-origin: border-box;
     box-shadow: 3px 1000px 1px #fff inset;
-    padding: 13px 17px;
-
     &.button_hovered,
     &:hover,
     &:active {
@@ -47,6 +48,9 @@
     color: $c-brand;
     padding: 0;
     border: none;
+    min-height: initial;
+    width: fit-content;
+    border-radius: 0;
     &.button_hovered,
     &:hover,
     &:active {
@@ -58,10 +62,13 @@
     }
   }
   &_wide {
+
     width: 100%;
     position: relative;
     justify-content: center;
-    padding: 13px 22px;
+  }
+  &_high {
+    height: 100%;
   }
   &__arrow {
     font-family: "Material Icons", sans-serif;

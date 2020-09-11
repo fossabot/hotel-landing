@@ -121,14 +121,14 @@ block content
                             +button({text: 'click me', type: 'outlined'})
                         .ui-page__button
                             +button({text: 'click me', type: 'outlined hovered'})
-                    .ui-page__button-row
+                    .ui-page__button-row_small-margin
                         .ui-page__left-button
-                            +button({text: 'click me', type: 'text'})
+                            +button({text: 'click me', type: 'text', isHigh: false})
                         .ui-page__button
-                            +button({text: 'click me', type: 'text hovered'})
+                            +button({text: 'click me', type: 'text hovered', isHigh: false})
                     .ui-page__button-row
-                        +button({text: 'перейти к оплате', type: 'wide'})
-                .ui-page__item
+                        +button({text: 'перейти к оплате', isWide: true})
+                .ui-page__item.ui-page__item_bottom
                     h3.ui-page__heading Pagination
                     +pagination({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
             .form-elements__column_wide
