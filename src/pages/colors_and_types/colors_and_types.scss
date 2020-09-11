@@ -8,8 +8,13 @@
   &__body {
     background-color: #e5e5e5;
   }
+  &__header {
+    display: flex;
+    align-items: baseline;
+  }
   &__page-title {
     padding-left: 30px;
+    margin-right: 30px;
   }
   &__page {
     position: relative;

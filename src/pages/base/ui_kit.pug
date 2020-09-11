@@ -8,7 +8,9 @@ html(lang="en")
             title Base page
         block variables
     body(class=`${mainClass}__body`)
-        h1(class=`${mainClass}__page-title`)=pageTitle
+        header(class=`${mainClass}__header`)
+            h1(class=`${mainClass}__page-title`)=pageTitle
+            a(class=`${mainClass}__back-link` href='ui_kit.html') back to UI kit
         div(class=`${mainClass}__page`)
             +logo({className: `${mainClass}__logo`, type: 'light'})
             main(class=`${mainClass}__main`)
