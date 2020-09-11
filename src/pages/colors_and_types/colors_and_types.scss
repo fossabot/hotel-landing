@@ -22,7 +22,7 @@
     padding: 145px 191px 0 149px;
     background-color: white;
     @media(max-width: $breakpoint-desktop) {
-      padding: 145px 30px;
+      padding: 145px 30px 0;
     }
   }
   &__main {
