@@ -1,4 +1,5 @@
 include ../select-option/select-option
+include ../button/button
 
 mixin dropdown({label='dropdown', placeholder='Open', items=[], hasButtons=false, status='', defaults=''}={})
     -const inputOpenClass = status === 'expanded' ? ' dropdown__input_open': ''
