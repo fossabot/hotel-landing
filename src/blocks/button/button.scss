@@ -60,6 +60,9 @@
       text-decoration: underline;
     }
   }
+  &_gray {
+    color: rgba(31, 32, 65, 0.5);
+  }
   &_wide {
     width: 100%;
     position: relative;
