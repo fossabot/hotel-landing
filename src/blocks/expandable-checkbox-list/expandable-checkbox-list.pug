@@ -1,9 +1,9 @@
 include ../checkbox/checkbox
 
 mixin expandable-checkbox-list({title='', items=[], isExpanded=false})
-    .expandable-checkbox-list
-        h3.expandable-checkbox-list__title(class=`${isExpanded ? 'js-open' : ''}`)= title
-        .expandable-checkbox-list__items(class=`${isExpanded ? 'js-open' : ''}`)
+    .expandable-checkbox-list.js-expandable-checkbox-list
+        h3.expandable-checkbox-list__title.js-checkbox-toggler(class=`${isExpanded ? 'js-open' : ''}`)= title
+        .expandable-checkbox-list__items.js-checkboxes(class=`${isExpanded ? 'js-open' : ''}`)
             for item in items
                 if typeof item === "string"
                     +checkbox({text: item, name:item})

@@ -1,16 +1,35 @@
-function toggleOptions() {
-  const element = document.querySelector('.expandable-checkbox-list__title');
-  const items = document.querySelector('.expandable-checkbox-list__items');
-  if (items.classList.contains('js-open')) {
-    items.classList.remove('js-open');
-    element.classList.remove('js-open');
-  } else {
-    items.classList.add('js-open');
-    element.classList.add('js-open');
+class ExpandableCheckboxList {
+  constructor(element) {
+    this.element = element;
+    this.isOpen = false;
+    this.initElements();
+    this.bindHandlers();
+  }
+
+  initElements() {
+    this.toggler = this.element.querySelector('.js-checkbox-toggler');
+    this.checkboxes = this.element.querySelector('.js-checkboxes');
+    if (this.toggler.classList.contains('js-open')) {
+      this.isOpen = true;
+      this.checkboxes.classList.add('js-open');
+    }
+  }
+
+  toggleCheckboxes() {
+    if (this.isOpen) {
+      this.isOpen = !this.isOpen;
+      this.toggler.classList.remove('js-open');
+      this.checkboxes.classList.remove('js-open');
+    } else {
+      this.isOpen = !this.isOpen;
+      this.toggler.classList.add('js-open');
+      this.checkboxes.classList.add('js-open');
+    }
+  }
+
+  bindHandlers() {
+    this.toggler.addEventListener('click', this.toggleCheckboxes.bind(this));
   }
 }
 
-const element = document.querySelector('.expandable-checkbox-list__title');
-element.addEventListener('click', toggleOptions);
-/* eslint-disable no-console */
-console.log('element');
+export default ExpandableCheckboxList;
