@@ -1,11 +1,11 @@
-mixin date-filter({isRange=true, labels=['прибытие', 'выезд']}={})
-    .date-filter__container.js-dates
+mixin date-filter({id='', isRange=true, labels=['прибытие', 'выезд']}={})
+    .date-filter__container.js-dates(id=id).flatpickr
         if isRange
             - const [labelStart, labelEnd] = labels
             label(class='date-filter__label date-filter__label_range')=labelStart
-                input(class='date-filter__input js-start' type='text' placeholder='ДД.ММ.ГГ')
+                input(class='date-filter__input js-start' type='text' data-input='' placeholder='ДД.ММ.ГГ' id=`start-${id}`)
             label(class='date-filter__label date-filter__label_range')=labelEnd
-                input(class='date-filter__input js-end' type='text' placeholder='ДД.ММ.ГГ')
+                input(class='date-filter__input js-end' type='text' data-input='' placeholder='ДД.ММ.ГГ' id=`end-${id}`)
         else
             label(class='date-filter__label date-filter__label_single')=labels[0]
-                input(class='date-filter__input js-single-date' type='text' placeholder='ДД.ММ.ГГ')
+                input(class='date-filter__input js-single-date' data-input='' id=`i-${id}` type='text' placeholder='ДД.ММ.ГГ')

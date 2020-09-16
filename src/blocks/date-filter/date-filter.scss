@@ -1,5 +1,6 @@
 
 .date-filter {
+  --calendar-max-width: 320px;
   &__container {
     position: relative;
     @include flex-row;
@@ -43,126 +44,8 @@
     flex: 0 0 1rem;
     font-size:24px;
   }
-}
-
-/***
- Copy the datepiker variables (the ones with `dp-` prefix and `!default` flag)
- from `sass/Datepicker.scss` to here
- Then, edit them using your framework's variables/values
- e.g.:
- $dp-background-color: $background !default;
- $dp-border-color: $border !default;
- ...
- ***/
-$dp-range-start-end-background-color: red;
-$dp-range-start-end-color: white;
-//$dp-range-background-color: $brand-gradient-light;
-$dp-range-background-color: red;
-$dp-range-today-background-color: red;
-@import '../../../node_modules/vanillajs-datepicker/sass/mixins';
-
-@mixin dp-button {
-  //$dp-range-start-end-background-color: red;
-  //$dp-range-start-end-color: red;
-  //$dp-range-background-color: $brand-gradient-light;
-  //$dp-range-today-background-color: red;
-  .date-filter__button {
-    font-family: "Quicksand", "Open Sans", sans-serif;
-    font-weight: bold;
-    font-size: 19px;
-    background-color: white;
-
-    .datepicker-header & {
-      @include dp-header-button-common;
-      margin-bottom: 20px;
-    }
-
-    .datepicker-footer & {
-      @include dp-footer-button-common;
-    }
-  }
-}
-// The datepicker has background color, not gradient, and it makes the color darker
-// using sass functions, which doesn't work with gradients. So, we are not using
-// the provided variables, but overriding the background here, instead.
-@import '../../../node_modules/vanillajs-datepicker/sass/datepicker';
-.datepicker-picker {
-  max-width: 320px;
-  padding: 20px;
-}
-.datepicker-header {
-  margin-bottom: 20px;
-}
-.datepicker-grid {
-  width: 100%;
-}
-.datepicker-cell.range-start,
-.datepicker-cell.range-end {
-  background: $brand-gradient;
-  border-radius: 50%;
-  color: white;
-  position: relative;
-}
-.datepicker-cell.range-start::after {
-  content: '';
-  background: $brand-gradient-light;
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  left: 50%;
-}
-.datepicker-cell.range-end::after {
-  content: '';
-  background: $brand-gradient-light;
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  left:0;
-}
-.datepicker-cell.range {
-  background: $brand-gradient-light;
-
-  &:not(.disabled):not(.focused):not(.today):hover {
-    background: $brand-gradient-light;
-  }
-
-  &.focused {
-    background: $brand-gradient-light;
-  }
-
-  &:not(.disabled):not(.focused):not(.today):hover {
-    background: $brand-gradient-light-hover;
-  }
-}
-.datepicker-cell.today {
-  background: $accent-gradient;
-  border-radius: 50%;
-  &.range {
-    color: red;
-    position: relative;
-    &::after {
-      content: '';
-      position: absolute;
-      top:0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: $brand-gradient-light;
-      &:hover {
-        background: $brand-gradient-light-hover;
-      }
-    }
-  }
-}
-.datepicker-icon {
-  color: $c-brand;
-  font-size: 24px;
-  line-height: 20px;
-  font-weight: normal;
-}
-.datepicker-button {
-  &:active {
-    outline: none;
-    text-decoration: underline;
+  &__buttons {
+    @include flex-row;
+    margin-top: 20px;
   }
 }
