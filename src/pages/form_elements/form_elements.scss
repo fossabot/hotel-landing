@@ -1,0 +1,106 @@
+@import "src/styles/_variables.scss";
+@import "src/styles/_base.scss";
+
+@import "src/blocks/text-input/text-input";
+@import "src/blocks/dropdown/dropdown";
+@import "src/blocks/masked-input/masked-input";
+@import "src/blocks/date-filter/date-filter";
+@import "src/blocks/subscription-text-field/subscription-text-field";
+@import "src/blocks/checkbox-list/checkbox-list";
+@import "src/blocks/radiobutton/radiobutton";
+@import "src/blocks/toggle/toggle";
+@import "src/blocks/like-button/like-button";
+@import "src/blocks/rate-button/rate-button";
+@import "src/blocks/slider/slider";
+@import "src/blocks/button/button";
+@import "src/blocks/pagination/pagination";
+@import "src/blocks/expandable-checkbox-list/expandable-checkbox-list";
+@import "src/blocks/checkbox/checkbox";
+@import "src/blocks/bullet-list/bullet-list";
+@import "src/blocks/details-list/details-list";
+@import "src/blocks/review/review";
+
+
+.fe {
+  &__body {
+    background-color: #e5e5e5;
+  }
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__page-title {
+    padding-left: 30px;
+    margin-right: 30px;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+
+  &__page {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 143px 140px 140px;
+    background-color: white;
+    @media(max-width: $breakpoint-desktop) {
+      padding: 145px 30px 0;
+    }
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    column-gap: 25px;
+  }
+  &__column {
+    &_left-padding {
+      margin-left: 50px;
+    }
+  }
+  &__item {
+    margin-bottom: 20px;
+    max-width: 320px;
+    &_narrow {
+      max-width: 266px;
+    }
+    &_medium-margin {
+      margin-bottom: 40px;
+    }
+    &_margin23 {
+      margin-bottom: 23px;
+    }
+  }
+  &__heading {
+    @include label-font;
+    margin-bottom: 7px;
+    &_radio,
+    &_toggle {
+      margin-bottom: 14px;
+    }
+    &_like {
+      margin-bottom: 16px;
+    }
+    &_rate {
+      margin-bottom:14px;
+    }
+  }
+  &__like-buttons {
+    @include flex-row;
+    justify-content: normal;
+    &>div + div {
+      margin-left: 12px;
+    }
+  }
+  &__rate-buttons {
+    display: flex;
+    flex-direction: row;
+    &>div + div {
+      margin-left: 20px;
+    }
+  }
+}

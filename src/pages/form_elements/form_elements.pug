@@ -1,0 +1,204 @@
+extends ../base/ui_kit
+
+include ../../blocks/text-input/text-input
+include ../../blocks/dropdown/dropdown
+
+include ../../blocks/masked-input/masked-input
+include ../../blocks/date-filter/date-filter
+include ../../blocks/subscription-text-field/subscription-text-field
+include ../../blocks/checkbox-list/checkbox-list
+include ../../blocks/radiobutton/radiobutton
+include ../../blocks/toggle/toggle
+include ../../blocks/like-button/like-button
+include ../../blocks/rate-button/rate-button
+include ../../blocks/slider/slider
+include ../../blocks/button/button
+include ../../blocks/pagination/pagination
+include ../../blocks/expandable-checkbox-list/expandable-checkbox-list
+include ../../blocks/checkbox/checkbox
+include ../../blocks/bullet-list/bullet-list
+include ../../blocks/details-list/details-list
+include ../../blocks/review/review
+
+block variables
+    - const mainClass = 'fe';
+    - const pageTitle = 'Form Elements';
+    - const { guestDropdown, conveniencesDropdown } = require('./dropdowns.json');
+block content
+    .fe__column.fe__column_wide
+        .fe__item._small-margin
+            +text-input({placeholder: 'Email', label: 'text field', status: 'default'})
+        .fe__item._small-margin
+            +text-input({
+                placeholder: 'This is pretty awesome',
+                label: 'text field',
+                status: 'hover / focus'
+            })
+        .fe__item.fe__item_margin23
+            -let {placeholder, items} = guestDropdown;
+            +dropdown({
+                label: 'dropdown',
+                placeholder: placeholder,
+                items: items,
+                hasButtons: true
+            })&attributes({class: 'js-guestDropdown'})
+        .fe__item.fe__item_medium-margin
+            +masked-input({placeholder: 'ДД.ММ.ГГ', label: 'masked text field'})
+        .fe__item.fe__item_medium-margin
+            +date-filter({id: '1', labels: ['date dropdown', 'date dropdown']})
+        .fe__item.fe__item_medium-margin.fe__item_narrow
+            +date-filter({id: '2', isRange: false, labels: ['filter date dropdown']})
+        .fe__item.fe__item_narrow.fe__item_no-margin
+            h3.fe__heading Subscription text field
+            +subscription-text-field()
+    .fe__column.fe__column_left-padding
+        .fe__item.fe__item_narrow.fe__item_medium-margin
+            +checkbox-list(
+                {
+                    items: [
+                        {
+                            text: 'Можно курить',
+                            name: 'smokingAllowed'
+                        },
+                        {
+                            text: 'Можно с питомцами',
+                            name: 'petsAllowed',
+                            defaultValue: true
+                        },
+                        {
+                            text: 'Можно пригласить гостей (до 10 человек)',
+                            name: 'guestsAllowed',
+                            defaultValue: true
+                        }
+                    ]
+                })
+        .fe__item.fe__item_medium-margin
+            h3.fe__heading.fe__heading_radio radio buttons
+            +radiobutton({name: 'gender', options: ['Мужчина', 'Женщина']})
+        .fe__item.fe__item_medium-margin
+            h3.fe__heading.fe__heading_toggle toggle
+            +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
+            +toggle({
+                label: 'Получать спецпредложения',
+                name: 'subscriptionChecked',
+                defaultValue: true
+            })
+        .fe__item.fe__item_medium-margin
+            h3.fe__heading.fe__heading_like like button
+            .fe__like-buttons
+                +like-button({value: 0})
+                +like-button({value: 11, defaultValue: true})
+        .fe__item.fe__item_bottom
+            h3.fe__heading.fe__heading_rate rate button
+            .fe__rate-buttons
+                .fe__rate-button
+                    +rate-button({rating: 3})
+                .fe__rate-button
+                    +rate-button({rating: 5})
+
+    .fe__column.fe__column_narrow
+        .fe__slider
+            +slider({range: '5 000₽ - 10 000₽'})
+        .fe__item
+            h3.fe__heading Buttons
+            .fe_button-row
+                .fe_left-button
+                    +button({text: 'click me', type: ''})
+                .fe_button
+                    +button({text: 'click me', type: 'default hovered'})
+            .fe_button-row
+                .fe_left-button
+                    +button({text: 'click me', type: 'outlined'})
+                .fe_button
+                    +button({text: 'click me', type: 'outlined hovered'})
+            .fe_button-row_small-margin
+                .fe_left-button
+                    +button({text: 'click me', type: 'text', isHigh: false})
+                .fe_button
+                    +button({text: 'click me', type: 'text hovered', isHigh: false})
+            .fe_button-row
+                +button({text: 'перейти к оплате', isWide: true})
+        .ui-page__item.ui-page__item_bottom
+            h3.ui-page__heading Pagination
+            +pagination({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
+    .fe__column
+        .fe__item.fe__item_narrow.fe__item_small-margin
+            +dropdown({
+                placeholder: conveniencesDropdown.placeholder,
+                items: conveniencesDropdown.items,
+                status: 'default',
+                defaults: 'default'
+            })&attributes({class: 'js-conveniencesDropdown'})
+        .fe__item.fe__item_narrow.fe__item_xl-margin
+            +dropdown({
+                placeholder: conveniencesDropdown.placeholder,
+                items: conveniencesDropdown.items,
+                status: 'expanded'
+            })&attributes({class: 'js-conveniencesDropdown'})
+        .fe__item.fe__item_narrow.fe__item_ml-margin
+            +expandable-checkbox-list({
+                title: 'expandable checkbox list',
+                items: ['завтрак', 'письменный стол', 'стул для кормления'
+                ]
+            })
+        .fe__item.fe__item_narrow.fe__item_no-margin
+            +expandable-checkbox-list({
+                isExpanded: true,
+                title: 'expandable checkbox list',
+                items: [
+                    {name: 'завтрак', defaultValue: false},
+                    {name: 'письменный стол', defaultValue: true},
+                    {name: 'стул для кормления', defaultValue: true},
+                    {name: 'кроватка', defaultValue: true},
+                    {name: 'телевизор', defaultValue: false},
+                    {name: 'шампунь', defaultValue: false}
+                ]
+            })
+    .fe__column.fe__column_narrow
+        .fe__item.fe__item_narrow.fe__item_xxl-margin
+            +dropdown({
+                label: 'dropdown',
+                placeholder: guestDropdown.placeholder,
+                items: guestDropdown.items,
+                hasButtons: true,
+                status: 'expanded'
+            })&attributes({class: 'js-guestDropdown'})
+        .fe__item
+            h3.ui-page__heading rich checkbox buttons
+            +checkbox({
+                text: 'Ширина коридоров в номере не менее 91 см.',
+                name: 'hall', header: 'Широкий коридор'
+            })
+            +checkbox({
+                text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+                name: 'helper', header: 'Помощник для инвалидов'
+            })
+
+    .fe__column_narrow
+        .ui-page__item_xxl-margin
+            +dropdown({
+                label: 'dropdown',
+                placeholder: placeholder,
+                items: items,
+                hasButtons: true,
+                status: 'expanded',
+                defaults: 'example'
+            })&attributes({class: 'js-guestDropdown'})
+    .ui-page__item
+        +bullet-list({
+            title: 'bullet list',
+            items: [
+                'Нельзя с питомцами',
+                'Без вечеринок и мероприятий',
+                'Время прибытия — после 13:00, а выезд до 12:00',
+            ]
+        })
+    .fe__item
+        +details-list({
+            items: [
+                {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
+                {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой комнате'},
+            ]
+        })
+    .fe__item.fe__review
+        +review({authorImg: 'user1.png'})

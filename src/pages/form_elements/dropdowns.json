@@ -1,0 +1,40 @@
+{
+  "guestDropdown": {
+    "placeholder": "Сколько гостей",
+    "items": [
+      {"name":  "adults", "label":  "Взрослые"},
+      {"name":  "children", "label":  "Дети"},
+      {"name":  "infants", "label":  "Младенцы"}
+    ],
+    "groups": {
+      "guests": [
+        "adults",
+        "children"
+      ]
+    },
+    "singleItems": ["infants"],
+    "values": {
+      "default": null,
+      "example": {
+        "adults": 2,
+        "children": 1
+      }
+    }
+  },
+  "conveniencesDropdown": {
+    "placeholder": "Выберите удобства",
+    "items": [
+      {"name":  "bedrooms", "label":  "Спальни"},
+      {"name":  "beds", "label":  "Кровати"},
+      {"name":  "bathrooms", "label":  "Ванные комнаты"}
+    ],
+    "groups": null,
+    "singleItems": ["bedrooms", "beds", "bathrooms"],
+    "values": {
+      "default": {
+        "bedrooms": 2,
+        "beds": 2
+      }
+    }
+  }
+}
