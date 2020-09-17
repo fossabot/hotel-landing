@@ -1,10 +1,11 @@
-mixin button({ tag = 'button', text = '', isHigh = true, isWide = false, type = 'contained', mod = '', link=null})
+mixin button({ tag = 'button', text = '', isHigh = true, isWide = false, type = 'contained', mod = '', link=null, page=''})
     - const layoutClass = attributes.class ? ` ${attributes.class}` : ''
     -
         let typeClass = !type ? 'button_default' : `button_${type}`
-            if (isHigh) typeClass = typeClass + ' button_high';
-            if (isWide) typeClass = typeClass + ' button_wide';
-            if (mod) typeClass = typeClass + ` button_${mod}`;
+            if (isHigh) typeClass = `${typeClass} button_high`;
+            if (isWide) typeClass = `${typeClass} button_wide`;
+            if (mod) typeClass = `${typeClass} button_${mod}`;
+            if (page) typeClass = `${typeClass} button_${page}`;
     #{tag}(
         class=`button ${typeClass}${layoutClass}`
         href=link? link: false

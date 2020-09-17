@@ -31,19 +31,22 @@
     height: 8px;
     margin-left: 3px;
     box-shadow: 0 5px 5px rgba(31, 32, 65, 0.3);
+    cursor: pointer;
     &_active {
       background: white;
     }
   }
   &__description {
-    padding: 20px 17px 16px 20px;
+    padding: 20px 17px 16px 19px;
+    & > div:last-child {
+      margin-top: 5px;
+    }
   }
   &__detail-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 6px;
-    padding-bottom: 6px;
+    padding-bottom: 8px;
     position: relative;
     &::after {
     content: '';
@@ -61,21 +64,22 @@
   }
   &__no {
     font-size: 19px;
-    padding-left: 5px;
-    padding-right: 6px;
+    padding-left: 4px;
+    padding-right: 5px;
   }
   &__lux {
     font-family: "Montserrat", 'sans-serif';
     font-size: 12px;
     text-transform: uppercase;
+    color: $c-brand;
   }
   &__price {
     font-size: 12px;
-    line-height: 30px;
+    line-height: 25px;
   }
   &__amount {
     font-weight: bold;
-    padding-right: 4px;
+    padding-right: 2px;
     font-size: 15px;
 
   }
@@ -85,6 +89,7 @@
   &__reviews {
     margin-right: 3px;
     line-height: 28px;
+
   }
   &__review-count {
     padding-right: 5px;

@@ -5,10 +5,10 @@ include ../button/button
 mixin login-card()
     .login-card
         h2.login-card__title Войти
-
-        +text-field({placeholder: 'Email'})&attributes({class: 'login-card__email-field'})
-        +text-field({placeholder: 'Пароль'})&attributes({class: 'login-card__password-field'})
-        +button({text: 'Войти', type: 'wide'})&attributes({class: 'login-card__login-btn'})
-        .login-card__redirect-row
-            p.login-card__redirect-directions Нет аккаунта на Toxin?
-            +button({text: 'Создать', type: 'outlined', tag: 'a', link: 'register.html'})
+        form
+            +text-field({placeholder: 'Email'})&attributes({class: 'login-card__email-field'})
+            +text-field({placeholder: 'Пароль'})&attributes({class: 'login-card__password-field'})
+            +button({text: 'Войти', type: 'wide'})&attributes({class: 'login-card__login-btn'})
+            .login-card__redirect-row
+                p.login-card__redirect-directions Нет аккаунта на Toxin?
+                +button({text: 'Создать', type: 'outlined', tag: 'a', link: 'register.html'})

@@ -11,7 +11,7 @@
   &__input {
     color: $c-primary-dark;
     @include input-base;
-    width: calc(100% - var(--horizontal-padding)*2);
+    width: 100%;
     &_hovered {
         border-color: $c-primary-medium;
         border-width: 1px;

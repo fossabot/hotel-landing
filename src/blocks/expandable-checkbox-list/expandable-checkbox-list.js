@@ -16,15 +16,9 @@ class ExpandableCheckboxList {
   }
 
   toggleCheckboxes() {
-    if (this.isOpen) {
-      this.isOpen = !this.isOpen;
-      this.toggler.classList.remove('js-open');
-      this.checkboxes.classList.remove('js-open');
-    } else {
-      this.isOpen = !this.isOpen;
-      this.toggler.classList.add('js-open');
-      this.checkboxes.classList.add('js-open');
-    }
+    this.isOpen = !this.isOpen;
+    this.toggler.classList.toggle('js-open');
+    this.checkboxes.classList.toggle('js-open');
   }
 
   bindHandlers() {

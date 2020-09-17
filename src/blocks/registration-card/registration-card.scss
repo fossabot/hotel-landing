@@ -8,17 +8,18 @@
   &__title {
     margin-bottom: 20px;
   }
+  &__item-group {
+    margin-bottom: 20px;
+  }
   &__item_small-margin {
     margin-bottom: 10px;
   }
   &__item_large-margin {
     margin-bottom: 20px;
   }
-  &__register-button {
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
-  &__redirect-row {
-  @include flex-row;
+  &__item-group:last-child {
+    @include flex-row;
+    margin-top: 30px;
+    margin-bottom: 0;
   }
 }

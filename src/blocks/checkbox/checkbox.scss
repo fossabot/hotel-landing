@@ -8,9 +8,10 @@
       text-transform: initial;
       line-height: 20px;
       margin-left: 10px;
-      max-width: 200px;
+      //max-width: 200px;
       &_rich {
         padding-top: 0;
+        margin-left: 3px;
       }
     }
     &__header {
