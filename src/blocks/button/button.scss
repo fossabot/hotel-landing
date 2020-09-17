@@ -25,12 +25,16 @@
   &_default {
     background: $brand-gradient;
     border-color: transparent;
+    padding-left: 17px;
+    padding-right: 17px;
   }
   &_outlined {
     color: $c-brand;
     background-image: $brand-gradient;
     background-origin: border-box;
     box-shadow: 3px 1000px 1px #fff inset;
+    padding-left: 17px;
+    padding-right: 17px;
     &.button_hovered,
     &:hover,
     &:active {
@@ -70,8 +74,8 @@
     border: 2px solid transparent;
   }
   &_high {
-    padding-top: 13px;
-    padding-bottom: 14px;
+    padding-top: 12px;
+    padding-bottom: 13px;
   }
   &__arrow {
     font-family: "Material Icons", sans-serif;
