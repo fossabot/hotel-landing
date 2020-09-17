@@ -77,12 +77,12 @@ block content
             +radiobutton({name: 'gender', options: ['Мужчина', 'Женщина']})
         .fe__item.fe__item_medium-margin
             h3.fe__heading.fe__heading_toggle toggle
-            +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
             +toggle({
                 label: 'Получать спецпредложения',
                 name: 'subscriptionChecked',
                 defaultValue: true
             })
+            +toggle({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
         .fe__item.fe__item_medium-margin
             h3.fe__heading.fe__heading_like like button
             .fe__like-buttons
@@ -96,30 +96,30 @@ block content
                 .fe__rate-button
                     +rate-button({rating: 5})
 
-    .fe__column.fe__column_narrow
+    .fe__column.fe__column_left-padding
         .fe__slider
             +slider({range: '5 000₽ - 10 000₽'})
-        .fe__item
-            h3.fe__heading Buttons
-            .fe_button-row
-                .fe_left-button
+        .fe__item.fe__item_medium-margin
+            h3.fe__heading.fe__heading_buttons Buttons
+            .fe__button-row
+                .fe__button
                     +button({text: 'click me', type: ''})
-                .fe_button
-                    +button({text: 'click me', type: 'default hovered'})
-            .fe_button-row
-                .fe_left-button
+                .fe__button
+                    +button({text: 'click me', type: 'default', mod: 'hovered'})
+            .fe__button-row
+                .fe__button
                     +button({text: 'click me', type: 'outlined'})
-                .fe_button
-                    +button({text: 'click me', type: 'outlined hovered'})
-            .fe_button-row_small-margin
-                .fe_left-button
+                .fe__button
+                    +button({text: 'click me', type: 'outlined', mod: 'hovered'})
+            .fe__button-row.fe_button-row_small-margin
+                .fe__button
                     +button({text: 'click me', type: 'text', isHigh: false})
-                .fe_button
-                    +button({text: 'click me', type: 'text hovered', isHigh: false})
-            .fe_button-row
+                .fe__button
+                    +button({text: 'click me', type: 'text', mod: 'hovered', isHigh: false})
+            .fe__button-row
                 +button({text: 'перейти к оплате', isWide: true})
-        .ui-page__item.ui-page__item_bottom
-            h3.ui-page__heading Pagination
+        .fe__item
+            h3.fe__heading.fe__heading_pagination Pagination
             +pagination({label: 'Получать спецпредложения', name: 'subscriptionChecked'})
     .fe__column
         .fe__item.fe__item_narrow.fe__item_small-margin
@@ -135,6 +135,29 @@ block content
                 items: conveniencesDropdown.items,
                 status: 'expanded'
             })&attributes({class: 'js-conveniencesDropdown'})
+
+    .fe__column.fe__column_left-padding
+        .fe__item
+            +dropdown({
+                label: 'dropdown',
+                placeholder: guestDropdown.placeholder,
+                items: guestDropdown.items,
+                hasButtons: true,
+                status: 'expanded'
+            })&attributes({class: 'js-guestDropdown'})
+
+
+    .fe__column.fe__column_left-padding
+        .fe__item
+            +dropdown({
+                label: 'dropdown',
+                placeholder: placeholder,
+                items: items,
+                hasButtons: true,
+                status: 'expanded',
+                defaults: 'example'
+            })&attributes({class: 'js-guestDropdown'})
+    .fe__column
         .fe__item.fe__item_narrow.fe__item_ml-margin
             +expandable-checkbox-list({
                 title: 'expandable checkbox list',
@@ -154,50 +177,30 @@ block content
                     {name: 'шампунь', defaultValue: false}
                 ]
             })
-    .fe__column.fe__column_narrow
-        .fe__item.fe__item_narrow.fe__item_xxl-margin
-            +dropdown({
-                label: 'dropdown',
-                placeholder: guestDropdown.placeholder,
-                items: guestDropdown.items,
-                hasButtons: true,
-                status: 'expanded'
-            })&attributes({class: 'js-guestDropdown'})
         .fe__item
-            h3.ui-page__heading rich checkbox buttons
-            +checkbox({
-                text: 'Ширина коридоров в номере не менее 91 см.',
-                name: 'hall', header: 'Широкий коридор'
+            +details-list({
+                items: [
+                    {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
+                    {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой комнате'},
+                ]
             })
-            +checkbox({
-                text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-                name: 'helper', header: 'Помощник для инвалидов'
-            })
-
-    .fe__column_narrow
-        .ui-page__item_xxl-margin
-            +dropdown({
-                label: 'dropdown',
-                placeholder: placeholder,
-                items: items,
-                hasButtons: true,
-                status: 'expanded',
-                defaults: 'example'
-            })&attributes({class: 'js-guestDropdown'})
-    .ui-page__item
+    .fe__item
+        h3.fe__heading rich checkbox buttons
+        +checkbox({
+            text: 'Ширина коридоров в номере не менее 91 см.',
+            name: 'hall', header: 'Широкий коридор'
+        })
+        +checkbox({
+            text: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+            name: 'helper', header: 'Помощник для инвалидов'
+        })
+    .fe__item
         +bullet-list({
             title: 'bullet list',
             items: [
                 'Нельзя с питомцами',
                 'Без вечеринок и мероприятий',
                 'Время прибытия — после 13:00, а выезд до 12:00',
-            ]
-        })
-    .fe__item
-        +details-list({
-            items: [
-                {icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены'},
-                {icon: 'location_city', title: 'Удобство', text: 'Окно в каждой комнате'},
             ]
         })
     .fe__item.fe__review
