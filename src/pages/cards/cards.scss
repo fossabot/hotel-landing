@@ -1,0 +1,53 @@
+@import "src/styles/_variables.scss";
+@import "src/styles/_base.scss";
+
+@import "../../blocks/search-card/search-card";
+@import "../../blocks/registration-card/registration-card";
+@import "../../blocks/booking-card/booking-card";
+@import "../../blocks/login-card/login-card";
+@import "../../blocks/calendar-card/calendar-card";
+@import "../../blocks/room-details/room-details";
+
+.cards {
+  &__body {
+    background-color: #e5e5e5;
+  }
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__page-title {
+    padding-left: 30px;
+    margin-right: 30px;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+
+  &__page {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 143px 140px 140px;
+    background-color: #f4f4f6;
+    @media(max-width: $breakpoint-desktop) {
+      padding: 145px 30px 0;
+    }
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+  }
+  &__column {
+    & > div {
+      margin-bottom: 40px;
+    }
+  }
+
+}

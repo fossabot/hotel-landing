@@ -103,21 +103,21 @@ block content
             h3.fe__heading.fe__heading_buttons Buttons
             .fe__button-row
                 .fe__button
-                    +button({text: 'click me', type: ''})
+                    +button({text: 'click me', type: '', page: 'fe'})
                 .fe__button
-                    +button({text: 'click me', type: 'default', mod: 'hovered'})
+                    +button({text: 'click me', type: 'default', mod: 'hovered', page: 'fe'})
             .fe__button-row
                 .fe__button
-                    +button({text: 'click me', type: 'outlined'})
+                    +button({text: 'click me', type: 'outlined', page: 'fe'})
                 .fe__button
-                    +button({text: 'click me', type: 'outlined', mod: 'hovered'})
+                    +button({text: 'click me', type: 'outlined', mod: 'hovered', page: 'fe'})
             .fe__button-row.fe_button-row_small-margin
                 .fe__button
-                    +button({text: 'click me', type: 'text', isHigh: false})
+                    +button({text: 'click me', type: 'text', isHigh: false, page: 'fe'})
                 .fe__button
-                    +button({text: 'click me', type: 'text', mod: 'hovered', isHigh: false})
+                    +button({text: 'click me', type: 'text', mod: 'hovered', isHigh: false, page: 'fe'})
             .fe__button-row
-                +button({text: 'перейти к оплате', isWide: true})
+                +button({text: 'перейти к оплате', isWide: true, page: 'fe'})
         .fe__item
             h3.fe__heading.fe__heading_pagination Pagination
             +pagination({label: 'Получать спецпредложения', name: 'subscriptionChecked'})

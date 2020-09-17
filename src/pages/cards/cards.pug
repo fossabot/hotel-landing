@@ -1,0 +1,28 @@
+extends ../base/ui_kit
+
+include ../../blocks/search-card/search-card
+include ../../blocks/registration-card/registration-card
+include ../../blocks/booking-card/booking-card
+include ../../blocks/login-card/login-card
+include ../../blocks/calendar-card/calendar-card
+include ../../blocks/room-details/room-details
+
+block variables
+    - const mainClass = 'cards';
+    - const pageTitle = 'Cards';
+block content
+    .cards__column
+        .cards__card
+            +search-card()
+        .cards__card
+            +registration-card()
+    .cards__column
+        .cards__card
+            +booking-card({isLux: true})
+        .cards__card
+            +login-card()
+    .cards__column
+        .cards__card
+            +room-details({number: 888, isLux: true, price: 9990, rating: 5, reviewCount: 145})
+        .cards__card
+            +room-details({number: 888, isLux: true, price: 9990, rating: 5, reviewCount: 145})
