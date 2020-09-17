@@ -15,10 +15,11 @@
 .search-room {
   display: grid;
   grid-template-columns: 266px 1fr;
-  column-gap: 60px;
+  column-gap: 59px;
   padding-right: 140px;
   padding-left: 140px;
   padding-top: 30px;
+  margin-bottom: 65px;
   @media (max-width: 1200px) {
     padding: 30px 10px;
     column-gap: 3vh;
@@ -41,10 +42,10 @@
     margin-bottom: 16px;
   }
   &__guests-dropdown {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
   }
   &__slider {
-    margin-bottom: 22px;
+    margin-bottom: 30px;
   }
   &__amenities-filter {
     max-width: 244px;
@@ -57,7 +58,7 @@
     margin-bottom: 28px;
   }
   &__checkbox_wide {
-    max-width: 252px;
+    max-width: 254px;
   }
   &__checkbox_narrow {
     max-width: 230px;
@@ -67,7 +68,7 @@
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     align-items: flex-start;
     justify-items: stretch;
-    row-gap: 17px;
+    row-gap: 22px;
     column-gap: 12px;
   }
   &__pagination {
