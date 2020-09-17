@@ -31,13 +31,15 @@ block content
                 .room-details__reviews1
                     h2.room-details__reviews-heading Отзывы посетителей номера
                         span.room-details__reviews-count 2 отзыва
-                    +review({authorImg: 'user1.png'})
-                    +review(
-                        {authorImg: 'user2.png',
-                        authorName: 'Патрисия Стёклышкова',
-                        reviewDate: 'Неделю назад',
-                        likes: 2,
-                        text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
+                    .room-details__review
+                        +review({authorImg: 'user1.png'})
+                    .room-details__review
+                        +review(
+                            {authorImg: 'user2.png',
+                            authorName: 'Патрисия Стёклышкова',
+                            reviewDate: 'Неделю назад',
+                            likes: 2,
+                            text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
 
                 .room-details__rules
                     h2.room-details__rules-heading Правила
